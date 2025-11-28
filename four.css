@@ -8,7 +8,7 @@
     height: auto;
 }
 .body{
-    background-image: url("Images/img1.jpg");
+    background-image: url("img1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
