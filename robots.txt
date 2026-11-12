@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://userkewal64.github.io/SafalMauriPalan/sitemap.xml
+Sitemap: https://safalmauripalan.com.np/sitemap.xml
