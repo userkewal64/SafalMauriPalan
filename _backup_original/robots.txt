@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://safalmauripalan.com.np/sitemap.xml
