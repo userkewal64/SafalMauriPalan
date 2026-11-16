@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initGlobalNavigation();
   initPrototypeBottle3D();
   initHeroBottlesInteraction();
+  initHeroAnimationObserver();
   initFlyingBee();
   initGalleryLightbox();
   initEquipmentFilter();
@@ -117,10 +118,12 @@ const translations = {
     prod_cat_desc: "Safal Mauri Palan द्वारा उत्पादित १ के.जी. र ५०० ग्रामका आधिकारिक glass jar हरू।",
     prod_1kg_title: "Itahari Honey – 1 kg Jar",
     prod_1kg_sub: "Producer: Safal Mauri Palan, Itahari",
+    prod_1kg_price: "Rs. 1200",
     prod_badge1: "1 kg Jar",
     prod_badge2: "500 g Jar",
     prod_500g_title: "Itahari Honey – 500 g Jar",
     prod_500g_sub: "Producer: Safal Mauri Palan, Itahari",
+    prod_500g_price: "Rs. 600",
     prod_sources_title: "Available Floral Varieties:",
     prod_source_1: "1. Mustard Honey",
     prod_source_2: "2. Litchi Honey",
@@ -270,7 +273,9 @@ const translations = {
 
     // Two Real Honey Bottles in Hero
     home_bottle1_name: "Itahari Honey – 1 kg",
+    home_bottle1_price: "Rs. 1200",
     home_bottle2_name: "Itahari Honey – 500 g",
+    home_bottle2_price: "Rs. 600",
     home_varieties_available_lbl: "Available Varieties:",
     home_var_mustard: "Mustard Honey",
     home_var_litchi: "Litchi Honey",
@@ -318,10 +323,12 @@ const translations = {
     prod_cat_desc: "Official 1 kg and 500 g glass jars produced by Safal Mauri Palan in Itahari-4, Sunsari.",
     prod_1kg_title: "Itahari Honey – 1 kg Jar",
     prod_1kg_sub: "Producer: Safal Mauri Palan, Itahari",
+    prod_1kg_price: "Rs. 1200",
     prod_badge1: "1 kg Jar",
     prod_badge2: "500 g Jar",
     prod_500g_title: "Itahari Honey – 500 g Jar",
     prod_500g_sub: "Producer: Safal Mauri Palan, Itahari",
+    prod_500g_price: "Rs. 600",
     prod_sources_title: "Available Floral Varieties:",
     prod_source_1: "1. Mustard Honey",
     prod_source_2: "2. Litchi Honey",
@@ -614,6 +621,23 @@ function initHeroBottlesInteraction() {
       card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0px)';
     });
   });
+}
+
+function initHeroAnimationObserver() {
+  const hero = document.querySelector('.hero-section');
+  if (!hero || !('IntersectionObserver' in window)) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        hero.classList.remove('anim-paused');
+      } else {
+        hero.classList.add('anim-paused');
+      }
+    });
+  }, { threshold: 0.05 });
+
+  observer.observe(hero);
 }
 
 /* --------------------------------------------------------------------------
