@@ -1,7 +1,8 @@
 /* ==========================================================================
-   SAFAL MAURI PALAN — UNIFIED LUXURY STYLESHEET (style.css)
-   Cinematic Honey Brand Design System
-   Palette: Deep Forest Green | Golden Amber | Warm Cream | Earthy Wood
+   SAFAL MAURI PALAN — COMPLETE MULTI-PAGE STYLESHEET (style.css)
+   Company: Safal Mauri Palan (सफल मौरी पालन)
+   Product: Itahari Honey (इटहरी मह)
+   Palette: Deep Forest Green | Honey Gold & Amber | Warm Cream | Earthy Wood
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -12,9 +13,9 @@
   --bg-deep-forest: #050d08;
   --bg-forest: #0a170f;
   --bg-forest-light: #12281b;
-  --bg-forest-card: rgba(14, 30, 20, 0.72);
-  --bg-glass: rgba(18, 38, 25, 0.65);
-  --bg-glass-elevated: rgba(24, 48, 32, 0.85);
+  --bg-forest-card: rgba(14, 30, 20, 0.78);
+  --bg-glass: rgba(18, 38, 25, 0.68);
+  --bg-glass-elevated: rgba(24, 48, 32, 0.9);
 
   /* Color Palette - Golden Honey */
   --honey-primary: #f5b027;
@@ -33,12 +34,12 @@
   --text-muted: #b8c4ba;
 
   /* Accents & Borders */
-  --border-gold: rgba(245, 176, 39, 0.28);
-  --border-gold-glow: rgba(245, 176, 39, 0.65);
-  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-gold: rgba(245, 176, 39, 0.32);
+  --border-gold-glow: rgba(245, 176, 39, 0.7);
+  --border-glass: rgba(255, 255, 255, 0.09);
   --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.4);
-  --shadow-gold: 0 0 35px rgba(245, 176, 39, 0.25);
-  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --shadow-gold: 0 0 35px rgba(245, 176, 39, 0.28);
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.55);
 
   /* Typography */
   --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
@@ -46,12 +47,12 @@
   --font-devanagari: 'Mukta', 'Noto Sans Devanagari', 'Outfit', sans-serif;
 
   /* Transitions */
-  --transition-fast: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.38s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 
   /* Layout */
-  --nav-height: 80px;
+  --nav-height: 82px;
   --container-max: 1240px;
   --radius-sm: 8px;
   --radius-md: 14px;
@@ -83,14 +84,15 @@ body {
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background-image: 
-    radial-gradient(circle at 15% 20%, rgba(245, 176, 39, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 15% 20%, rgba(245, 176, 39, 0.07) 0%, transparent 40%),
     radial-gradient(circle at 85% 60%, rgba(20, 60, 36, 0.18) 0%, transparent 50%),
     radial-gradient(circle at 50% 90%, rgba(245, 176, 39, 0.05) 0%, transparent 45%);
   background-attachment: fixed;
 }
 
-/* Background image overlay blend */
 body::before {
   content: '';
   position: fixed;
@@ -99,10 +101,14 @@ body::before {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.08;
+  opacity: 0.07;
   pointer-events: none;
   z-index: -1;
   filter: contrast(120%) brightness(80%);
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 img, video {
@@ -138,9 +144,13 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.01em;
 }
 
-.nepali-text {
+.nepali-text, [lang="ne"] body {
   font-family: var(--font-devanagari);
-  line-height: 1.7;
+}
+
+.scientific-name {
+  font-style: italic;
+  font-family: var(--font-serif);
 }
 
 .gold-gradient-text {
@@ -154,33 +164,32 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.08em;
   color: var(--honey-primary);
-  background: rgba(245, 176, 39, 0.1);
-  padding: 6px 16px;
+  background: rgba(245, 176, 39, 0.12);
+  padding: 6px 18px;
   border-radius: var(--radius-full);
   border: 1px solid var(--border-gold);
   margin-bottom: 14px;
 }
 
 .section-title {
-  font-size: clamp(2rem, 4vw, 2.85rem);
+  font-size: clamp(2rem, 3.8vw, 2.85rem);
   margin-bottom: 16px;
 }
 
 .section-subtitle {
   font-size: clamp(1rem, 1.8vw, 1.15rem);
   color: var(--text-muted);
-  max-width: 680px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 48px;
 }
 
 .container {
@@ -198,7 +207,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 13px 28px;
+  padding: 13px 26px;
   font-size: 0.98rem;
   font-weight: 600;
   border-radius: var(--radius-full);
@@ -245,10 +254,11 @@ h1, h2, h3, h4, h5, h6 {
 .btn-whatsapp:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 28px rgba(37, 211, 102, 0.55);
+  color: #ffffff;
 }
 
 /* --------------------------------------------------------------------------
-   4. NAVIGATION BAR (STICKY & BLURRED)
+   4. GLOBAL NAVIGATION BAR & LANGUAGE SWITCHER
    -------------------------------------------------------------------------- */
 .navbar {
   position: fixed;
@@ -263,9 +273,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar.scrolled {
-  background: rgba(7, 18, 11, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(7, 18, 11, 0.94);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--border-glass);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   height: 72px;
@@ -277,54 +287,75 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
 }
 
+/* Brand Logo & Title Link */
 .nav-brand {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.nav-brand .brand-logo {
-  width: 44px;
-  height: 44px;
+.brand-logo-frame {
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   border: 2px solid var(--honey-primary);
-  object-fit: cover;
-  box-shadow: 0 0 14px rgba(245, 176, 39, 0.4);
+  background: #fff;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 16px rgba(245, 176, 39, 0.45);
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
 }
 
-.nav-brand .brand-title {
+.nav-brand:hover .brand-logo-frame {
+  transform: scale(1.05);
+}
+
+.brand-logo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.brand-title-wrap {
   display: flex;
   flex-direction: column;
 }
 
-.brand-title .en-name {
+.brand-company-name {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
+  font-size: 1.22rem;
   font-weight: 700;
   color: var(--cream-pure);
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+}
+
+.brand-product-sub {
+  font-family: var(--font-devanagari);
+  font-size: 0.76rem;
+  color: var(--honey-primary);
+  font-weight: 600;
   letter-spacing: 0.02em;
 }
 
-.brand-title .np-name {
-  font-family: var(--font-devanagari);
-  font-size: 0.78rem;
-  color: var(--honey-primary);
-  letter-spacing: 0.05em;
-  font-weight: 600;
-}
-
+/* Desktop Nav Links */
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 18px;
 }
 
 .nav-link {
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: var(--cream-muted);
   position: relative;
   padding: 6px 2px;
+  white-space: nowrap;
 }
 
 .nav-link::after {
@@ -347,10 +378,46 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
-.nav-cta {
+.nav-cta-group {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+/* Language Switcher Pill (नेपाली | English) */
+.lang-switcher-pill {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(10, 24, 15, 0.85);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-full);
+  padding: 3px 6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.lang-btn {
+  padding: 5px 11px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--cream-muted);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.lang-btn:hover {
+  color: var(--honey-light);
+}
+
+.lang-btn.active {
+  background: linear-gradient(135deg, var(--honey-primary), var(--honey-amber));
+  color: #100b02;
+  box-shadow: 0 2px 8px rgba(245, 176, 39, 0.4);
+}
+
+.lang-sep {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.8rem;
+  padding: 0 2px;
 }
 
 .nav-toggle {
@@ -360,25 +427,26 @@ h1, h2, h3, h4, h5, h6 {
   padding: 8px;
 }
 
-/* Mobile Drawer */
+/* Mobile Drawer Menu */
 .mobile-menu {
   position: fixed;
   top: 0;
   right: -100%;
-  width: 82%;
+  width: 84%;
   max-width: 380px;
   height: 100vh;
-  background: rgba(10, 24, 15, 0.98);
+  background: rgba(8, 20, 13, 0.98);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   z-index: 1100;
-  padding: 80px 30px 40px;
+  padding: 75px 24px 40px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 14px;
   border-left: 1px solid var(--border-gold);
   transition: right var(--transition-smooth);
-  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.85);
+  overflow-y: auto;
 }
 
 .mobile-menu.open {
@@ -387,23 +455,22 @@ h1, h2, h3, h4, h5, h6 {
 
 .mobile-close {
   position: absolute;
-  top: 24px;
-  right: 24px;
+  top: 20px;
+  right: 20px;
   font-size: 1.6rem;
   color: var(--cream-pure);
 }
 
 .mobile-menu .nav-link {
-  font-size: 1.25rem;
-  font-family: var(--font-serif);
-  padding: 10px 0;
+  font-size: 1.12rem;
+  padding: 8px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.72);
   backdrop-filter: blur(4px);
   z-index: 1050;
   opacity: 0;
@@ -417,14 +484,43 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --------------------------------------------------------------------------
-   5. CINEMATIC HERO SECTION
+   5. PAGE HERO HEADER FOR SUBPAGES (ourproducts, moreservices, etc.)
+   -------------------------------------------------------------------------- */
+.page-hero {
+  position: relative;
+  padding: calc(var(--nav-height) + 40px) 0 45px;
+  background: linear-gradient(180deg, rgba(10, 24, 15, 0.95) 0%, rgba(5, 13, 8, 0.6) 100%);
+  border-bottom: 1px solid var(--border-glass);
+  text-align: center;
+  overflow: hidden;
+}
+
+.page-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.page-hero h1 {
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  margin-bottom: 14px;
+}
+
+.page-hero p {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  color: var(--text-muted);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   6. HOMEPAGE HERO & NEWLY DESIGNED 3D HONEY BOTTLE PROTOTYPE
    -------------------------------------------------------------------------- */
 .hero-section {
   position: relative;
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
-  padding: calc(var(--nav-height) + 40px) 0 80px;
+  padding: calc(var(--nav-height) + 20px) 0 50px;
   overflow: hidden;
 }
 
@@ -439,15 +535,15 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   border-radius: 50%;
   filter: blur(100px);
-  opacity: 0.45;
+  opacity: 0.4;
 }
 
 .glow-1 {
-  width: 500px;
-  height: 500px;
+  width: 520px;
+  height: 520px;
   background: radial-gradient(circle, rgba(245, 176, 39, 0.35) 0%, transparent 70%);
   top: 10%;
-  right: 5%;
+  right: 8%;
 }
 
 .glow-2 {
@@ -455,7 +551,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 650px;
   background: radial-gradient(circle, rgba(16, 75, 42, 0.45) 0%, transparent 70%);
   bottom: 0%;
-  left: -10%;
+  left: -8%;
 }
 
 .hero-grid {
@@ -471,65 +567,64 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 620px;
 }
 
-.hero-badge {
+.hero-company-badge {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   background: rgba(245, 176, 39, 0.12);
   border: 1px solid var(--border-gold);
   border-radius: var(--radius-full);
-  padding: 8px 18px;
-  margin-bottom: 22px;
+  padding: 7px 18px;
+  margin-bottom: 18px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
-.hero-badge i {
+.hero-company-badge i {
   color: var(--honey-primary);
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
-.hero-badge span {
+.hero-company-badge span {
   font-size: 0.88rem;
   font-weight: 600;
   color: var(--honey-light);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
 }
 
-.hero-title {
-  font-size: clamp(2.5rem, 5.2vw, 4rem);
+.hero-product-title {
+  font-size: clamp(2.3rem, 4.6vw, 3.6rem);
   font-weight: 800;
-  line-height: 1.15;
-  margin-bottom: 14px;
+  line-height: 1.16;
+  margin-bottom: 12px;
 }
 
-.hero-nepali-title {
-  font-family: var(--font-devanagari);
-  font-size: clamp(1.4rem, 2.8vw, 1.95rem);
+.hero-company-tagline {
+  font-size: clamp(1.15rem, 2.2vw, 1.55rem);
   color: var(--honey-light);
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .hero-description {
-  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  font-size: clamp(0.98rem, 1.3vw, 1.1rem);
   color: var(--text-muted);
   line-height: 1.75;
-  margin-bottom: 34px;
+  margin-bottom: 28px;
 }
 
 .hero-actions {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 16px;
-  margin-bottom: 40px;
+  gap: 14px;
+  margin-bottom: 32px;
 }
 
 .hero-badges-row {
   display: flex;
   align-items: center;
   gap: 24px;
-  padding-top: 24px;
+  padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -540,91 +635,433 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-mini-stat .stat-num {
   font-family: var(--font-serif);
-  font-size: 1.6rem;
+  font-size: 1.55rem;
   font-weight: 700;
   color: var(--honey-light);
 }
 
 .hero-mini-stat .stat-label {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
-/* 3D Jar Canvas & Interactive Visual Container */
-.hero-visual-wrapper {
-  position: relative;
+/* --------------------------------------------------------------------------
+   THE TWO REAL HONEY BOTTLES SHOWCASE (HOMEPAGE HERO)
+   Displaying both authentic Itahari Honey bottle photographs (img5.jpg - 1 kg,
+   img6.jpg - 500 g) prominently with variety labels, pricing, and WhatsApp action.
+   -------------------------------------------------------------------------- */
+.hero-bottles-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
   width: 100%;
-  height: 520px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  z-index: 5;
 }
 
-#hero-3d-canvas {
+.hero-bottle-card {
+  background: var(--bg-glass-elevated);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(14px);
+  transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bottle-card:hover {
+  border-color: rgba(245, 176, 39, 0.7);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), 0 0 25px rgba(245, 176, 39, 0.18);
+}
+
+.hero-bottle-card::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  cursor: grab;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--honey-primary), transparent);
 }
 
-#hero-3d-canvas:active {
-  cursor: grabbing;
-}
-
-/* CSS / Fallback 3D Honey Jar Card */
-.hero-product-fallback {
+.bottle-img-frame {
   position: relative;
-  z-index: 1;
+  width: 100%;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.real-bottle-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.65));
+  transition: transform var(--transition-smooth);
+}
+
+.hero-bottle-card:hover .real-bottle-img {
+  transform: scale(1.05);
+}
+
+.bottle-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bottle-product-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--cream-pure);
+  margin-bottom: 2px;
+  line-height: 1.25;
+}
+
+.bottle-price-tag {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #4ade80;
+  margin-bottom: 8px;
+}
+
+.bottle-varieties-label {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--honey-light);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.bottle-varieties-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 14px;
+}
+
+.variety-chip {
+  background: rgba(245, 176, 39, 0.12);
+  border: 1px solid rgba(245, 176, 39, 0.35);
+  color: var(--cream-soft);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+}
+
+.bottle-order-btn {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  justify-content: center;
+}
+
+.hero-bottles-footer {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   THE REALISTIC 3D HONEY BOTTLE PROTOTYPE (CSS 3D & SVG CRAFTED)
+   Inspired strictly by the reference packaging photograph (shape, fluted cap,
+   label placement, golden honey, and authentic logo)
+   -------------------------------------------------------------------------- */
+.proto-bottle-stage {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+}
+
+.proto-bottle-wrapper {
+  position: relative;
   width: 320px;
-  height: 440px;
-  background: radial-gradient(circle at 40% 30%, rgba(245, 176, 39, 0.25) 0%, rgba(14, 30, 20, 0.95) 75%);
-  border: 1px solid var(--border-gold);
-  border-radius: 40px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), var(--shadow-gold);
+  height: 470px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 30px;
-  text-align: center;
-  overflow: hidden;
-  animation: floatJar 6s ease-in-out infinite;
+  transform-style: preserve-3d;
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: grab;
+  animation: floatBottle 6s ease-in-out infinite;
 }
 
-@keyframes floatJar {
+.proto-bottle-wrapper:active {
+  cursor: grabbing;
+}
+
+@keyframes floatBottle {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-12px) rotate(1deg); }
+  50% { transform: translateY(-10px) rotate(0.8deg); }
 }
 
-.fallback-jar-img {
-  width: 220px;
-  height: auto;
-  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.6));
-  transition: transform var(--transition-smooth);
-}
-
-.hero-product-fallback:hover .fallback-jar-img {
-  transform: scale(1.05);
-}
-
-.fallback-floating-badge {
+/* Pedestal Aura Glow beneath bottle */
+.proto-glow-pedestal {
   position: absolute;
-  bottom: 24px;
-  background: rgba(7, 18, 11, 0.88);
+  bottom: 10px;
+  width: 250px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(245, 176, 39, 0.7) 0%, rgba(245, 176, 39, 0.15) 60%, transparent 80%);
+  filter: blur(12px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Honey Bottle 3D Body Container */
+.proto-bottle {
+  position: relative;
+  width: 220px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.85));
+}
+
+/* 1. Fluted Metallic Gold Twist Cap */
+.proto-cap {
+  position: relative;
+  width: 110px;
+  height: 38px;
+  background: linear-gradient(180deg, #ffea9f 0%, #d4931a 40%, #99600a 80%, #ffd466 100%);
+  border-radius: 6px 6px 2px 2px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.7);
+  z-index: 5;
+  border: 1px solid #734503;
+}
+
+.proto-cap-ridges {
+  position: absolute;
+  inset: 4px;
+  background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0.4) 2px, transparent 2px, transparent 6px);
+  border-radius: 4px;
+}
+
+/* 2. Glass Neck & Collar */
+.proto-neck {
+  width: 90px;
+  height: 22px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.4) 0%, rgba(223, 140, 11, 0.8) 15%, rgba(245, 176, 39, 0.9) 50%, rgba(223, 140, 11, 0.8) 85%, rgba(255, 255, 255, 0.4) 100%);
+  border-left: 2px solid rgba(255, 255, 255, 0.7);
+  border-right: 2px solid rgba(255, 255, 255, 0.7);
+  z-index: 4;
+}
+
+/* 3. Main Glass Jar Body */
+.proto-body {
+  position: relative;
+  width: 210px;
+  height: 320px;
+  border-radius: 24px 24px 32px 32px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.05) 20%, transparent 60%),
+              radial-gradient(circle at 40% 35%, rgba(255, 212, 102, 0.95) 0%, rgba(223, 140, 11, 0.95) 60%, rgba(138, 79, 4, 0.98) 100%);
+  border: 3px solid rgba(255, 255, 255, 0.55);
+  box-shadow: inset 0 0 25px rgba(255, 230, 150, 0.6), inset 0 -12px 20px rgba(80, 40, 0, 0.7);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+/* Thick Glass Base Reflection */
+.proto-body::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 24px;
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.4) 70%, rgba(255, 255, 255, 0.7) 100%);
+  border-radius: 0 0 28px 28px;
+}
+
+/* Specular Glass Streaks */
+.proto-glass-sheen {
+  position: absolute;
+  top: 10px;
+  left: 18px;
+  width: 14px;
+  height: 85%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.15) 60%, rgba(255, 255, 255, 0.5) 100%);
+  border-radius: 10px;
+  filter: blur(1px);
+  pointer-events: none;
+  z-index: 6;
+}
+
+/* 4. Honey Bottle Label (Faithfully Designed Prototype) */
+.proto-label {
+  position: relative;
+  width: 196px;
+  height: 215px;
+  background: linear-gradient(180deg, #fff9e6 0%, #fff2cc 100%);
+  border: 2px solid #b87c12;
+  border-radius: 12px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  z-index: 4;
+}
+
+.proto-label-logo-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #b87c12;
+  background: #fff;
+  padding: 2px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.proto-label-logo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.proto-label-brand {
+  font-family: var(--font-devanagari);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1a1202;
+  line-height: 1.1;
+}
+
+.proto-label-product {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #c98210;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  margin: 3px 0 2px;
+}
+
+.proto-label-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #593502;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: #fce59f;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  margin-bottom: 4px;
+}
+
+.proto-label-varieties {
+  font-size: 0.66rem;
+  font-weight: 600;
+  color: #3b2808;
+  line-height: 1.3;
+}
+
+.proto-label-weight {
+  margin-top: auto;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: #100b02;
+  border-top: 1px dashed #b87c12;
+  width: 100%;
+  padding-top: 3px;
+}
+
+/* Floating Honey Dipper Card */
+.floating-dipper-card {
+  position: absolute;
+  top: 15%;
+  right: -10px;
+  background: var(--bg-glass-elevated);
   border: 1px solid var(--border-gold);
-  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(12px);
+  z-index: 7;
+  animation: floatSlow 5s ease-in-out infinite 1s;
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.dipper-icon {
+  width: 34px;
+  height: 34px;
+  background: rgba(245, 176, 39, 0.18);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--honey-primary);
+  font-size: 1.1rem;
+}
+
+/* Dripping honey animation from dipper */
+.dipper-honey-drop {
+  width: 6px;
+  height: 12px;
+  background: #f5b027;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: dropHoney 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  margin: 0 auto;
+}
+
+@keyframes dropHoney {
+  0% { transform: scale(0.6) translateY(0); opacity: 0; }
+  30% { transform: scale(1) translateY(4px); opacity: 1; }
+  75% { transform: scale(1.1) translateY(18px); opacity: 0.9; }
+  100% { transform: scale(0.8) translateY(28px); opacity: 0; }
+}
+
+.bottle-origin-badge {
+  position: absolute;
+  bottom: -15px;
+  background: rgba(8, 20, 13, 0.95);
+  border: 1px solid var(--border-gold);
+  padding: 7px 18px;
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
   gap: 8px;
   font-size: 0.82rem;
   color: var(--honey-light);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+  z-index: 6;
 }
 
 /* Flying Bee Animation */
@@ -632,8 +1069,8 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   pointer-events: none;
   z-index: 20;
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   transition: transform 0.1s linear;
 }
 
@@ -642,11 +1079,6 @@ h1, h2, h3, h4, h5, h6 {
   height: 44px;
   position: relative;
   filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.6));
-}
-
-.flying-bee svg {
-  width: 100%;
-  height: 100%;
 }
 
 .bee-wing {
@@ -659,169 +1091,31 @@ h1, h2, h3, h4, h5, h6 {
   100% { transform: scaleY(1.3) rotate(25deg); }
 }
 
-/* Floating Dipper with honey drop */
-.floating-dipper-card {
-  position: absolute;
-  top: 15%;
-  right: -5%;
-  background: var(--bg-glass-elevated);
-  border: 1px solid var(--border-gold);
-  border-radius: var(--radius-md);
-  padding: 12px 18px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  box-shadow: var(--shadow-card);
-  backdrop-filter: blur(12px);
-  z-index: 5;
-  animation: floatSlow 5s ease-in-out infinite 1s;
-}
-
-@keyframes floatSlow {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-.dipper-icon {
-  width: 36px;
-  height: 36px;
-  background: rgba(245, 176, 39, 0.18);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--honey-primary);
-  font-size: 1.1rem;
-}
-
 /* --------------------------------------------------------------------------
-   6. BRAND INTRODUCTION & OUR STORY (#about)
+   7. SECTIONS & CARDS COMMON STYLES
    -------------------------------------------------------------------------- */
 .section {
-  padding: 100px 0;
+  padding: 85px 0;
   position: relative;
   z-index: 2;
 }
 
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
+.section-alt {
+  background: linear-gradient(180deg, transparent 0%, rgba(10, 24, 15, 0.65) 50%, transparent 100%);
 }
 
-.about-imagery {
-  position: relative;
-}
-
-.about-img-main {
-  width: 100%;
-  height: 460px;
-  object-fit: cover;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-gold);
-  box-shadow: var(--shadow-card);
-}
-
-.about-badge-card {
-  position: absolute;
-  bottom: -25px;
-  right: -20px;
-  background: rgba(10, 24, 15, 0.95);
-  border: 1px solid var(--border-gold);
-  backdrop-filter: blur(16px);
-  padding: 20px 26px;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.about-badge-card .badge-icon {
-  font-size: 2.2rem;
-  color: var(--honey-primary);
-}
-
-.about-badge-card .badge-text h4 {
-  font-size: 1.35rem;
-  color: var(--honey-light);
-}
-
-.about-badge-card .badge-text p {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-
-.about-text .nepali-quote {
-  font-family: var(--font-devanagari);
-  font-size: 1.15rem;
-  color: var(--cream-pure);
-  background: rgba(245, 176, 39, 0.08);
-  border-left: 4px solid var(--honey-primary);
-  padding: 18px 24px;
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  margin-bottom: 24px;
-  line-height: 1.85;
-}
-
-.about-features {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 30px;
-}
-
-.feature-box {
-  background: var(--bg-forest-card);
-  border: 1px solid var(--border-glass);
-  padding: 18px 20px;
-  border-radius: var(--radius-md);
-  transition: all var(--transition-smooth);
-}
-
-.feature-box:hover {
-  border-color: var(--border-gold);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-}
-
-.feature-box i {
-  color: var(--honey-primary);
-  font-size: 1.4rem;
-  margin-bottom: 10px;
-}
-
-.feature-box h4 {
-  font-size: 1.05rem;
-  margin-bottom: 6px;
-  color: var(--cream-pure);
-}
-
-.feature-box p {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
-
-/* --------------------------------------------------------------------------
-   7. HONEY VARIETIES SHOWCASE (#varieties)
-   -------------------------------------------------------------------------- */
-.varieties-section {
-  background: linear-gradient(180deg, transparent 0%, rgba(10, 24, 15, 0.6) 50%, transparent 100%);
-}
-
+/* Variety Cards */
 .varieties-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  gap: 26px;
 }
 
 .variety-card {
   background: var(--bg-forest-card);
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-lg);
-  padding: 32px 28px;
+  padding: 30px 26px;
   display: flex;
   flex-direction: column;
   transition: all var(--transition-smooth);
@@ -855,12 +1149,12 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .variety-icon {
-  width: 54px;
-  height: 54px;
+  width: 52px;
+  height: 52px;
   border-radius: var(--radius-md);
   background: rgba(245, 176, 39, 0.14);
   border: 1px solid var(--border-gold);
@@ -873,39 +1167,31 @@ h1, h2, h3, h4, h5, h6 {
 
 .variety-number {
   font-family: var(--font-serif);
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.12);
 }
 
-.variety-title-en {
-  font-size: 1.45rem;
+.variety-title-wrap h3 {
+  font-size: 1.35rem;
   margin-bottom: 4px;
-}
-
-.variety-title-np {
-  font-family: var(--font-devanagari);
-  font-size: 1.15rem;
-  color: var(--honey-light);
-  margin-bottom: 16px;
-  font-weight: 600;
 }
 
 .variety-description {
   font-size: 0.95rem;
   color: var(--text-muted);
   line-height: 1.65;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
   flex-grow: 1;
 }
 
 .variety-profile {
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.28);
   border-radius: var(--radius-sm);
-  padding: 14px 16px;
+  padding: 12px 16px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   border: 1px solid rgba(255, 255, 255, 0.04);
 }
 
@@ -925,22 +1211,20 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-/* --------------------------------------------------------------------------
-   8. HONEY PRODUCTS SHOWCASE (#products)
-   -------------------------------------------------------------------------- */
-.products-grid {
+/* Product Catalogue Cards */
+.products-catalogue-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 36px;
-  max-width: 980px;
-  margin: 0 auto 50px;
+  gap: 32px;
+  max-width: 960px;
+  margin: 0 auto 40px;
 }
 
 .product-card {
   background: var(--bg-glass-elevated);
   border: 1px solid var(--border-gold);
   border-radius: var(--radius-lg);
-  padding: 36px 32px;
+  padding: 34px 28px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -957,8 +1241,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .product-badge {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 18px;
+  right: 18px;
   background: linear-gradient(135deg, var(--honey-primary), var(--honey-amber));
   color: #120e05;
   font-size: 0.78rem;
@@ -975,15 +1259,14 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 24px;
-  position: relative;
+  margin-bottom: 20px;
 }
 
 .product-img-wrap img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.6));
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.65));
   transition: transform var(--transition-smooth);
 }
 
@@ -992,14 +1275,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .product-name {
-  font-size: 1.6rem;
-  margin-bottom: 6px;
+  font-size: 1.5rem;
+  margin-bottom: 4px;
 }
 
-.product-weight {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  margin-bottom: 16px;
+.product-producer-tag {
+  font-size: 0.82rem;
+  color: var(--honey-light);
+  margin-bottom: 12px;
 }
 
 .product-price {
@@ -1007,21 +1290,21 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 2rem;
   font-weight: 800;
   color: var(--honey-light);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .product-sources {
   background: rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: var(--radius-md);
-  padding: 14px 18px;
+  padding: 12px 16px;
   width: 100%;
   text-align: left;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
 }
 
 .product-sources h5 {
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   color: var(--honey-primary);
   margin-bottom: 8px;
   text-transform: uppercase;
@@ -1054,39 +1337,39 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --------------------------------------------------------------------------
-   9. BEEKEEPING ACCESSORIES, COLONIES & EQUIPMENT (#services)
+   8. BEEKEEPING ACCESSORIES PAGE (moreservices.html)
    -------------------------------------------------------------------------- */
 .services-intro-card {
   background: var(--bg-glass);
   border: 1px solid var(--border-gold);
   border-radius: var(--radius-lg);
-  padding: 36px 40px;
+  padding: 34px 38px;
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 40px;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 36px;
   align-items: center;
-  margin-bottom: 48px;
+  margin-bottom: 44px;
 }
 
 .services-intro-card img {
   border-radius: var(--radius-md);
   border: 1px solid var(--border-gold);
   box-shadow: var(--shadow-card);
-  max-height: 320px;
+  max-height: 310px;
   object-fit: cover;
   width: 100%;
 }
 
 .services-intro-text h3 {
-  font-size: 1.8rem;
-  margin-bottom: 16px;
+  font-size: 1.7rem;
+  margin-bottom: 14px;
   color: var(--honey-light);
 }
 
 .services-intro-text p {
   color: var(--text-muted);
   line-height: 1.75;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .accessories-filter {
@@ -1095,7 +1378,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 36px;
+  margin-bottom: 34px;
 }
 
 .filter-btn {
@@ -1118,15 +1401,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .equipment-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 22px;
+  grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+  gap: 20px;
 }
 
 .equipment-card {
   background: var(--bg-forest-card);
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-md);
-  padding: 18px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   transition: all var(--transition-smooth);
@@ -1140,14 +1423,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .equipment-img-wrap {
   width: 100%;
-  height: 170px;
+  height: 165px;
   background: rgba(0, 0, 0, 0.3);
   border-radius: var(--radius-sm);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .equipment-img-wrap img {
@@ -1161,16 +1444,15 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(1.08);
 }
 
-.equipment-name-en {
-  font-size: 1.02rem;
+.equipment-name-main {
+  font-size: 1rem;
   font-weight: 600;
   color: var(--cream-pure);
   margin-bottom: 4px;
 }
 
-.equipment-name-np {
-  font-family: var(--font-devanagari);
-  font-size: 0.92rem;
+.equipment-name-sub {
+  font-size: 0.85rem;
   color: var(--honey-primary);
   margin-bottom: 12px;
 }
@@ -1197,80 +1479,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --------------------------------------------------------------------------
-   10. PRODUCTION PROCESS & JOURNEY (#process)
-   -------------------------------------------------------------------------- */
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  position: relative;
-}
-
-.process-step {
-  background: var(--bg-forest-card);
-  border: 1px solid var(--border-glass);
-  border-radius: var(--radius-lg);
-  padding: 30px 24px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  transition: all var(--transition-smooth);
-}
-
-.process-step:hover {
-  border-color: var(--border-gold);
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-card);
-}
-
-.step-number {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--honey-primary), var(--honey-amber));
-  color: #120e05;
-  font-family: var(--font-serif);
-  font-weight: 800;
-  font-size: 1.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 14px rgba(245, 176, 39, 0.4);
-}
-
-.step-title {
-  font-size: 1.22rem;
-  margin-bottom: 10px;
-  color: var(--cream-pure);
-}
-
-.step-desc {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-
-/* --------------------------------------------------------------------------
-   11. APIARY & FARM GALLERY (#gallery)
+   9. GALLERY PAGE (gallery.html) — 8 CAREFULLY SELECTED FARM PHOTOS
    -------------------------------------------------------------------------- */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 22px;
 }
 
-.gallery-item {
+.gallery-card {
   position: relative;
-  height: 240px;
+  height: 250px;
   border-radius: var(--radius-md);
   overflow: hidden;
   cursor: pointer;
   border: 1px solid var(--border-glass);
   box-shadow: var(--shadow-subtle);
+  background: #000;
 }
 
-.gallery-item img {
+.gallery-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1280,11 +1508,11 @@ h1, h2, h3, h4, h5, h6 {
 .gallery-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(7, 18, 11, 0.9) 0%, transparent 60%);
+  background: linear-gradient(to top, rgba(7, 18, 11, 0.92) 0%, transparent 60%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 20px;
+  padding: 18px;
   opacity: 0;
   transition: opacity var(--transition-smooth);
 }
@@ -1295,12 +1523,12 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--cream-pure);
 }
 
-.gallery-item:hover img {
+.gallery-card:hover img {
   transform: scale(1.08);
   filter: brightness(110%);
 }
 
-.gallery-item:hover .gallery-overlay {
+.gallery-card:hover .gallery-overlay {
   opacity: 1;
 }
 
@@ -1345,10 +1573,221 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --------------------------------------------------------------------------
-   12. AUTHENTIC FARM VIDEO SHOWCASE (#video)
+   10. RESOURCES & FAQ PAGE (resources.html)
    -------------------------------------------------------------------------- */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  margin-bottom: 50px;
+}
+
+.resource-card {
+  background: var(--bg-forest-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-smooth);
+}
+
+.resource-card:hover {
+  border-color: var(--border-gold);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card);
+}
+
+.resource-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-md);
+  background: rgba(245, 176, 39, 0.14);
+  border: 1px solid var(--border-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--honey-primary);
+  font-size: 1.4rem;
+  margin-bottom: 18px;
+}
+
+.resource-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.resource-card p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* FAQ Accordion */
+.faq-accordion {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faq-item {
+  background: var(--bg-forest-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all var(--transition-smooth);
+}
+
+.faq-item.active {
+  border-color: var(--border-gold);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--cream-pure);
+  cursor: pointer;
+}
+
+.faq-question i {
+  color: var(--honey-primary);
+  transition: transform var(--transition-smooth);
+}
+
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-smooth), padding var(--transition-smooth);
+  padding: 0 24px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 250px;
+  padding: 0 24px 20px;
+}
+
+/* --------------------------------------------------------------------------
+   11. ABOUT US PAGE (about.html) WITH PROMINENT VIDEO
+   -------------------------------------------------------------------------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.about-imagery {
+  position: relative;
+}
+
+.about-img-main {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-gold);
+  box-shadow: var(--shadow-card);
+}
+
+.about-badge-card {
+  position: absolute;
+  bottom: -20px;
+  right: -15px;
+  background: rgba(10, 24, 15, 0.96);
+  border: 1px solid var(--border-gold);
+  backdrop-filter: blur(16px);
+  padding: 18px 24px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.about-badge-card .badge-icon {
+  font-size: 2.2rem;
+  color: var(--honey-primary);
+}
+
+.about-badge-card .badge-text h4 {
+  font-size: 1.25rem;
+  color: var(--honey-light);
+}
+
+.about-badge-card .badge-text p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.about-text .nepali-quote {
+  font-family: var(--font-devanagari);
+  font-size: 1.1rem;
+  color: var(--cream-pure);
+  background: rgba(245, 176, 39, 0.08);
+  border-left: 4px solid var(--honey-primary);
+  padding: 18px 22px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin-bottom: 24px;
+  line-height: 1.85;
+}
+
+.about-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 26px;
+}
+
+.feature-box {
+  background: var(--bg-forest-card);
+  border: 1px solid var(--border-glass);
+  padding: 18px 20px;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-smooth);
+}
+
+.feature-box:hover {
+  border-color: var(--border-gold);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.feature-box i {
+  color: var(--honey-primary);
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.feature-box h4 {
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+  color: var(--cream-pure);
+}
+
+.feature-box p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Prominent Farm Video Showcase */
 .video-card-wrapper {
-  max-width: 900px;
+  max-width: 920px;
   margin: 0 auto;
   background: var(--bg-forest-card);
   border: 1px solid var(--border-gold);
@@ -1372,68 +1811,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .video-caption {
-  margin-top: 18px;
+  margin-top: 16px;
   text-align: center;
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: 0.98rem;
 }
 
 /* --------------------------------------------------------------------------
-   13. WHY CHOOSE SAFAL MAURI PALAN (#why-us)
-   -------------------------------------------------------------------------- */
-.why-us-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 26px;
-}
-
-.why-card {
-  background: var(--bg-forest-card);
-  border: 1px solid var(--border-glass);
-  border-radius: var(--radius-lg);
-  padding: 32px 26px;
-  transition: all var(--transition-smooth);
-}
-
-.why-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--border-gold);
-  box-shadow: var(--shadow-card);
-}
-
-.why-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: rgba(245, 176, 39, 0.12);
-  border: 1px solid var(--border-gold);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--honey-primary);
-  font-size: 1.4rem;
-  margin-bottom: 20px;
-}
-
-.why-card h4 {
-  font-size: 1.25rem;
-  margin-bottom: 12px;
-  color: var(--cream-pure);
-}
-
-.why-card p {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  line-height: 1.65;
-}
-
-/* --------------------------------------------------------------------------
-   14. REACH US & INTERACTIVE MAP (#contact)
+   12. CONTACT US PAGE (contact.html) WITH DIRECT ACTIONS & MAP
    -------------------------------------------------------------------------- */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 36px;
   align-items: stretch;
 }
 
@@ -1441,17 +1831,17 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--bg-glass-elevated);
   border: 1px solid var(--border-gold);
   border-radius: var(--radius-lg);
-  padding: 38px 34px;
+  padding: 36px 32px;
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 24px;
   box-shadow: var(--shadow-card);
 }
 
 .contact-method {
   display: flex;
   align-items: flex-start;
-  gap: 18px;
+  gap: 16px;
 }
 
 .method-icon {
@@ -1482,7 +1872,7 @@ h1, h2, h3, h4, h5, h6 {
 .phone-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
   margin-top: 8px;
 }
 
@@ -1514,13 +1904,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .social-btn {
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   transition: all var(--transition-smooth);
   border: 1px solid var(--border-glass);
 }
@@ -1567,69 +1957,71 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-card);
-  min-height: 420px;
-  position: relative;
+  min-height: 400px;
 }
 
 .map-wrapper iframe {
   width: 100%;
   height: 100%;
-  min-height: 420px;
+  min-height: 400px;
   border: 0;
-  filter: contrast(105%) brightness(95%);
 }
 
-/* Quick order generator card */
 .quick-inquiry-box {
   background: rgba(14, 30, 20, 0.7);
   border: 1px solid var(--border-gold);
   border-radius: var(--radius-md);
-  padding: 22px;
-  margin-top: 12px;
+  padding: 20px;
+  margin-top: 8px;
 }
 
 .quick-inquiry-box h4 {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--honey-light);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .quick-inquiry-box p {
   font-size: 0.88rem;
   color: var(--text-muted);
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 /* --------------------------------------------------------------------------
-   15. FOOTER
+   13. FOOTER WITH ORIGINAL LOGO & BRAND DETAILS
    -------------------------------------------------------------------------- */
 .site-footer {
   background: #040905;
   border-top: 1px solid rgba(245, 176, 39, 0.2);
-  padding: 60px 0 30px;
+  padding: 55px 0 28px;
   position: relative;
   z-index: 2;
+  margin-top: auto;
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr;
-  gap: 40px;
-  margin-bottom: 40px;
+  gap: 36px;
+  margin-bottom: 36px;
 }
 
-.footer-brand-col .brand-logo-large {
-  width: 70px;
-  height: 70px;
+.footer-brand-col .footer-logo-frame {
+  width: 68px;
+  height: 68px;
   border-radius: 50%;
   border: 2px solid var(--honey-primary);
-  margin-bottom: 18px;
-  object-fit: cover;
+  background: #fff;
+  padding: 3px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer-brand-col h3 {
-  font-size: 1.4rem;
-  margin-bottom: 8px;
+  font-size: 1.35rem;
+  margin-bottom: 6px;
 }
 
 .footer-brand-col p {
@@ -1642,13 +2034,13 @@ h1, h2, h3, h4, h5, h6 {
 .footer-links-col h4 {
   font-size: 1.1rem;
   color: var(--honey-light);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .footer-links-col ul {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 9px;
 }
 
 .footer-links-col a {
@@ -1662,7 +2054,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-bottom {
-  padding-top: 24px;
+  padding-top: 22px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
@@ -1677,7 +2069,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --------------------------------------------------------------------------
-   16. FLOATING ACTIONS (WHATSAPP & SCROLL TOP)
+   14. FLOATING ACTIONS (WHATSAPP & SCROLL TOP)
    -------------------------------------------------------------------------- */
 .floating-actions {
   position: fixed;
@@ -1743,13 +2135,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --------------------------------------------------------------------------
-   17. RESPONSIVE DESIGN & BREAKPOINTS
+   15. RESPONSIVE DESIGN & MOBILE OPTIMIZATIONS
    -------------------------------------------------------------------------- */
 @media (max-width: 1080px) {
   .hero-grid {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 50px;
+    gap: 40px;
   }
 
   .hero-content {
@@ -1766,7 +2158,7 @@ h1, h2, h3, h4, h5, h6 {
 
   .about-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
   }
 
   .varieties-grid {
@@ -1775,14 +2167,10 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
   }
 
-  .process-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .why-us-grid {
+  .resource-grid {
     grid-template-columns: 1fr;
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 580px;
+    margin: 0 auto 40px;
   }
 
   .contact-grid {
@@ -1799,8 +2187,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-@media (max-width: 860px) {
-  .nav-links, .nav-cta {
+@media (max-width: 920px) {
+  .nav-links, .nav-cta-group .btn-whatsapp {
     display: none;
   }
 
@@ -1808,7 +2196,7 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
   }
 
-  .products-grid {
+  .products-catalogue-grid {
     grid-template-columns: 1fr;
     max-width: 480px;
   }
@@ -1817,29 +2205,253 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     right: 0;
     bottom: 0;
-    margin-top: 16px;
+    margin-top: 14px;
   }
 }
 
-@media (max-width: 640px) {
+/* DEDICATED MOBILE HOMEPAGE DESIGN (< 768px) */
+@media (max-width: 768px) {
   :root {
     --nav-height: 70px;
   }
 
   .section {
-    padding: 70px 0;
+    padding: 55px 0;
   }
 
-  .hero-visual-wrapper {
-    height: 400px;
+  .page-hero {
+    padding: calc(var(--nav-height) + 24px) 0 35px;
   }
 
-  .process-grid {
-    grid-template-columns: 1fr;
+  .navbar .container {
+    padding: 0 16px;
+  }
+
+  .brand-logo-frame {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand-company-name {
+    font-size: 1.05rem;
+  }
+
+  .brand-product-sub {
+    font-size: 0.7rem;
+  }
+
+  /* MOBILE HERO COMPOSITION:
+     The 3D Honey Bottle prototype is visible on the first mobile screen! */
+  .hero-section {
+    padding: calc(var(--nav-height) + 10px) 0 35px;
+    min-height: auto;
+  }
+
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .hero-company-badge {
+    margin-bottom: 6px;
+    padding: 6px 14px;
+    font-size: 0.78rem;
+  }
+
+  .hero-product-title {
+    font-size: 2.1rem;
+    margin-bottom: 6px;
+    line-height: 1.15;
+  }
+
+  .hero-company-tagline {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+  }
+
+  .proto-bottle-stage {
+    order: 2;
+    margin: 6px 0 12px;
+  }
+
+  .hero-bottles-showcase {
+    order: 2;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 10px auto 14px;
+    max-width: 520px;
+  }
+
+  .hero-bottle-card {
+    padding: 12px 10px;
+  }
+
+  .bottle-img-frame {
+    height: 175px;
+    margin-bottom: 8px;
+  }
+
+  .bottle-product-title {
+    font-size: 0.96rem;
+  }
+
+  .bottle-price-tag {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+
+  .bottle-varieties-label {
+    font-size: 0.68rem;
+    margin-bottom: 4px;
+  }
+
+  .bottle-varieties-list {
+    gap: 4px;
+    margin-bottom: 10px;
+  }
+
+  .variety-chip {
+    font-size: 0.68rem;
+    padding: 2px 6px;
+  }
+
+  .bottle-order-btn {
+    padding: 6px 10px;
+    font-size: 0.78rem;
+  }
+
+  .proto-bottle-wrapper {
+    width: 260px;
+    height: 340px;
+  }
+
+  .proto-bottle {
+    width: 175px;
+    height: 300px;
+  }
+
+  .proto-cap {
+    width: 90px;
+    height: 30px;
+  }
+
+  .proto-neck {
+    width: 74px;
+    height: 18px;
+  }
+
+  .proto-body {
+    width: 170px;
+    height: 250px;
+  }
+
+  .proto-label {
+    width: 156px;
+    height: 170px;
+    padding: 6px;
+  }
+
+  .proto-label-logo-wrap {
+    width: 34px;
+    height: 34px;
+  }
+
+  .proto-label-brand {
+    font-size: 0.72rem;
+  }
+
+  .proto-label-product {
+    font-size: 1.1rem;
+  }
+
+  .proto-label-tag {
+    font-size: 0.6rem;
+  }
+
+  .proto-label-varieties {
+    font-size: 0.58rem;
+  }
+
+  .proto-label-weight {
+    font-size: 0.68rem;
+  }
+
+  .proto-glow-pedestal {
+    width: 190px;
+    height: 45px;
+  }
+
+  .floating-dipper-card {
+    top: 5%;
+    right: -10px;
+    padding: 6px 10px;
+  }
+
+  .floating-dipper-card p {
+    font-size: 0.7rem !important;
+  }
+
+  .dipper-icon {
+    width: 26px;
+    height: 26px;
+    font-size: 0.85rem;
+  }
+
+  .bottle-origin-badge {
+    bottom: -12px;
+    font-size: 0.74rem;
+    padding: 5px 12px;
+  }
+
+  .hero-description {
+    order: 3;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+
+  .hero-actions {
+    order: 4;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    flex: 1;
+    max-width: 180px;
+    padding: 10px 14px;
+    font-size: 0.86rem;
+  }
+
+  .hero-badges-row {
+    order: 5;
+    gap: 14px;
+    padding-top: 14px;
+  }
+
+  .hero-mini-stat .stat-num {
+    font-size: 1.3rem;
+  }
+
+  .hero-mini-stat .stat-label {
+    font-size: 0.7rem;
   }
 
   .equipment-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
   }
 
   .float-whatsapp-btn span {
