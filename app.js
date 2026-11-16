@@ -7,7 +7,26 @@
  * Active Navigation, Gallery Lightbox, FAQ Accordion, and WhatsApp Integration.
  */
 
+// Force page to always reach its top content on refresh or navigation
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+window.addEventListener('beforeunload', () => {
+  window.scrollTo(0, 0);
+});
+
+window.addEventListener('pageshow', () => {
+  window.scrollTo(0, 0);
+});
+
+window.scrollTo(0, 0);
+
 document.addEventListener('DOMContentLoaded', () => {
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+
   initLanguageSwitcher();
   initGlobalNavigation();
   initHeroBottlesInteraction();
@@ -16,6 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordion();
   initScrollToTop();
   initWhatsAppHelpers();
+});
+
+window.addEventListener('load', () => {
+  window.scrollTo(0, 0);
 });
 
 /* --------------------------------------------------------------------------
@@ -30,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const translations = {
   ne: {
     // Navigation (7 Global Pages)
-    nav_home: "Home (गृहपृष्ठ)",
+    nav_home: "Home",
     nav_products: "Honey Varieties",
     nav_accessories: "Beekeeping Accessories",
     nav_gallery: "Gallery",
@@ -38,6 +61,8 @@ const translations = {
     nav_about: "About Us",
     nav_contact: "Contact Us",
     nav_whatsapp: "WhatsApp",
+    nav_brand_company: "Safal Mauri Palan",
+    nav_brand_sub: "Producer of Itahari Honey",
 
     // Common Footer & Global Elements
     foot_company: "Safal Mauri Palan",
@@ -51,8 +76,8 @@ const translations = {
     // --- PAGE 1: INDEX.HTML (HOMEPAGE) ---
     home_badge: "Safal Mauri Palan • Itahari-4, Sunsari",
     home_hero_title: "इटहरीको शुद्ध मह: <span class=\"gold-gradient-text\">Itahari Honey</span>",
-    home_hero_tagline: "Safal Mauri Palan द्वारा उत्पादित १००% शुद्ध र प्राकृतिक मह",
-    home_hero_desc: "विगत १० वर्षभन्दा बढी समयदेखि आधुनिक र वैज्ञानिक मौरीपालन गर्दै आएको Safal Mauri Palan ले संकलन गरेको शुद्ध र प्राकृतिक Itahari Honey।",
+    home_hero_tagline: "सफल मौरी पालन द्वारा उत्पादित १००% शुद्ध र प्राकृतिक मह",
+    home_hero_desc: "विगत १० वर्षभन्दा बढी समयदेखि आधुनिक र वैज्ञानिक मौरीपालन गर्दै आएको सफल मौरी पालन ले संकलन गरेको शुद्ध र प्राकृतिक Itahari Honey।",
     home_btn_varieties: "Honey Varieties हेर्नुहोस्",
     home_btn_accessories: "Beekeeping Accessories",
     home_btn_whatsapp: "WhatsApp मा अर्डर गर्नुहोस्",
@@ -243,6 +268,8 @@ const translations = {
     nav_about: "About Us",
     nav_contact: "Contact Us",
     nav_whatsapp: "WhatsApp",
+    nav_brand_company: "Safal Mauri Palan",
+    nav_brand_sub: "Producer of Itahari Honey",
 
     // Common Footer & Global Elements
     foot_company: "Safal Mauri Palan",

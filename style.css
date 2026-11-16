@@ -286,6 +286,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
 }
 
 /* Brand Logo & Title Link */
@@ -293,6 +294,8 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
+  min-width: 0;
 }
 
 .brand-logo-frame {
@@ -324,39 +327,48 @@ h1, h2, h3, h4, h5, h6 {
 .brand-title-wrap {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .brand-company-name {
   font-family: var(--font-serif);
-  font-size: 1.22rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--cream-pure);
   letter-spacing: 0.01em;
   line-height: 1.15;
+  white-space: nowrap;
 }
 
 .brand-product-sub {
   font-family: var(--font-devanagari);
-  font-size: 0.76rem;
+  font-size: 0.8rem;
   color: var(--honey-primary);
   font-weight: 600;
   letter-spacing: 0.02em;
+  white-space: nowrap;
+  line-height: 1.15;
 }
 
 /* Desktop Nav Links */
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 4px;
+  flex: 1;
+  justify-content: center;
+  min-width: 0;
 }
 
 .nav-link {
-  font-size: 0.9rem;
+  font-size: 0.84rem;
   font-weight: 500;
   color: var(--cream-muted);
   position: relative;
-  padding: 6px 2px;
+  padding: 6px 8px;
   white-space: nowrap;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), background var(--transition-fast);
 }
 
 .nav-link::after {
@@ -371,7 +383,12 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 2px;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover {
+  color: var(--honey-primary);
+  background: rgba(245, 176, 39, 0.07);
+}
+
+.nav-link.active {
   color: var(--honey-primary);
 }
 
@@ -382,7 +399,8 @@ h1, h2, h3, h4, h5, h6 {
 .nav-cta-group {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 /* Language Switcher Pill (नेपाली | English) */
@@ -419,6 +437,18 @@ h1, h2, h3, h4, h5, h6 {
   color: rgba(255, 255, 255, 0.25);
   font-size: 0.8rem;
   padding: 0 2px;
+}
+
+.lang-short {
+  display: none;
+}
+
+.mobile-menu .lang-full {
+  display: inline !important;
+}
+
+.mobile-menu .lang-short {
+  display: none !important;
 }
 
 .nav-toggle {
@@ -1130,6 +1160,9 @@ h1, h2, h3, h4, h5, h6 {
   padding: 5px 14px;
   border-radius: var(--radius-full);
   letter-spacing: 0.05em;
+  z-index: 10;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .product-img-wrap {
@@ -1622,15 +1655,48 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .about-text .nepali-quote {
-  font-family: var(--font-devanagari);
-  font-size: 1.1rem;
-  color: var(--cream-pure);
-  background: rgba(245, 176, 39, 0.08);
-  border-left: 4px solid var(--honey-primary);
-  padding: 18px 22px;
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  color: var(--cream-soft);
+  background: var(--bg-forest-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
   margin-bottom: 24px;
   line-height: 1.85;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition: all var(--transition-smooth);
+  position: relative;
+}
+
+.about-text .nepali-quote::before {
+  content: "\f10d";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  display: block;
+  font-size: 1.4rem;
+  color: var(--honey-primary);
+  margin-bottom: 14px;
+}
+
+.about-text .nepali-quote:hover {
+  border-color: var(--border-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.about-text .nepali-quote strong:first-of-type {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--cream-pure);
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+
+.about-text .nepali-quote strong:first-of-type u {
+  text-decoration-color: var(--honey-primary);
+  text-underline-offset: 4px;
 }
 
 .about-features {
@@ -2024,6 +2090,58 @@ h1, h2, h3, h4, h5, h6 {
 /* --------------------------------------------------------------------------
    15. RESPONSIVE DESIGN & MOBILE OPTIMIZATIONS
    -------------------------------------------------------------------------- */
+
+/* Medium desktop: 921px–1200px — slightly tighter nav */
+@media (min-width: 921px) and (max-width: 1200px) {
+  .navbar .container {
+    padding: 0 16px;
+    gap: 8px;
+  }
+
+  .nav-links {
+    gap: 2px;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 6px 6px;
+  }
+
+  .nav-cta-group {
+    gap: 8px;
+  }
+
+  .btn-whatsapp {
+    padding: 7px 12px !important;
+    font-size: 0.82rem !important;
+  }
+
+  .brand-company-name {
+    font-size: 1.18rem;
+  }
+
+  .brand-product-sub {
+    font-size: 0.74rem;
+  }
+}
+
+/* Full desktop: 1201px–1366px — standard comfortable layout */
+@media (min-width: 1201px) and (max-width: 1366px) {
+  .navbar .container {
+    padding: 0 20px;
+    gap: 10px;
+  }
+
+  .nav-links {
+    gap: 4px;
+  }
+
+  .nav-link {
+    font-size: 0.84rem;
+    padding: 6px 9px;
+  }
+}
+
 @media (max-width: 1080px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -2111,24 +2229,120 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .navbar .container {
-    padding: 0 16px;
+    padding: 0 12px;
+  }
+
+  .nav-brand {
+    gap: 10px;
+    min-width: 0;
+    flex-shrink: 1;
   }
 
   .brand-logo-frame {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+  }
+
+  .brand-title-wrap {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .brand-company-name {
-    font-size: 1.05rem;
+    font-size: clamp(1.1rem, 4.4vw, 1.25rem);
+    font-weight: 700;
+    color: var(--cream-pure);
+    white-space: nowrap;
+    line-height: 1.15;
   }
 
   .brand-product-sub {
+    font-size: clamp(0.72rem, 2.7vw, 0.8rem);
+    font-weight: 600;
+    color: var(--honey-primary);
+    white-space: nowrap;
+    line-height: 1.15;
+  }
+
+  .lang-full {
+    display: none;
+  }
+
+  .lang-short {
+    display: inline-block;
+    font-weight: 700;
+  }
+
+  .lang-switcher-pill {
+    padding: 2px 4px;
+    gap: 2px;
+    flex-shrink: 0;
+  }
+
+  .lang-btn {
+    padding: 3px 6px;
+    font-size: 0.76rem;
+    min-width: 26px;
+    text-align: center;
+  }
+
+  .lang-sep {
     font-size: 0.7rem;
+    opacity: 0.4;
+  }
+
+  .nav-cta-group {
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .nav-toggle {
+    width: 36px;
+    height: 36px;
+    padding: 6px;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .products-catalogue-grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin: 0 auto 30px;
+    gap: 22px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .product-card {
+    padding: 24px 16px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .product-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .product-actions .btn {
+    width: 100%;
+    max-width: 100%;
+    padding: 11px 16px;
+    font-size: 0.9rem;
+    white-space: normal;
+    text-align: center;
+    justify-content: center;
+    box-sizing: border-box;
   }
 
   /* MOBILE HERO COMPOSITION:
-     The 3D Honey Bottle prototype is visible on the first mobile screen! */
+     The authentic honey bottles are visible on the first mobile screen! */
   .hero-section {
     padding: calc(var(--nav-height) + 10px) 0 35px;
     min-height: auto;
@@ -2165,41 +2379,20 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 520px;
   }
 
-  .honey-harvest-centerpiece {
-    max-width: 250px;
-    height: 140px;
-    margin-bottom: 8px;
-  }
-
-  .hero-bee-1 {
-    top: -8px;
-    left: 10%;
-    width: 26px;
-    height: 26px;
-  }
-
-  .hero-bee-2 {
-    top: 110px;
-    left: -4px;
-    width: 26px;
-    height: 26px;
-  }
-
-  .hero-bee-3 {
-    top: 100px;
-    right: -4px;
-    width: 26px;
-    height: 26px;
-  }
-
   .hero-bottles-showcase {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .hero-bottle-card {
     padding: 12px 8px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
   .bottle-img-frame {
@@ -2293,10 +2486,21 @@ h1, h2, h3, h4, h5, h6 {
     padding: 14px;
     border-radius: 50%;
   }
+
+  .about-text .nepali-quote {
+    padding: 18px 20px;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
 }
 
 /* Extra Compact Mobile (< 480px & 360px-390px Viewports) */
 @media (max-width: 480px) {
+  .about-text .nepali-quote {
+    padding: 16px 16px;
+    font-size: 0.92rem;
+  }
   .hero-product-title {
     font-size: clamp(1.65rem, 6.8vw, 2.05rem);
   }
@@ -2309,42 +2513,50 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.9rem;
   }
 
-  .honey-harvest-centerpiece {
-    max-width: 220px;
-    height: 125px;
-    margin-bottom: 6px;
-  }
-
   .hero-bottles-showcase {
     gap: 8px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .hero-bottle-card {
-    padding: 10px 6px;
+    padding: 10px 5px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
   .bottle-img-frame {
-    height: 145px;
+    height: 140px;
     margin-bottom: 5px;
   }
 
   .bottle-product-title {
-    font-size: 0.88rem;
+    font-size: 0.84rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
   }
 
   .bottle-price-tag {
-    font-size: 0.98rem;
+    font-size: 0.95rem;
     margin-bottom: 3px;
   }
 
   .variety-chip {
-    font-size: 0.62rem;
-    padding: 1px 5px;
+    font-size: 0.6rem;
+    padding: 1px 4px;
   }
 
   .bottle-order-btn {
-    font-size: 0.74rem;
-    padding: 5px 6px;
+    font-size: 0.72rem;
+    padding: 5px 4px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .hero-actions {
@@ -2361,16 +2573,11 @@ h1, h2, h3, h4, h5, h6 {
 /* Extremely Small Phones (< 380px, e.g. 360px Galaxy S) */
 @media (max-width: 380px) {
   .bottle-img-frame {
-    height: 130px;
+    height: 125px;
   }
 
   .bottle-product-title {
-    font-size: 0.82rem;
-  }
-
-  .honey-harvest-centerpiece {
-    max-width: 190px;
-    height: 110px;
+    font-size: 0.78rem;
   }
 
   .hero-badges-row {
