@@ -1563,11 +1563,19 @@ h1, h2, h3, h4, h5, h6 {
 /* --------------------------------------------------------------------------
    11. ABOUT US PAGE (about.html) WITH PROMINENT VIDEO
    -------------------------------------------------------------------------- */
+/* About grid: image+text two-column layout */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: center;
+}
+
+/* When no image: single column, full width */
+.about-grid--text-only {
+  grid-template-columns: 1fr;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .about-imagery {

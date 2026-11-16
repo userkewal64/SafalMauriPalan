@@ -10,10 +10,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initLanguageSwitcher();
   initGlobalNavigation();
-  initPrototypeBottle3D();
   initHeroBottlesInteraction();
-  initHeroAnimationObserver();
-  initFlyingBee();
   initGalleryLightbox();
   initEquipmentFilter();
   initFaqAccordion();
@@ -480,15 +477,7 @@ function setLanguage(lang) {
 
   const dict = translations[lang] || translations.ne;
 
-  // Text content updates
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (dict[key]) {
-      el.textContent = dict[key];
-    }
-  });
-
-  // HTML content updates
+  // 1. Trusted HTML content updates (supports <span>, <strong>, <em>, <br>, etc.)
   document.querySelectorAll('[data-i18n-html]').forEach(el => {
     const key = el.getAttribute('data-i18n-html');
     if (dict[key]) {
@@ -496,7 +485,19 @@ function setLanguage(lang) {
     }
   });
 
-  // Placeholder updates
+  // 2. Plain text updates (preserves textContent, auto-promotes if translation contains trusted markup)
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key]) {
+      if (dict[key].includes('<') && dict[key].includes('>')) {
+        el.innerHTML = dict[key];
+      } else {
+        el.textContent = dict[key];
+      }
+    }
+  });
+
+  // 3. Form input placeholder updates
   document.querySelectorAll('[data-i18n-ph]').forEach(el => {
     const key = el.getAttribute('data-i18n-ph');
     if (dict[key]) {
@@ -554,49 +555,8 @@ function initGlobalNavigation() {
 }
 
 /* --------------------------------------------------------------------------
-   3. PROTOTYPE 3D HONEY BOTTLE INTERACTIVE TILT (HOMEPAGE)
+   3. HERO REAL BOTTLES PERSPECTIVE TILT (HOMEPAGE)
    -------------------------------------------------------------------------- */
-function initPrototypeBottle3D() {
-  const bottleWrapper = document.querySelector('.proto-bottle-wrapper');
-  if (!bottleWrapper) return;
-
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    return;
-  }
-
-  function onMove(clientX, clientY) {
-    const bounds = bottleWrapper.getBoundingClientRect();
-    const x = clientX - bounds.left;
-    const y = clientY - bounds.top;
-
-    const centerX = bounds.width / 2;
-    const centerY = bounds.height / 2;
-
-    const rotateX = ((y - centerY) / centerY) * -12;
-    const rotateY = ((x - centerX) / centerX) * 12;
-
-    bottleWrapper.style.transform = `perspective(1200px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-8px)`;
-  }
-
-  bottleWrapper.addEventListener('mousemove', (e) => {
-    onMove(e.clientX, e.clientY);
-  });
-
-  bottleWrapper.addEventListener('mouseleave', () => {
-    bottleWrapper.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(0px)';
-  });
-
-  bottleWrapper.addEventListener('touchmove', (e) => {
-    if (e.touches.length === 1) {
-      onMove(e.touches[0].clientX, e.touches[0].clientY);
-    }
-  }, { passive: true });
-
-  bottleWrapper.addEventListener('touchend', () => {
-    bottleWrapper.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(0px)';
-  });
-}
-
 function initHeroBottlesInteraction() {
   const cards = document.querySelectorAll('.hero-bottle-card');
   if (!cards.length) return;
@@ -623,62 +583,8 @@ function initHeroBottlesInteraction() {
   });
 }
 
-function initHeroAnimationObserver() {
-  const hero = document.querySelector('.hero-section');
-  if (!hero || !('IntersectionObserver' in window)) return;
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        hero.classList.remove('anim-paused');
-      } else {
-        hero.classList.add('anim-paused');
-      }
-    });
-  }, { threshold: 0.05 });
-
-  observer.observe(hero);
-}
-
 /* --------------------------------------------------------------------------
-   4. FLYING BEE HOVER ANIMATION
-   -------------------------------------------------------------------------- */
-function initFlyingBee() {
-  const beeContainer = document.querySelector('.flying-bee-container');
-  if (!beeContainer) return;
-
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    beeContainer.style.display = 'none';
-    return;
-  }
-
-  let x = window.innerWidth * 0.75;
-  let y = 140;
-  let targetX = x;
-  let targetY = y;
-  let angle = 0;
-
-  window.addEventListener('mousemove', (e) => {
-    targetX = Math.min(window.innerWidth - 60, Math.max(30, e.clientX + 35));
-    targetY = Math.min(window.innerHeight - 60, Math.max(80, e.clientY - 35));
-  }, { passive: true });
-
-  function updateBee() {
-    angle += 0.04;
-    const hoverWobbleX = Math.sin(angle) * 16;
-    const hoverWobbleY = Math.cos(angle * 1.4) * 12;
-
-    x += (targetX + hoverWobbleX - x) * 0.05;
-    y += (targetY + hoverWobbleY - y) * 0.05;
-
-    beeContainer.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-    requestAnimationFrame(updateBee);
-  }
-  updateBee();
-}
-
-/* --------------------------------------------------------------------------
-   5. GALLERY LIGHTBOX MODAL (gallery.html)
+   4. GALLERY LIGHTBOX MODAL (gallery.html)
    -------------------------------------------------------------------------- */
 function initGalleryLightbox() {
   const galleryCards = document.querySelectorAll('.gallery-card');
@@ -804,6 +710,7 @@ function initWhatsAppHelpers() {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const weight = btn.getAttribute('data-weight') || '1 kg';
+      const price = btn.getAttribute('data-price') || (weight.includes('500') ? (currentLang === 'ne' ? 'रु. ६००' : 'Rs. 600') : (currentLang === 'ne' ? 'रु. १२००' : 'Rs. 1200'));
 
       let msgText = '';
       if (currentLang === 'ne') {
