@@ -1,8 +1,25 @@
 <!DOCTYPE html>
-<html lang="ne">
+<html lang="ne" translate="no" class="notranslate">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" content="notranslate">
+  <meta name="googlebot" content="notranslate">
+  <!-- Immediate Language Initialization: Enforce Nepali Default Before Paint -->
+  <script>
+    (function () {
+      var saved = null;
+      try {
+        saved = localStorage.getItem('smp_lang');
+      } catch (e) {}
+      // Strictly default to Nepali ('ne') for first-time visitors or invalid preferences
+      var lang = (saved === 'en') ? 'en' : 'ne';
+      document.documentElement.lang = lang;
+      document.documentElement.setAttribute('translate', 'no');
+      document.documentElement.classList.add('notranslate');
+    })();
+  </script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO Metadata -->
   <title>Safal Mauri Palan | Farm Gallery - Apiary in Itahari, Nepal</title>
@@ -122,14 +139,10 @@
     <section class="page-hero">
       <div class="container">
         <span class="section-label">
-          <i class="fa-solid fa-camera"></i> <span data-i18n="gal_hero_label">Apiary Life in Sunsari</span>
+          <i class="fa-solid fa-camera"></i> <span data-i18n="gal_hero_label">सुनसरी फार्मको दैनिकी</span>
         </span>
-        <h1 data-i18n-html="gal_hero_title">
-          Genuine <span class="gold-gradient-text">Farm Gallery</span>
-        </h1>
-        <p data-i18n="gal_hero_desc">
-          Safal Mauri Palan को Itahari-4 स्थित मौरी फार्म, काठका घारहरू, मौरीका चाका र honey harvesting का ८ वास्तविक तस्बिरहरू।
-        </p>
+        <h1 data-i18n-html="gal_hero_title">हाम्रो वास्तविक <span class="gold-gradient-text">फार्म ग्यालरी</span></h1>
+        <p data-i18n="gal_hero_desc">सफल मौरी पालन को इटहरी-४ स्थित मौरी फार्म, काठका घारहरू, मौरीका चाका र मह संकलनका ८ वास्तविक तस्बिरहरू।</p>
       </div>
     </section>
 
@@ -141,7 +154,7 @@
           <div class="gallery-card" title="Click to view full photo">
             <img src="Images/img201.jpg" alt="Sunsari Apiary Field with Beehives" loading="lazy">
             <div class="gallery-overlay">
-              <span data-i18n="gal_img1_caption">Sunsari Farm मा modern wooden beehives को दृश्य</span>
+              <span data-i18n="gal_img1_caption">सुनसरी फार्ममा काठका आधुनिक घारहरूको व्यवस्थित दृश्य</span>
             </div>
           </div>
 
@@ -149,7 +162,7 @@
           <div class="gallery-card" title="Click to view full photo">
             <img src="Images/img202.jpg" alt="Honeycomb frame inspection by beekeeper" loading="lazy">
             <div class="gallery-overlay">
-              <span data-i18n="gal_img2_caption">Beekeeper द्वारा honeycomb frame को नियमित निरीक्षण</span>
+              <span data-i18n="gal_img2_caption">मौरीपालक विशेषज्ञद्वारा चाका र फ्रेमको नियमित निरीक्षण</span>
             </div>
           </div>
 
@@ -157,7 +170,7 @@
           <div class="gallery-card" title="Click to view full photo">
             <img src="Images/img203.jpg" alt="Active Apis mellifera colony on comb" loading="lazy">
             <div class="gallery-overlay">
-              <span data-i18n="gal_img3_caption">Comb मा active रहेको स्वस्थ Apis mellifera colony</span>
+              <span data-i18n="gal_img3_caption">चाकामा सक्रिय रहेको स्वस्थ Apis mellifera मौरीको गोला</span>
             </div>
           </div>
 
@@ -165,7 +178,7 @@
           <div class="gallery-card" title="Click to view full photo">
             <img src="Images/img204.jpg" alt="Beekeeper using bee smoker" loading="lazy">
             <div class="gallery-overlay">
-              <span data-i18n="gal_img4_caption">शान्त hive management का लागि bee smoker को प्रयोग</span>
+              <span data-i18n="gal_img4_caption">शान्त वातावरणमा घार व्यवस्थापनका लागि धुवादानीको प्रयोग</span>
             </div>
           </div>
 
@@ -173,7 +186,7 @@
           <div class="gallery-card" title="Click to view full photo">
             <img src="Images/img101.jpg" alt="Honey extraction in progress" loading="lazy">
             <div class="gallery-overlay">
-              <span data-i18n="gal_img5_caption">Centrifugal extractor बाट ताजा pure honey संकलन</span>
+              <span data-i18n="gal_img5_caption">Centrifugal extractor मेसिनबाट ताजा शुद्ध मह संकलन</span>
             </div>
           </div>
 
@@ -181,7 +194,7 @@
           <div class="gallery-card" title="Click to view full photo">
             <img src="Images/img107.jpg" alt="Wooden hive boxes in neat rows" loading="lazy">
             <div class="gallery-overlay">
-              <span data-i18n="gal_img6_caption">सूर्यको प्रकाशमा व्यवस्थित hive boxes को पंक्ति</span>
+              <span data-i18n="gal_img6_caption">बिहानी घाममा व्यवस्थित रूपमा राखिएका घारका बाकसहरू</span>
             </div>
           </div>
 
@@ -189,7 +202,7 @@
           <div class="gallery-card" title="Click to view full photo">
             <img src="Images/img206.jpg" alt="Morning sunshine on Itahari bee farm" loading="lazy">
             <div class="gallery-overlay">
-              <span data-i18n="gal_img7_caption">बिहानी घाममा सफा र हराभरा Safal Mauri Palan apiary</span>
+              <span data-i18n="gal_img7_caption">सफा, शान्त र हराभरा सफल मौरी पालन फार्म परिसर</span>
             </div>
           </div>
 
@@ -197,7 +210,7 @@
           <div class="gallery-card" title="Click to view full photo">
             <img src="Images/img207.jpg" alt="Naturally capped raw honeycomb" loading="lazy">
             <div class="gallery-overlay">
-              <span data-i18n="gal_img8_caption">स्वाभाविक रूपमा beeswax ले सिल गरिएको mature honeycomb</span>
+              <span data-i18n="gal_img8_caption">प्राकृतिक मौरीको मैन (beeswax) ले भरिएको परिपक्व महको चाका</span>
             </div>
           </div>
         </div>
@@ -223,14 +236,12 @@
             <img src="Images/img4.jpg" alt="Safal Mauri Palan Emblem" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
           </div>
           <h3 data-i18n="foot_company">Safal Mauri Palan</h3>
-          <p class="nepali-text" style="color: var(--honey-light); margin-bottom: 8px;" data-i18n="foot_tagline">Producer of Itahari Honey & Sustainable Apiary Farm</p>
-          <p data-i18n="foot_desc">
-            हाम्रो लक्ष्य आधुनिक र दिगो apiculture मार्फत शुद्ध Itahari Honey उत्पादन गर्नु र नेपालभर गुणस्तरीय beekeeping equipment उपलब्ध गराउनु हो।
-          </p>
+          <p class="nepali-text" style="color: var(--honey-light); margin-bottom: 8px;" data-i18n="foot_tagline">इटहरी मह तथा दिगो मौरी फार्म (Producer of Itahari Honey)</p>
+          <p data-i18n="foot_desc">हाम्रो लक्ष्य आधुनिक र दिगो मौरीपालन मार्फत शुद्ध Itahari Honey उत्पादन गर्नु र नेपालभर गुणस्तरीय मौरीपालन सामग्री उपलब्ध गराउनु हो।</p>
         </div>
 
         <div class="footer-links-col">
-          <h4 data-i18n="foot_quick_links">Quick Links</h4>
+          <h4 data-i18n="foot_quick_links">महत्वपूर्ण लिङ्कहरू</h4>
           <ul>
             <li><a href="index.html" data-i18n="nav_home">Home</a></li>
             <li><a href="ourproducts.html" data-i18n="nav_products">Honey Varieties</a></li>
@@ -243,13 +254,13 @@
         </div>
 
         <div class="footer-links-col">
-          <h4 data-i18n="foot_contact_title">Contact Information</h4>
+          <h4 data-i18n="foot_contact_title">सम्पर्क जानकारी</h4>
           <ul>
             <li><i class="fa-solid fa-phone" style="color: #4ade80; margin-right: 8px;"></i> <a href="tel:+9779802313025">+977 9802313025</a></li>
             <li><i class="fa-solid fa-phone" style="color: #4ade80; margin-right: 8px;"></i> <a href="tel:+9779842765945">+977 9842765945</a></li>
             <li><i class="fa-solid fa-phone" style="color: #4ade80; margin-right: 8px;"></i> <a href="tel:+9779749245832">+977 9749245832</a></li>
             <li><i class="fa-solid fa-location-dot" style="color: #f5b027; margin-right: 8px;"></i> Itahari-4, Sunsari, Nepal</li>
-            <li><i class="fa-regular fa-clock" style="color: #f5b027; margin-right: 8px;"></i> <span data-i18n="foot_hours">7 Days a Week: 7:00 AM – 7:00 PM</span></li>
+            <li><i class="fa-regular fa-clock" style="color: #f5b027; margin-right: 8px;"></i> <span data-i18n="foot_hours">खुल्ने समय: हप्ताको ७ दिन, बिहान ७:०० देखि साँझ ७:०० सम्म</span></li>
           </ul>
         </div>
       </div>

@@ -1,8 +1,25 @@
 <!DOCTYPE html>
-<html lang="ne">
+<html lang="ne" translate="no" class="notranslate">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" content="notranslate">
+  <meta name="googlebot" content="notranslate">
+  <!-- Immediate Language Initialization: Enforce Nepali Default Before Paint -->
+  <script>
+    (function () {
+      var saved = null;
+      try {
+        saved = localStorage.getItem('smp_lang');
+      } catch (e) {}
+      // Strictly default to Nepali ('ne') for first-time visitors or invalid preferences
+      var lang = (saved === 'en') ? 'en' : 'ne';
+      document.documentElement.lang = lang;
+      document.documentElement.setAttribute('translate', 'no');
+      document.documentElement.classList.add('notranslate');
+    })();
+  </script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO Metadata -->
   <title>Safal Mauri Palan | About Us — 10+ Years of Sustainable Apiculture</title>
@@ -114,12 +131,10 @@
       <div class="container text-center">
         <div class="hero-badge">
           <i class="fa-solid fa-seedling"></i>
-          <span data-i18n="abt_hero_label">Our Journey &amp; Legacy</span>
+          <span data-i18n="abt_hero_label">हाम्रो यात्रा र अनुभव</span>
         </div>
-        <h1 class="page-hero-title" data-i18n-html="abt_hero_title">About <span class="gold-gradient-text">Safal Mauri Palan</span></h1>
-        <p class="page-hero-subtitle nepali-text" data-i18n="abt_hero_desc">
-          Itahari, Sunsari मा विगत १० वर्षभन्दा बढी समयदेखि आधुनिक, दिगो र वैज्ञानिक beekeeping गर्दै आएको अग्रणी मौरी फार्म।
-        </p>
+        <h1 class="page-hero-title" data-i18n-html="abt_hero_title"><span class="gold-gradient-text">सफल मौरी पालन</span> को बारेमा</h1>
+        <p class="page-hero-subtitle nepali-text" data-i18n="abt_hero_desc">इटहरी, सुनसरीमा विगत १० वर्षभन्दा बढी समयदेखि आधुनिक, दिगो र वैज्ञानिक मौरीपालन गर्दै आएको अग्रणी मौरी फार्म।</p>
       </div>
     </section>
 
@@ -128,34 +143,30 @@
       <div class="container">
         <div class="about-grid about-grid--text-only">
           <div class="about-text">
-            <div class="nepali-quote" data-i18n-html="abt_quote">
-              <strong><u>Safal Mauri Palan</u> मा तपाईँलाई हार्दिक स्वागत छ।</strong><br><br>
-              Itahari, Nepal मा अवस्थित Safal Mauri Palan ले विगत १० वर्षभन्दा बढी समयदेखि आधुनिक, दिगो र scientific beekeeping गर्दै आएको छ। हामी <em>Apis mellifera</em> प्रजातिका मौरीहरूलाई आधुनिक तरिकाबाट पालन–पोषण गर्छौं, जसले मौरीहरूको स्वास्थ्य र उत्पादन दुवै उच्च स्तरमा राख्छ।<br><br>
-              दशकभन्दा धेरै अनुभवसहित, हामी हाल हरेक वर्ष <strong>१०–१५ tons शुद्ध मह</strong> उत्पादन गर्दै आएका छौँ। हाम्रो मह विभिन्न प्राकृतिक फूल र बोटबिरुवाबाट संकलित हुने भएकाले प्रत्येक variety मा छुट्टै स्वाद, सुगन्ध र गुण पाइन्छ।
-            </div>
+            <div class="nepali-quote" data-i18n-html="abt_quote"><strong><u>सफल मौरी पालन (Safal Mauri Palan)</u> मा तपाईँलाई हार्दिक स्वागत छ।</strong><br><br>इटहरी, नेपालमा अवस्थित सफल मौरी पालन ले विगत १० वर्षभन्दा बढी समयदेखि आधुनिक, दिगो र वैज्ञानिक मौरीपालन गर्दै आएको छ। हामी <em>Apis mellifera</em> प्रजातिका मौरीहरूलाई आधुनिक तरिकाबाट पालन–पोषण गर्छौं, जसले मौरीहरूको स्वास्थ्य र उत्पादन दुवै उच्च स्तरमा राख्छ।<br><br>दशकभन्दा धेरै अनुभवसहित, हामी हाल हरेक वर्ष <strong>१०–१५ टन शुद्ध मह</strong> उत्पादन गर्दै आएका छौँ। हाम्रो मह विभिन्न प्राकृतिक फूल र बोटबिरुवाबाट संकलित हुने भएकाले प्रत्येक प्रकारमा छुट्टै स्वाद, सुगन्ध र प्राकृतिक गुण पाइन्छ।</div>
 
             <div class="about-features">
               <div class="feature-box">
                 <i class="fa-solid fa-shield-halved"></i>
-                <h4 data-i18n="abt_feat1_title">Zero Adulteration</h4>
+                <h4 data-i18n="abt_feat1_title">शतप्रतिशत प्राकृतिक (Zero Adulteration)</h4>
                 <p data-i18n="abt_feat1_desc">कुनै बाह्य चिनी वा केमिकल मिसावट बिना संकलित शतप्रतिशत प्राकृतिक मह।</p>
               </div>
 
               <div class="feature-box">
                 <i class="fa-solid fa-bugs"></i>
-                <h4 data-i18n="abt_feat2_title">Apis mellifera Care</h4>
-                <p data-i18n="abt_feat2_desc">वैज्ञानिक विधिबाट मौरीका गोलाहरूको नियमित स्वास्थ्य परीक्षण र हेरचाह।</p>
+                <h4 data-i18n="abt_feat2_title">वैज्ञानिक मौरी हेरचाह</h4>
+                <p data-i18n="abt_feat2_desc">वैज्ञानिक विधिबाट मौरीका गोलाहरूको नियमित स्वास्थ्य परीक्षण र उचित हेरचाह।</p>
               </div>
 
               <div class="feature-box">
                 <i class="fa-solid fa-chart-line"></i>
-                <h4 data-i18n="abt_feat3_title">10–15 Tons Capacity</h4>
+                <h4 data-i18n="abt_feat3_title">वार्षिक १०–१५ टन उत्पादन क्षमता</h4>
                 <p data-i18n="abt_feat3_desc">वार्षिक १० देखि १५ टन शुद्ध मह उत्पादन गर्न सक्ने अनुभवी क्षमता।</p>
               </div>
 
               <div class="feature-box">
                 <i class="fa-solid fa-hands-holding-circle"></i>
-                <h4 data-i18n="abt_feat4_title">Complete Apiary Support</h4>
+                <h4 data-i18n="abt_feat4_title">पूर्ण मौरीपालन सहयोग</h4>
                 <p data-i18n="abt_feat4_desc">नयाँ तथा व्यावसायिक मौरीपालकहरूलाई घार, सामग्री र प्राविधिक सल्लाह।</p>
               </div>
             </div>
@@ -172,7 +183,7 @@
             <i class="fa-solid fa-circle-play"></i>
             <span>Authentic Farm Glimpse</span>
           </div>
-          <h2 class="section-title" data-i18n="abt_video_title">Live Video: Beekeeping &amp; Honey Harvesting</h2>
+          <h2 class="section-title" data-i18n="abt_video_title">प्रत्यक्ष भिडियो: मौरीपालन तथा मह संकलन</h2>
         </div>
 
         <div class="video-card-wrapper">
@@ -182,9 +193,7 @@
               Your browser does not support the video tag. Please visit our farm or YouTube channel.
             </video>
           </div>
-          <p class="video-caption nepali-text" data-i18n="abt_video_caption">
-            Safal Mauri Palan, Itahari-4, Sunsari — प्राङ्गारिक मौरीपालन र शुद्ध मह संकलनको प्रत्यक्ष भिडियो झलक।
-          </p>
+          <p class="video-caption nepali-text" data-i18n="abt_video_caption">सफल मौरी पालन, इटहरी-४, सुनसरी — प्राङ्गारिक मौरीपालन र शुद्ध मह संकलनको प्रत्यक्ष भिडियो झलक।</p>
         </div>
       </div>
     </section>
@@ -192,7 +201,7 @@
     <!-- FARM METRICS / CALL TO ACTION BANNER -->
     <section class="section" style="padding-top: 40px; padding-bottom: 60px;">
       <div class="container">
-        <div style="background: linear-gradient(135deg, rgba(20,48,30,0.9), rgba(10,24,15,0.95)); border: 1px solid var(--border-gold); border-radius: var(--radius-lg); padding: 40px 30px; text-align: center; box-shadow: var(--shadow-card);">
+        <div style="background: #ffffff; border: 1px solid var(--border-gold); border-radius: var(--radius-lg); padding: 40px 30px; text-align: center; box-shadow: var(--shadow-card);">
           <h3 style="font-family: var(--font-display); font-size: 1.8rem; color: var(--cream-pure); margin-bottom: 12px;">
             Experience Pure <span class="gold-gradient-text">Itahari Honey</span> Today
           </h3>
@@ -210,7 +219,7 @@
             </a>
             <a href="https://wa.me/9779802313025?text=Namaste%20Safal%20Mauri%20Palan!%20I%20would%20like%20to%20learn%20more%20about%20your%20farm." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
               <i class="fa-brands fa-whatsapp"></i>
-              <span data-i18n="nav_whatsapp">WhatsApp Inquiry</span>
+              <span data-i18n="nav_whatsapp">WhatsApp</span>
             </a>
           </div>
         </div>
@@ -227,14 +236,12 @@
             <img src="Images/img4.jpg" alt="Safal Mauri Palan Emblem" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
           </div>
           <h3 data-i18n="foot_company">Safal Mauri Palan</h3>
-          <p class="nepali-text" style="color: var(--honey-light); margin-bottom: 8px;" data-i18n="foot_tagline">Producer of Itahari Honey &amp; Sustainable Apiary Farm</p>
-          <p data-i18n="foot_desc">
-            हाम्रो लक्ष्य आधुनिक र दिगो apiculture मार्फत शुद्ध Itahari Honey उत्पादन गर्नु र नेपालभर गुणस्तरीय beekeeping equipment उपलब्ध गराउनु हो।
-          </p>
+          <p class="nepali-text" style="color: var(--honey-light); margin-bottom: 8px;" data-i18n="foot_tagline">इटहरी मह तथा दिगो मौरी फार्म (Producer of Itahari Honey)</p>
+          <p data-i18n="foot_desc">हाम्रो लक्ष्य आधुनिक र दिगो मौरीपालन मार्फत शुद्ध Itahari Honey उत्पादन गर्नु र नेपालभर गुणस्तरीय मौरीपालन सामग्री उपलब्ध गराउनु हो।</p>
         </div>
 
         <div class="footer-links-col">
-          <h4 data-i18n="foot_quick_links">Quick Links</h4>
+          <h4 data-i18n="foot_quick_links">महत्वपूर्ण लिङ्कहरू</h4>
           <ul>
             <li><a href="index.html" data-i18n="nav_home">Home</a></li>
             <li><a href="ourproducts.html" data-i18n="nav_products">Honey Varieties</a></li>
@@ -247,13 +254,13 @@
         </div>
 
         <div class="footer-links-col">
-          <h4 data-i18n="foot_contact_title">Contact Information</h4>
+          <h4 data-i18n="foot_contact_title">सम्पर्क जानकारी</h4>
           <ul>
             <li><i class="fa-solid fa-phone" style="color: #4ade80; margin-right: 8px;"></i> <a href="tel:+9779802313025">+977 9802313025</a></li>
             <li><i class="fa-solid fa-phone" style="color: #4ade80; margin-right: 8px;"></i> <a href="tel:+9779842765945">+977 9842765945</a></li>
             <li><i class="fa-solid fa-phone" style="color: #4ade80; margin-right: 8px;"></i> <a href="tel:+9779749245832">+977 9749245832</a></li>
             <li><i class="fa-solid fa-location-dot" style="color: #f5b027; margin-right: 8px;"></i> Itahari-4, Sunsari, Nepal</li>
-            <li><i class="fa-regular fa-clock" style="color: #f5b027; margin-right: 8px;"></i> <span data-i18n="foot_hours">7 Days a Week: 7:00 AM – 7:00 PM</span></li>
+            <li><i class="fa-regular fa-clock" style="color: #f5b027; margin-right: 8px;"></i> <span data-i18n="foot_hours">खुल्ने समय: हप्ताको ७ दिन, बिहान ७:०० देखि साँझ ७:०० सम्म</span></li>
           </ul>
         </div>
       </div>

@@ -1,8 +1,25 @@
 <!DOCTYPE html>
-<html lang="ne">
+<html lang="ne" translate="no" class="notranslate">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" content="notranslate">
+  <meta name="googlebot" content="notranslate">
+  <!-- Immediate Language Initialization: Enforce Nepali Default Before Paint -->
+  <script>
+    (function () {
+      var saved = null;
+      try {
+        saved = localStorage.getItem('smp_lang');
+      } catch (e) {}
+      // Strictly default to Nepali ('ne') for first-time visitors or invalid preferences
+      var lang = (saved === 'en') ? 'en' : 'ne';
+      document.documentElement.lang = lang;
+      document.documentElement.setAttribute('translate', 'no');
+      document.documentElement.classList.add('notranslate');
+    })();
+  </script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO Metadata -->
   <title>Safal Mauri Palan | Home - Natural Honey & Beekeeping Farm • Itahari, Nepal</title>
@@ -199,34 +216,28 @@
         <div class="hero-content">
           <div class="hero-company-badge">
             <i class="fa-solid fa-award"></i>
-            <span data-i18n="home_badge">Safal Mauri Palan • Itahari-4, Sunsari</span>
+            <span data-i18n="home_badge">सफल मौरी पालन • इटहरी-४, सुनसरी</span>
           </div>
 
-          <h1 class="hero-product-title" data-i18n-html="home_hero_title">
-            Pure Honey from Itahari: <span class="gold-gradient-text">Itahari Honey</span>
-          </h1>
+          <h1 class="hero-product-title" data-i18n-html="home_hero_title">इटहरीको शुद्ध मह: <span class="gold-gradient-text">Itahari Honey</span></h1>
 
-          <p class="hero-company-tagline" data-i18n="home_hero_tagline">
-            सफल मौरी पालन द्वारा उत्पादित १००% शुद्ध र प्राकृतिक मह
-          </p>
+          <p class="hero-company-tagline" data-i18n="home_hero_tagline">सफल मौरी पालन द्वारा उत्पादित १००% शुद्ध र प्राकृतिक मह</p>
 
-          <p class="hero-description" data-i18n="home_hero_desc">
-            विगत १० वर्षभन्दा बढी समयदेखि आधुनिक र वैज्ञानिक मौरीपालन गर्दै आएको सफल मौरी पालन ले संकलन गरेको शुद्ध र प्राकृतिक Itahari Honey।
-          </p>
+          <p class="hero-description" data-i18n="home_hero_desc">विगत १० वर्षभन्दा बढी समयदेखि आधुनिक र वैज्ञानिक मौरीपालन गर्दै आएको सफल मौरी पालन ले संकलन गरेको शुद्ध र प्राकृतिक Itahari Honey।</p>
 
           <!-- Clear Navigation Actions -->
           <div class="hero-actions">
             <a href="ourproducts.html" class="btn btn-primary">
               <i class="fa-solid fa-jar"></i>
-              <span data-i18n="home_btn_varieties">Honey Varieties हेर्नुहोस्</span>
+              <span data-i18n="home_btn_varieties">महका प्रकारहरू हेर्नुहोस्</span>
             </a>
             <a href="moreservices.html" class="btn btn-secondary">
               <i class="fa-solid fa-boxes-stacked"></i>
-              <span data-i18n="home_btn_accessories">Beekeeping Accessories</span>
+              <span data-i18n="home_btn_accessories">मौरीपालनका सामग्रीहरू</span>
             </a>
             <a href="https://wa.me/9779802313025?text=Namaste%20Safal%20Mauri%20Palan!%20I%20would%20like%20to%20order%20Itahari%20Honey." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
               <i class="fa-brands fa-whatsapp"></i>
-              <span data-i18n="home_btn_whatsapp">WhatsApp अर्डर</span>
+              <span data-i18n="home_btn_whatsapp">WhatsApp मा अर्डर गर्नुहोस्</span>
             </a>
           </div>
 
@@ -257,13 +268,12 @@
                 <img src="Images/img5.jpg" alt="Itahari Honey 1 kg Bottle - Safal Mauri Palan" class="real-bottle-img" loading="eager">
               </div>
               <div class="bottle-details">
-                <h3 class="bottle-product-title" data-i18n="home_bottle1_name">Itahari Honey – 1 kg</h3>
-                <div class="bottle-price-tag" data-i18n="home_bottle1_price">Rs. 1200</div>
-                <span class="bottle-varieties-label" data-i18n="home_varieties_available_lbl">Available Varieties:</span>
+                <h3 class="bottle-product-title" data-i18n="home_bottle1_name">Itahari Honey – १ के.जी.</h3>
+                <span class="bottle-varieties-label" data-i18n="home_varieties_available_lbl">उपलब्ध प्रकारहरू:</span>
                 <div class="bottle-varieties-list">
-                  <span class="variety-chip" data-i18n="home_var_mustard">Mustard Honey</span>
-                  <span class="variety-chip" data-i18n="home_var_litchi">Litchi Honey</span>
-                  <span class="variety-chip" data-i18n="home_var_multi">Multifloral Honey</span>
+                  <span class="variety-chip" data-i18n="home_var_mustard">तोरीको मह (Mustard Honey)</span>
+                  <span class="variety-chip" data-i18n="home_var_litchi">लिचीको मह (Litchi Honey)</span>
+                  <span class="variety-chip" data-i18n="home_var_multi">बहुफुली मह (Multifloral Honey)</span>
                 </div>
                 <a href="https://wa.me/9779802313025?text=Namaste%20Safal%20Mauri%20Palan!%20I%20would%20like%20to%20order%20Itahari%20Honey%201%20kg." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp bottle-order-btn">
                   <i class="fa-brands fa-whatsapp"></i> <span data-i18n="home_btn_order_wa">WhatsApp अर्डर</span>
@@ -277,13 +287,12 @@
                 <img src="Images/img6.jpg" alt="Itahari Honey 500 g Bottle - Safal Mauri Palan" class="real-bottle-img" loading="eager">
               </div>
               <div class="bottle-details">
-                <h3 class="bottle-product-title" data-i18n="home_bottle2_name">Itahari Honey – 500 g</h3>
-                <div class="bottle-price-tag" data-i18n="home_bottle2_price">Rs. 600</div>
-                <span class="bottle-varieties-label" data-i18n="home_varieties_available_lbl">Available Varieties:</span>
+                <h3 class="bottle-product-title" data-i18n="home_bottle2_name">Itahari Honey – ५०० ग्राम</h3>
+                <span class="bottle-varieties-label" data-i18n="home_varieties_available_lbl">उपलब्ध प्रकारहरू:</span>
                 <div class="bottle-varieties-list">
-                  <span class="variety-chip" data-i18n="home_var_mustard">Mustard Honey</span>
-                  <span class="variety-chip" data-i18n="home_var_litchi">Litchi Honey</span>
-                  <span class="variety-chip" data-i18n="home_var_multi">Multifloral Honey</span>
+                  <span class="variety-chip" data-i18n="home_var_mustard">तोरीको मह (Mustard Honey)</span>
+                  <span class="variety-chip" data-i18n="home_var_litchi">लिचीको मह (Litchi Honey)</span>
+                  <span class="variety-chip" data-i18n="home_var_multi">बहुफुली मह (Multifloral Honey)</span>
                 </div>
                 <a href="https://wa.me/9779802313025?text=Namaste%20Safal%20Mauri%20Palan!%20I%20would%20like%20to%20order%20Itahari%20Honey%20500%20g." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp bottle-order-btn">
                   <i class="fa-brands fa-whatsapp"></i> <span data-i18n="home_btn_order_wa">WhatsApp अर्डर</span>
@@ -294,7 +303,7 @@
             <!-- Clear Link to Full Honey Varieties Page -->
             <div class="hero-bottles-footer">
               <a href="ourproducts.html" class="btn btn-secondary" style="width: 100%; justify-content: center;">
-                <i class="fa-solid fa-jar"></i> <span data-i18n="home_explore_varieties_btn">सबै Honey Varieties र विवरण हेर्नुहोस्</span> <i class="fa-solid fa-arrow-right"></i>
+                <i class="fa-solid fa-jar"></i> <span data-i18n="home_explore_varieties_btn">सबै महका प्रकारहरू र विवरण हेर्नुहोस्</span> <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
           </div>
@@ -311,14 +320,12 @@
           <img src="Images/img8.jpg" alt="Safal Mauri Palan Beekeeping Equipment">
           <div class="services-intro-text">
             <span class="section-label" style="margin-bottom: 10px;">
-              <i class="fa-solid fa-boxes-stacked"></i> <span data-i18n="home_acc_preview_label">Apiary Supplies</span>
+              <i class="fa-solid fa-boxes-stacked"></i> <span data-i18n="home_acc_preview_label">मौरीपालन सामग्री तथा गोलाहरू</span>
             </span>
-            <h3 data-i18n-html="home_acc_preview_title">Beekeeping Equipment & <span class="gold-gradient-text">Bee Colonies</span></h3>
-            <p data-i18n="home_acc_preview_desc">
-              Safal Mauri Palan मा व्यावसायिक तथा व्यक्तिगत मौरीपालकहरूका लागि आवश्यक सम्पूर्ण beehives, Apis mellifera colonies, र extraction equipment उपलब्ध छन्।
-            </p>
+            <h3 data-i18n-html="home_acc_preview_title">मौरीपालन सामग्री तथा <span class="gold-gradient-text">मौरीका गोलाहरू</span></h3>
+            <p data-i18n="home_acc_preview_desc">Safal Mauri Palan मा व्यावसायिक तथा व्यक्तिगत मौरीपालकहरूका लागि आवश्यक सम्पूर्ण घारहरू, Apis mellifera गोलाहरू, र मह निष्कासन (extraction) उपकरण उपलब्ध छन्।</p>
             <a href="moreservices.html" class="btn btn-secondary" style="margin-top: 10px;">
-              <span data-i18n="home_acc_explore_btn">सबै Accessories हेर्नुहोस्</span>
+              <span data-i18n="home_acc_explore_btn">सबै सामग्रीहरू हेर्नुहोस्</span>
               <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
@@ -333,14 +340,10 @@
       <div class="container">
         <div class="section-header" style="margin-bottom: 30px;">
           <span class="section-label">
-            <i class="fa-solid fa-film"></i> <span data-i18n="home_vid_preview_label">Farm In Action</span>
+            <i class="fa-solid fa-film"></i> <span data-i18n="home_vid_preview_label">फार्मको प्रत्यक्ष झलक</span>
           </span>
-          <h2 class="section-title" data-i18n-html="home_vid_preview_title">
-            Safal Mauri Palan <span class="gold-gradient-text">Video Tour</span>
-          </h2>
-          <p class="section-subtitle" data-i18n="home_vid_preview_desc">
-            इटहरी फार्ममा मौरीपालन तथा honey extraction को प्रत्यक्ष भिडियो झलक।
-          </p>
+          <h2 class="section-title" data-i18n-html="home_vid_preview_title">सफल मौरी पालन <span class="gold-gradient-text">भिडियो भ्रमण</span></h2>
+          <p class="section-subtitle" data-i18n="home_vid_preview_desc">इटहरी फार्ममा मौरीपालन तथा मह संकलनको प्रत्यक्ष भिडियो झलक।</p>
         </div>
 
         <div class="video-card-wrapper" style="max-width: 780px;">
@@ -351,7 +354,7 @@
           </div>
           <div style="text-align: center; margin-top: 18px;">
             <a href="about.html" class="btn btn-secondary">
-              <span data-i18n="home_about_explore_btn">हाम्रोबारे थप जान्नुहोस् (About Us)</span>
+              <span data-i18n="home_about_explore_btn">हाम्रोबारे थप जान्नुहोस्</span>
               <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
@@ -393,14 +396,12 @@
             <img src="Images/img4.jpg" alt="Safal Mauri Palan Emblem" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
           </div>
           <h3 data-i18n="foot_company">Safal Mauri Palan</h3>
-          <p class="nepali-text" style="color: var(--honey-light); margin-bottom: 8px;" data-i18n="foot_tagline">Producer of Itahari Honey & Sustainable Apiary Farm</p>
-          <p data-i18n="foot_desc">
-            हाम्रो लक्ष्य आधुनिक र दिगो apiculture मार्फत शुद्ध Itahari Honey उत्पादन गर्नु र नेपालभर गुणस्तरीय beekeeping equipment उपलब्ध गराउनु हो।
-          </p>
+          <p class="nepali-text" style="color: var(--honey-light); margin-bottom: 8px;" data-i18n="foot_tagline">इटहरी मह तथा दिगो मौरी फार्म (Producer of Itahari Honey)</p>
+          <p data-i18n="foot_desc">हाम्रो लक्ष्य आधुनिक र दिगो मौरीपालन मार्फत शुद्ध Itahari Honey उत्पादन गर्नु र नेपालभर गुणस्तरीय मौरीपालन सामग्री उपलब्ध गराउनु हो।</p>
         </div>
 
         <div class="footer-links-col">
-          <h4 data-i18n="foot_quick_links">Quick Links</h4>
+          <h4 data-i18n="foot_quick_links">महत्वपूर्ण लिङ्कहरू</h4>
           <ul>
             <li><a href="index.html" data-i18n="nav_home">Home</a></li>
             <li><a href="ourproducts.html" data-i18n="nav_products">Honey Varieties</a></li>
@@ -413,13 +414,13 @@
         </div>
 
         <div class="footer-links-col">
-          <h4 data-i18n="foot_contact_title">Contact Information</h4>
+          <h4 data-i18n="foot_contact_title">सम्पर्क जानकारी</h4>
           <ul>
             <li><i class="fa-solid fa-phone" style="color: #4ade80; margin-right: 8px;"></i> <a href="tel:+9779802313025">+977 9802313025</a></li>
             <li><i class="fa-solid fa-phone" style="color: #4ade80; margin-right: 8px;"></i> <a href="tel:+9779842765945">+977 9842765945</a></li>
             <li><i class="fa-solid fa-phone" style="color: #4ade80; margin-right: 8px;"></i> <a href="tel:+9779749245832">+977 9749245832</a></li>
             <li><i class="fa-solid fa-location-dot" style="color: #f5b027; margin-right: 8px;"></i> Itahari-4, Sunsari, Nepal</li>
-            <li><i class="fa-regular fa-clock" style="color: #f5b027; margin-right: 8px;"></i> <span data-i18n="foot_hours">7 Days a Week: 7:00 AM – 7:00 PM</span></li>
+            <li><i class="fa-regular fa-clock" style="color: #f5b027; margin-right: 8px;"></i> <span data-i18n="foot_hours">खुल्ने समय: हप्ताको ७ दिन, बिहान ७:०० देखि साँझ ७:०० सम्म</span></li>
           </ul>
         </div>
       </div>
@@ -435,7 +436,7 @@
   <div class="floating-actions" aria-label="Quick Actions">
     <a href="https://wa.me/9779802313025?text=Namaste%20Safal%20Mauri%20Palan!%20I%20would%20like%20to%20order%20Itahari%20Honey." target="_blank" rel="noopener noreferrer" class="float-whatsapp-btn" aria-label="Order on WhatsApp">
       <i class="fa-brands fa-whatsapp"></i>
-      <span data-i18n="home_btn_whatsapp">WhatsApp अर्डर</span>
+      <span data-i18n="home_btn_whatsapp">WhatsApp मा अर्डर गर्नुहोस्</span>
     </a>
     <button class="scroll-top-btn" aria-label="Scroll to top of page">
       <i class="fa-solid fa-chevron-up"></i>

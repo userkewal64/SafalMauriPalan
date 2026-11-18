@@ -1,8 +1,25 @@
 <!DOCTYPE html>
-<html lang="ne">
+<html lang="ne" translate="no" class="notranslate">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" content="notranslate">
+  <meta name="googlebot" content="notranslate">
+  <!-- Immediate Language Initialization: Enforce Nepali Default Before Paint -->
+  <script>
+    (function () {
+      var saved = null;
+      try {
+        saved = localStorage.getItem('smp_lang');
+      } catch (e) {}
+      // Strictly default to Nepali ('ne') for first-time visitors or invalid preferences
+      var lang = (saved === 'en') ? 'en' : 'ne';
+      document.documentElement.lang = lang;
+      document.documentElement.setAttribute('translate', 'no');
+      document.documentElement.classList.add('notranslate');
+    })();
+  </script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO Metadata -->
   <title>Safal Mauri Palan | Contact Us — Farm Location, Phones &amp; WhatsApp</title>
@@ -114,12 +131,10 @@
       <div class="container text-center">
         <div class="hero-badge">
           <i class="fa-solid fa-envelope-open-text"></i>
-          <span data-i18n="cnt_hero_label">Get In Touch</span>
+          <span data-i18n="cnt_hero_label">हामीलाई सम्पर्क गर्नुहोस्</span>
         </div>
-        <h1 class="page-hero-title" data-i18n-html="cnt_hero_title">Contact <span class="gold-gradient-text">Safal Mauri Palan</span></h1>
-        <p class="page-hero-subtitle nepali-text" data-i18n="cnt_hero_desc">
-          Itahari Honey खरिद गर्न, beehives तथा accessories मगाउन वा हाम्रो फार्म भ्रमण गर्न हामीलाई सम्पर्क गर्नुहोस्।
-        </p>
+        <h1 class="page-hero-title" data-i18n-html="cnt_hero_title"><span class="gold-gradient-text">सफल मौरी पालन</span> सम्पर्क</h1>
+        <p class="page-hero-subtitle nepali-text" data-i18n="cnt_hero_desc">Itahari Honey खरिद गर्न, घार तथा मौरीपालन सामग्री मगाउन वा हाम्रो फार्म भ्रमण गर्न हामीलाई सम्पर्क गर्नुहोस्।</p>
       </div>
     </section>
 
@@ -135,12 +150,8 @@
                 <i class="fa-solid fa-location-dot"></i>
               </div>
               <div class="method-details">
-                <h4 data-i18n="cnt_addr_title">Farm &amp; Company Location</h4>
-                <p data-i18n-html="cnt_addr_val">
-                  <strong>Safal Mauri Palan</strong><br>
-                  Producer of <strong>Itahari Honey</strong><br>
-                  Itahari-4, Sunsari District, Koshi Province, Nepal
-                </p>
+                <h4 data-i18n="cnt_addr_title">फार्म तथा कम्पनीको ठेगाना</h4>
+                <p data-i18n-html="cnt_addr_val"><strong>सफल मौरी पालन (Safal Mauri Palan)</strong><br><strong>Itahari Honey</strong> को आधिकारिक उत्पादक<br>इटहरी-४, सुनसरी जिल्ला, कोशी प्रदेश, नेपाल</p>
               </div>
             </div>
 
@@ -150,7 +161,7 @@
                 <i class="fa-solid fa-phone"></i>
               </div>
               <div class="method-details" style="width: 100%;">
-                <h4 data-i18n="cnt_phones_title">Direct Phone Lines (Click to Call)</h4>
+                <h4 data-i18n="cnt_phones_title">सीधा फोन सम्पर्क (Click to Call)</h4>
                 <p data-i18n="cnt_phones_sub">हाम्रा प्रतिनिधिहरूसँग सीधै कुरा गर्नुहोस्:</p>
                 <div class="phone-list">
                   <a href="tel:+9779802313025" class="phone-chip">
@@ -172,7 +183,7 @@
                 <i class="fa-solid fa-share-nodes"></i>
               </div>
               <div class="method-details">
-                <h4 data-i18n="cnt_social_title">Social Media Channels</h4>
+                <h4 data-i18n="cnt_social_title">सामाजिक सञ्जालहरू</h4>
                 <p data-i18n="cnt_social_sub">हाम्रा भिडियो तथा नयाँ updates हेर्नुहोस्:</p>
                 <div class="social-links-row">
                   <a href="https://www.facebook.com/share/1Bar6pBfwQ/" target="_blank" rel="noopener noreferrer" class="social-btn facebook" aria-label="Visit our Facebook Page">
@@ -190,10 +201,10 @@
 
             <!-- Quick WhatsApp Message Box -->
             <div class="quick-inquiry-box">
-              <h4 data-i18n="cnt_msg_title">Direct WhatsApp Message</h4>
-              <p data-i18n="cnt_msg_sub">आफ्नो requirement वा अर्डर तल लेखी पठाउनुहोस्:</p>
+              <h4 data-i18n="cnt_msg_title">WhatsApp मा सीधा सन्देश पठाउनुहोस्</h4>
+              <p data-i18n="cnt_msg_sub">आफ्नो आवश्यकता वा अर्डर तल लेखी पठाउनुहोस्:</p>
               <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
-                <input type="text" id="inquiry-msg-input" data-i18n-ph="cnt_msg_ph" placeholder="e.g. मलाई 2 kg Mustard Honey चाहियो।" style="flex: 1; min-width: 200px; padding: 12px 14px; background: rgba(0, 0, 0, 0.5); border: 1px solid var(--border-gold); border-radius: var(--radius-sm); color: #ffffff; font-size: 0.95rem;">
+                <input type="text" id="inquiry-msg-input" data-i18n-ph="cnt_msg_ph" placeholder="e.g. मलाई 2 kg Mustard Honey चाहियो।" style="flex: 1; min-width: 200px; padding: 12px 14px; background: #ffffff; border: 1.5px solid var(--border-gold); border-radius: var(--radius-sm); color: var(--text-dark); font-size: 0.95rem;">
                 <button type="button" id="custom-inquiry-btn" class="btn btn-whatsapp" style="padding: 12px 20px;">
                   <i class="fa-brands fa-whatsapp"></i>
                   <span>Send</span>
@@ -229,14 +240,12 @@
             <img src="Images/img4.jpg" alt="Safal Mauri Palan Emblem" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
           </div>
           <h3 data-i18n="foot_company">Safal Mauri Palan</h3>
-          <p class="nepali-text" style="color: var(--honey-light); margin-bottom: 8px;" data-i18n="foot_tagline">Producer of Itahari Honey &amp; Sustainable Apiary Farm</p>
-          <p data-i18n="foot_desc">
-            हाम्रो लक्ष्य आधुनिक र दिगो apiculture मार्फत शुद्ध Itahari Honey उत्पादन गर्नु र नेपालभर गुणस्तरीय beekeeping equipment उपलब्ध गराउनु हो।
-          </p>
+          <p class="nepali-text" style="color: var(--honey-light); margin-bottom: 8px;" data-i18n="foot_tagline">इटहरी मह तथा दिगो मौरी फार्म (Producer of Itahari Honey)</p>
+          <p data-i18n="foot_desc">हाम्रो लक्ष्य आधुनिक र दिगो मौरीपालन मार्फत शुद्ध Itahari Honey उत्पादन गर्नु र नेपालभर गुणस्तरीय मौरीपालन सामग्री उपलब्ध गराउनु हो।</p>
         </div>
 
         <div class="footer-links-col">
-          <h4 data-i18n="foot_quick_links">Quick Links</h4>
+          <h4 data-i18n="foot_quick_links">महत्वपूर्ण लिङ्कहरू</h4>
           <ul>
             <li><a href="index.html" data-i18n="nav_home">Home</a></li>
             <li><a href="ourproducts.html" data-i18n="nav_products">Honey Varieties</a></li>
@@ -249,13 +258,13 @@
         </div>
 
         <div class="footer-links-col">
-          <h4 data-i18n="foot_contact_title">Contact Information</h4>
+          <h4 data-i18n="foot_contact_title">सम्पर्क जानकारी</h4>
           <ul>
             <li><i class="fa-solid fa-phone" style="color: #4ade80; margin-right: 8px;"></i> <a href="tel:+9779802313025">+977 9802313025</a></li>
             <li><i class="fa-solid fa-phone" style="color: #4ade80; margin-right: 8px;"></i> <a href="tel:+9779842765945">+977 9842765945</a></li>
             <li><i class="fa-solid fa-phone" style="color: #4ade80; margin-right: 8px;"></i> <a href="tel:+9779749245832">+977 9749245832</a></li>
             <li><i class="fa-solid fa-location-dot" style="color: #f5b027; margin-right: 8px;"></i> Itahari-4, Sunsari, Nepal</li>
-            <li><i class="fa-regular fa-clock" style="color: #f5b027; margin-right: 8px;"></i> <span data-i18n="foot_hours">7 Days a Week: 7:00 AM – 7:00 PM</span></li>
+            <li><i class="fa-regular fa-clock" style="color: #f5b027; margin-right: 8px;"></i> <span data-i18n="foot_hours">खुल्ने समय: हप्ताको ७ दिन, बिहान ७:०० देखि साँझ ७:०० सम्म</span></li>
           </ul>
         </div>
       </div>

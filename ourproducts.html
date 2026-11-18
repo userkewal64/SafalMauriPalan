@@ -1,8 +1,25 @@
 <!DOCTYPE html>
-<html lang="ne">
+<html lang="ne" translate="no" class="notranslate">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" content="notranslate">
+  <meta name="googlebot" content="notranslate">
+  <!-- Immediate Language Initialization: Enforce Nepali Default Before Paint -->
+  <script>
+    (function () {
+      var saved = null;
+      try {
+        saved = localStorage.getItem('smp_lang');
+      } catch (e) {}
+      // Strictly default to Nepali ('ne') for first-time visitors or invalid preferences
+      var lang = (saved === 'en') ? 'en' : 'ne';
+      document.documentElement.lang = lang;
+      document.documentElement.setAttribute('translate', 'no');
+      document.documentElement.classList.add('notranslate');
+    })();
+  </script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO Metadata -->
   <title>Safal Mauri Palan | Honey Varieties & Pure Honey Products - Itahari Honey</title>
@@ -173,14 +190,10 @@
     <section class="page-hero">
       <div class="container">
         <span class="section-label">
-          <i class="fa-solid fa-jar"></i> <span data-i18n="prod_hero_label">शुद्ध मह</span>
+          <i class="fa-solid fa-jar"></i> <span data-i18n="prod_hero_label">शुद्ध र प्राकृतिक मह</span>
         </span>
-        <h1 data-i18n-html="prod_hero_title">
-          महका <span class="gold-gradient-text">प्रकारहरू (Honey Varieties)</span>
-        </h1>
-        <p data-i18n="prod_hero_desc">
-          Safal Mauri Palan द्वारा उत्पादित Itahari Honey का ३ प्राकृतिक प्रकारहरू र आधिकारिक साइजहरू।
-        </p>
+        <h1 data-i18n-html="prod_hero_title">महका <span class="gold-gradient-text">प्राकृतिक प्रकारहरू</span></h1>
+        <p data-i18n="prod_hero_desc">सफल मौरी पालन द्वारा उत्पादित Itahari Honey का ३ प्राकृतिक प्रकारहरू र आधिकारिक साइजहरू।</p>
       </div>
     </section>
 
@@ -189,9 +202,7 @@
       <div class="container">
         <div class="section-header">
           <h2 class="section-title" data-i18n="prod_sources_header">Itahari Honey का प्राकृतिक फूलका स्रोतहरू</h2>
-          <p class="section-subtitle" data-i18n="prod_sources_sub">
-            कुनै बाह्य मिसावट बिना संकलित शुद्ध र प्राकृतिक मह।
-          </p>
+          <p class="section-subtitle" data-i18n="prod_sources_sub">कुनै बाह्य मिसावट बिना संकलित शुद्ध र प्राकृतिक मह।</p>
         </div>
 
         <div class="varieties-grid">
@@ -204,13 +215,11 @@
             <div class="variety-title-wrap">
               <h3 data-i18n="prod_mustard_title">Mustard Honey (तोरीको मह)</h3>
             </div>
-            <p class="variety-description" data-i18n="prod_mustard_desc">
-              हाम्रो Mustard Honey तोरीका फूलहरूबाट संकलन गरिन्छ। यसको स्वाद स्वाभाविक रूपमा मीठो र सुगन्ध प्राकृतिक हुन्छ। चिसो मौसममा यो जम्नु शुद्ध महको स्वाभाविक गुण हो।
-            </p>
+            <p class="variety-description" data-i18n="prod_mustard_desc">हाम्रो Mustard Honey तोरीका फूलहरूबाट संकलन गरिन्छ। यसको स्वाद स्वाभाविक रूपमा मीठो र सुगन्ध प्राकृतिक हुन्छ। चिसो मौसममा यो जम्नु शुद्ध महको स्वाभाविक गुण हो।</p>
             <div class="variety-profile">
-              <div class="profile-item"><span class="profile-label" data-i18n="prod_mustard_p1">Floral Source: Mustard Blossoms</span></div>
-              <div class="profile-item"><span class="profile-label" data-i18n="prod_mustard_p2">Taste: Naturally Sweet & Smooth</span></div>
-              <div class="profile-item"><span class="profile-label" data-i18n="prod_mustard_p3">Color: Warm Golden</span></div>
+              <div class="profile-item"><span class="profile-label" data-i18n="prod_mustard_p1">फूलको स्रोत: तोरीको फूल (Mustard Blossoms)</span></div>
+              <div class="profile-item"><span class="profile-label" data-i18n="prod_mustard_p2">स्वाद: प्राकृतिक रूपमा मीठो र स्वादिलो</span></div>
+              <div class="profile-item"><span class="profile-label" data-i18n="prod_mustard_p3">रङ्ग: सुनौलो पहेँलो (Warm Golden)</span></div>
             </div>
           </div>
 
@@ -223,13 +232,11 @@
             <div class="variety-title-wrap">
               <h3 data-i18n="prod_litchi_title">Litchi Honey (लिचीको मह)</h3>
             </div>
-            <p class="variety-description" data-i18n="prod_litchi_desc">
-              हाम्रो Litchi Honey लिचीका फूलहरूबाट संकलन गरिन्छ। यो हल्का र प्राकृतिक सुगन्धले भरिपूर्ण हुन्छ।
-            </p>
+            <p class="variety-description" data-i18n="prod_litchi_desc">हाम्रो Litchi Honey लिचीका फूलहरूबाट संकलन गरिन्छ। यो हल्का, ताजा र प्राकृतिक सुगन्धले भरिपूर्ण हुन्छ।</p>
             <div class="variety-profile">
-              <div class="profile-item"><span class="profile-label" data-i18n="prod_litchi_p1">Floral Source: Litchi Blossoms</span></div>
-              <div class="profile-item"><span class="profile-label" data-i18n="prod_litchi_p2">Taste: Light & Fragrant</span></div>
-              <div class="profile-item"><span class="profile-label" data-i18n="prod_litchi_p3">Color: Clear Amber</span></div>
+              <div class="profile-item"><span class="profile-label" data-i18n="prod_litchi_p1">फूलको स्रोत: लिचीको फूल (Litchi Blossoms)</span></div>
+              <div class="profile-item"><span class="profile-label" data-i18n="prod_litchi_p2">स्वाद: हल्का र सुगन्धित</span></div>
+              <div class="profile-item"><span class="profile-label" data-i18n="prod_litchi_p3">रङ्ग: सफा एम्बर (Clear Amber)</span></div>
             </div>
           </div>
 
@@ -242,13 +249,11 @@
             <div class="variety-title-wrap">
               <h3 data-i18n="prod_multi_title">Multifloral Honey (बहुफुली मह)</h3>
             </div>
-            <p class="variety-description" data-i18n="prod_multi_desc">
-              हाम्रो Multifloral Honey मौसमअनुसार विभिन्न प्राकृतिक फूलहरूबाट संकलन गरिएको मिश्रण हो। यसमा विविध फूलहरूको सन्तुलित स्वाद र सुगन्ध पाइन्छ।
-            </p>
+            <p class="variety-description" data-i18n="prod_multi_desc">हाम्रो Multifloral Honey मौसमअनुसार विभिन्न प्राकृतिक फूलहरूबाट संकलन गरिएको मिश्रण हो। यसमा विविध फूलहरूको सन्तुलित स्वाद र सुगन्ध पाइन्छ।</p>
             <div class="variety-profile">
-              <div class="profile-item"><span class="profile-label" data-i18n="prod_multi_p1">Floral Source: Diverse Wildflowers</span></div>
-              <div class="profile-item"><span class="profile-label" data-i18n="prod_multi_p2">Taste: Balanced & Aromatic</span></div>
-              <div class="profile-item"><span class="profile-label" data-i18n="prod_multi_p3">Color: Rich Golden Amber</span></div>
+              <div class="profile-item"><span class="profile-label" data-i18n="prod_multi_p1">फूलको स्रोत: विभिन्न जंगली फूलहरू (Wildflowers)</span></div>
+              <div class="profile-item"><span class="profile-label" data-i18n="prod_multi_p2">स्वाद: सन्तुलित र विशेष बास्नादार</span></div>
+              <div class="profile-item"><span class="profile-label" data-i18n="prod_multi_p3">रङ्ग: गाढा सुनौलो एम्बर (Rich Golden Amber)</span></div>
             </div>
           </div>
         </div>
@@ -260,32 +265,29 @@
       <div class="container">
         <div class="section-header">
           <span class="section-label">
-            <i class="fa-solid fa-boxes-packing"></i> <span data-i18n="prod_cat_label">Product Catalogue</span>
+            <i class="fa-solid fa-boxes-packing"></i> <span data-i18n="prod_cat_label">उत्पादन क्याटलग</span>
           </span>
-          <h2 class="section-title" data-i18n-html="prod_cat_title">
-            Branded Bottles of <span class="gold-gradient-text">Itahari Honey</span>
-          </h2>
-          <p class="section-subtitle" data-i18n="prod_cat_desc">
-            Safal Mauri Palan द्वारा उत्पादित १ के.जी. र आधा के.जी. का आधिकारिक glass jar हरू।
-          </p>
+          <h2 class="section-title" data-i18n-html="prod_cat_title">Itahari Honey का <span class="gold-gradient-text">आधिकारिक बोतलहरू</span></h2>
+          <p class="section-subtitle" data-i18n="prod_cat_desc">सफल मौरी पालन द्वारा उत्पादित १ के.जी. र ५०० ग्रामका आधिकारिक ग्लास जारहरू।</p>
         </div>
 
         <div class="products-catalogue-grid">
           <!-- 1 kg Jar Card with Genuine Photo -->
           <div class="product-card">
-            <span class="product-badge" data-i18n="prod_badge1">Most Popular</span>
+            <span class="product-badge" data-i18n="prod_badge1">सर्वाधिक रुचाइएको (१ के.जी.)</span>
             <div class="product-img-wrap">
               <img src="Images/img5.jpg" alt="Itahari Honey 1 kg Jar - Genuine Packaging">
             </div>
-            <h3 class="product-name" data-i18n="prod_1kg_title">Itahari Honey – 1 kg Jar</h3>
-            <p class="product-producer-tag" data-i18n="prod_1kg_sub">Producer: Safal Mauri Palan, Itahari</p>
+            <h3 class="product-name" data-i18n="prod_1kg_title">Itahari Honey – १ के.जी. Jar</h3>
+            <p class="product-producer-tag" data-i18n="prod_1kg_sub">उत्पादक: सफल मौरी पालन, इटहरी</p>
+            <div class="product-price" data-i18n="prod_1kg_price">रु. १२००</div>
 
             <div class="product-sources">
-              <h5 data-i18n="prod_sources_title">Available Floral Varieties:</h5>
+              <h5 data-i18n="prod_sources_title">उपलब्ध प्राकृतिक प्रकारहरू:</h5>
               <div class="sources-list">
-                <span class="source-tag" data-i18n="prod_source_1">1. Mustard Honey</span>
-                <span class="source-tag" data-i18n="prod_source_2">2. Litchi Honey</span>
-                <span class="source-tag" data-i18n="prod_source_3">3. Multifloral Honey</span>
+                <span class="source-tag" data-i18n="prod_source_1">१. तोरीको मह (Mustard Honey)</span>
+                <span class="source-tag" data-i18n="prod_source_2">२. लिचीको मह (Litchi Honey)</span>
+                <span class="source-tag" data-i18n="prod_source_3">३. बहुफुली मह (Multifloral Honey)</span>
               </div>
             </div>
 
@@ -294,26 +296,27 @@
                 <i class="fa-brands fa-whatsapp"></i> <span data-i18n="prod_order_btn">WhatsApp मा अर्डर गर्नुहोस्</span>
               </button>
               <a href="tel:+9779802313025" class="btn btn-secondary">
-                <i class="fa-solid fa-phone"></i> <span data-i18n="prod_call_btn">फोन गर्नुहोस्</span>
+                <i class="fa-solid fa-phone"></i> <span data-i18n="prod_call_btn">फोनबाट अर्डर गर्नुहोस्</span>
               </a>
             </div>
           </div>
 
           <!-- 500 g Jar Card with Genuine Photo -->
           <div class="product-card">
-            <span class="product-badge" data-i18n="prod_badge2">Family Size</span>
+            <span class="product-badge" data-i18n="prod_badge2">पारिवारिक साइज (५०० ग्राम)</span>
             <div class="product-img-wrap">
               <img src="Images/img6.jpg" alt="Itahari Honey 500 g Jar - Genuine Packaging">
             </div>
-            <h3 class="product-name" data-i18n="prod_500g_title">Itahari Honey – 500 g Jar</h3>
-            <p class="product-producer-tag" data-i18n="prod_500g_sub">Producer: Safal Mauri Palan, Itahari</p>
+            <h3 class="product-name" data-i18n="prod_500g_title">Itahari Honey – ५०० ग्राम Jar</h3>
+            <p class="product-producer-tag" data-i18n="prod_500g_sub">उत्पादक: सफल मौरी पालन, इटहरी</p>
+            <div class="product-price" data-i18n="prod_500g_price">रु. ६००</div>
 
             <div class="product-sources">
-              <h5 data-i18n="prod_sources_title">Available Floral Varieties:</h5>
+              <h5 data-i18n="prod_sources_title">उपलब्ध प्राकृतिक प्रकारहरू:</h5>
               <div class="sources-list">
-                <span class="source-tag" data-i18n="prod_source_1">1. Mustard Honey</span>
-                <span class="source-tag" data-i18n="prod_source_2">2. Litchi Honey</span>
-                <span class="source-tag" data-i18n="prod_source_3">3. Multifloral Honey</span>
+                <span class="source-tag" data-i18n="prod_source_1">१. तोरीको मह (Mustard Honey)</span>
+                <span class="source-tag" data-i18n="prod_source_2">२. लिचीको मह (Litchi Honey)</span>
+                <span class="source-tag" data-i18n="prod_source_3">३. बहुफुली मह (Multifloral Honey)</span>
               </div>
             </div>
 
@@ -322,17 +325,15 @@
                 <i class="fa-brands fa-whatsapp"></i> <span data-i18n="prod_order_btn">WhatsApp मा अर्डर गर्नुहोस्</span>
               </button>
               <a href="tel:+9779802313025" class="btn btn-secondary">
-                <i class="fa-solid fa-phone"></i> <span data-i18n="prod_call_btn">फोन गर्नुहोस्</span>
+                <i class="fa-solid fa-phone"></i> <span data-i18n="prod_call_btn">फोनबाट अर्डर गर्नुहोस्</span>
               </a>
             </div>
           </div>
         </div>
 
         <!-- Purity & Crystallization Tip Banner -->
-        <div style="background: rgba(245, 176, 39, 0.08); border: 1px dashed var(--border-gold); border-radius: var(--radius-md); padding: 18px 24px; text-align: center; max-width: 900px; margin: 0 auto;">
-          <p style="font-size: 0.95rem; color: var(--cream-soft); margin: 0;" data-i18n-html="prod_purity_tip">
-            <strong>Purity Guarantee:</strong> Raw Honey प्राकृतिक रूपमा चिसो मौसममा crystallize हुनु शुद्ध महको वैज्ञानिक प्रमाण हो। यसलाई पुनः तरल बनाउन सिसीलाई मनतातो पानीमा केही समय राख्न सक्नुहुन्छ।
-          </p>
+        <div style="background: rgba(217, 130, 24, 0.07); border: 1px dashed var(--border-gold); border-radius: var(--radius-md); padding: 18px 24px; text-align: center; max-width: 900px; margin: 0 auto;">
+          <p style="font-size: 0.95rem; color: var(--cream-soft); margin: 0;" data-i18n-html="prod_purity_tip"><strong>शुद्धता जानकारी:</strong> चिसो मौसममा मह जम्नु शुद्ध महको प्राकृतिक गुण हो। यसलाई पुनः तरल बनाउन सिसीलाई मनतातो पानीमा केही समय राख्न सक्नुहुन्छ।</p>
         </div>
       </div>
     </section>
@@ -347,14 +348,12 @@
             <img src="Images/img4.jpg" alt="Safal Mauri Palan Emblem" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
           </div>
           <h3 data-i18n="foot_company">Safal Mauri Palan</h3>
-          <p class="nepali-text" style="color: var(--honey-light); margin-bottom: 8px;" data-i18n="foot_tagline">Producer of Itahari Honey & Sustainable Apiary Farm</p>
-          <p data-i18n="foot_desc">
-            हाम्रो लक्ष्य आधुनिक र दिगो apiculture मार्फत शुद्ध Itahari Honey उत्पादन गर्नु र नेपालभर गुणस्तरीय beekeeping equipment उपलब्ध गराउनु हो।
-          </p>
+          <p class="nepali-text" style="color: var(--honey-light); margin-bottom: 8px;" data-i18n="foot_tagline">इटहरी मह तथा दिगो मौरी फार्म (Producer of Itahari Honey)</p>
+          <p data-i18n="foot_desc">हाम्रो लक्ष्य आधुनिक र दिगो मौरीपालन मार्फत शुद्ध Itahari Honey उत्पादन गर्नु र नेपालभर गुणस्तरीय मौरीपालन सामग्री उपलब्ध गराउनु हो।</p>
         </div>
 
         <div class="footer-links-col">
-          <h4 data-i18n="foot_quick_links">Quick Links</h4>
+          <h4 data-i18n="foot_quick_links">महत्वपूर्ण लिङ्कहरू</h4>
           <ul>
             <li><a href="index.html" data-i18n="nav_home">Home</a></li>
             <li><a href="ourproducts.html" data-i18n="nav_products">Honey Varieties</a></li>
@@ -367,13 +366,13 @@
         </div>
 
         <div class="footer-links-col">
-          <h4 data-i18n="foot_contact_title">Contact Information</h4>
+          <h4 data-i18n="foot_contact_title">सम्पर्क जानकारी</h4>
           <ul>
             <li><i class="fa-solid fa-phone" style="color: #4ade80; margin-right: 8px;"></i> <a href="tel:+9779802313025">+977 9802313025</a></li>
             <li><i class="fa-solid fa-phone" style="color: #4ade80; margin-right: 8px;"></i> <a href="tel:+9779842765945">+977 9842765945</a></li>
             <li><i class="fa-solid fa-phone" style="color: #4ade80; margin-right: 8px;"></i> <a href="tel:+9779749245832">+977 9749245832</a></li>
             <li><i class="fa-solid fa-location-dot" style="color: #f5b027; margin-right: 8px;"></i> Itahari-4, Sunsari, Nepal</li>
-            <li><i class="fa-regular fa-clock" style="color: #f5b027; margin-right: 8px;"></i> <span data-i18n="foot_hours">7 Days a Week: 7:00 AM – 7:00 PM</span></li>
+            <li><i class="fa-regular fa-clock" style="color: #f5b027; margin-right: 8px;"></i> <span data-i18n="foot_hours">खुल्ने समय: हप्ताको ७ दिन, बिहान ७:०० देखि साँझ ७:०० सम्म</span></li>
           </ul>
         </div>
       </div>
@@ -388,7 +387,7 @@
   <div class="floating-actions" aria-label="Quick Actions">
     <a href="https://wa.me/9779802313025?text=Namaste%20Safal%20Mauri%20Palan!%20I%20would%20like%20to%20order%20Itahari%20Honey." target="_blank" rel="noopener noreferrer" class="float-whatsapp-btn" aria-label="Order on WhatsApp">
       <i class="fa-brands fa-whatsapp"></i>
-      <span data-i18n="prod_order_btn">WhatsApp अर्डर</span>
+      <span data-i18n="prod_order_btn">WhatsApp मा अर्डर गर्नुहोस्</span>
     </a>
     <button class="scroll-top-btn" aria-label="Scroll to top of page">
       <i class="fa-solid fa-chevron-up"></i>

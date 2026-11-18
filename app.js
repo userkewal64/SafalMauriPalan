@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordion();
   initScrollToTop();
   initWhatsAppHelpers();
+  initFlyingBee();
 });
 
 window.addEventListener('load', () => {
@@ -52,7 +53,7 @@ window.addEventListener('load', () => {
    -------------------------------------------------------------------------- */
 const translations = {
   ne: {
-    // Navigation (7 Global Pages)
+    // Navigation (7 Global Pages) - INTENTIONAL EXCEPTION: Kept in English in both modes
     nav_home: "Home",
     nav_products: "Honey Varieties",
     nav_accessories: "Beekeeping Accessories",
@@ -66,20 +67,20 @@ const translations = {
 
     // Common Footer & Global Elements
     foot_company: "Safal Mauri Palan",
-    foot_tagline: "Producer of Itahari Honey & Sustainable Apiary Farm",
-    foot_desc: "हाम्रो लक्ष्य आधुनिक र दिगो apiculture मार्फत शुद्ध Itahari Honey उत्पादन गर्नु र नेपालभर गुणस्तरीय beekeeping equipment उपलब्ध गराउनु हो।",
-    foot_quick_links: "Quick Links",
-    foot_contact_title: "Contact Information",
+    foot_tagline: "इटहरी मह तथा दिगो मौरी फार्म (Producer of Itahari Honey)",
+    foot_desc: "हाम्रो लक्ष्य आधुनिक र दिगो मौरीपालन मार्फत शुद्ध Itahari Honey उत्पादन गर्नु र नेपालभर गुणस्तरीय मौरीपालन सामग्री उपलब्ध गराउनु हो।",
+    foot_quick_links: "महत्वपूर्ण लिङ्कहरू",
+    foot_contact_title: "सम्पर्क जानकारी",
     foot_hours: "खुल्ने समय: हप्ताको ७ दिन, बिहान ७:०० देखि साँझ ७:०० सम्म",
     foot_rights: "© २०२६ Safal Mauri Palan. सर्वाधिकार सुरक्षित।",
 
     // --- PAGE 1: INDEX.HTML (HOMEPAGE) ---
-    home_badge: "Safal Mauri Palan • Itahari-4, Sunsari",
+    home_badge: "सफल मौरी पालन • इटहरी-४, सुनसरी",
     home_hero_title: "इटहरीको शुद्ध मह: <span class=\"gold-gradient-text\">Itahari Honey</span>",
     home_hero_tagline: "सफल मौरी पालन द्वारा उत्पादित १००% शुद्ध र प्राकृतिक मह",
     home_hero_desc: "विगत १० वर्षभन्दा बढी समयदेखि आधुनिक र वैज्ञानिक मौरीपालन गर्दै आएको सफल मौरी पालन ले संकलन गरेको शुद्ध र प्राकृतिक Itahari Honey।",
-    home_btn_varieties: "Honey Varieties हेर्नुहोस्",
-    home_btn_accessories: "Beekeeping Accessories",
+    home_btn_varieties: "महका प्रकारहरू हेर्नुहोस्",
+    home_btn_accessories: "मौरीपालनका सामग्रीहरू",
     home_btn_whatsapp: "WhatsApp मा अर्डर गर्नुहोस्",
     home_stat_years_num: "१०+ वर्ष",
     home_stat_years_lbl: "मौरीपालन अनुभव",
@@ -89,134 +90,134 @@ const translations = {
     home_stat_purity_lbl: "प्राकृतिक मह",
 
     // Two Real Honey Bottles in Hero
-    home_bottle1_name: "Itahari Honey – 1 kg",
+    home_bottle1_name: "Itahari Honey – १ के.जी.",
     home_bottle1_price: "रु. १२००",
-    home_bottle2_name: "Itahari Honey – 500 g",
+    home_bottle2_name: "Itahari Honey – ५०० ग्राम",
     home_bottle2_price: "रु. ६००",
     home_varieties_available_lbl: "उपलब्ध प्रकारहरू:",
-    home_var_mustard: "Mustard Honey",
-    home_var_litchi: "Litchi Honey",
-    home_var_multi: "Multifloral Honey",
+    home_var_mustard: "तोरीको मह (Mustard Honey)",
+    home_var_litchi: "लिचीको मह (Litchi Honey)",
+    home_var_multi: "बहुफुली मह (Multifloral Honey)",
     home_btn_order_wa: "WhatsApp अर्डर",
-    home_explore_varieties_btn: "सबै Honey Varieties र विवरण हेर्नुहोस्",
+    home_explore_varieties_btn: "सबै महका प्रकारहरू र विवरण हेर्नुहोस्",
 
-    home_acc_preview_label: "Apiary Supplies",
-    home_acc_preview_title: "Beekeeping Equipment & <span class=\"gold-gradient-text\">Bee Colonies</span>",
-    home_acc_preview_desc: "Safal Mauri Palan मा व्यावसायिक तथा व्यक्तिगत मौरीपालकहरूका लागि आवश्यक सम्पूर्ण beehives, Apis mellifera colonies, र extraction equipment उपलब्ध छन्।",
-    home_acc_explore_btn: "सबै Accessories हेर्नुहोस्",
+    home_acc_preview_label: "मौरीपालन सामग्री तथा गोलाहरू",
+    home_acc_preview_title: "मौरीपालन सामग्री तथा <span class=\"gold-gradient-text\">मौरीका गोलाहरू</span>",
+    home_acc_preview_desc: "Safal Mauri Palan मा व्यावसायिक तथा व्यक्तिगत मौरीपालकहरूका लागि आवश्यक सम्पूर्ण घारहरू, Apis mellifera गोलाहरू, र मह निष्कासन (extraction) उपकरण उपलब्ध छन्।",
+    home_acc_explore_btn: "सबै सामग्रीहरू हेर्नुहोस्",
 
-    home_vid_preview_label: "Farm In Action",
-    home_vid_preview_title: "Safal Mauri Palan <span class=\"gold-gradient-text\">Video Tour</span>",
-    home_vid_preview_desc: "इटहरी फार्ममा मौरीपालन तथा honey extraction को प्रत्यक्ष भिडियो झलक।",
-    home_about_explore_btn: "हाम्रोबारे थप जान्नुहोस् (About Us)",
+    home_vid_preview_label: "फार्मको प्रत्यक्ष झलक",
+    home_vid_preview_title: "सफल मौरी पालन <span class=\"gold-gradient-text\">भिडियो भ्रमण</span>",
+    home_vid_preview_desc: "इटहरी फार्ममा मौरीपालन तथा मह संकलनको प्रत्यक्ष भिडियो झलक।",
+    home_about_explore_btn: "हाम्रोबारे थप जान्नुहोस्",
 
     // --- PAGE 2: OURPRODUCTS.HTML (HONEY VARIETIES & CATALOGUE) ---
-    prod_hero_label: "शुद्ध मह",
-    prod_hero_title: "महका <span class=\"gold-gradient-text\">प्रकारहरू (Honey Varieties)</span>",
-    prod_hero_desc: "Safal Mauri Palan द्वारा उत्पादित Itahari Honey का ३ प्राकृतिक प्रकारहरू र आधिकारिक साइजहरू।",
+    prod_hero_label: "शुद्ध र प्राकृतिक मह",
+    prod_hero_title: "महका <span class=\"gold-gradient-text\">प्राकृतिक प्रकारहरू</span>",
+    prod_hero_desc: "सफल मौरी पालन द्वारा उत्पादित Itahari Honey का ३ प्राकृतिक प्रकारहरू र आधिकारिक साइजहरू।",
     prod_sources_header: "Itahari Honey का प्राकृतिक फूलका स्रोतहरू",
     prod_sources_sub: "कुनै बाह्य मिसावट बिना संकलित शुद्ध र प्राकृतिक मह।",
     
     prod_mustard_title: "Mustard Honey (तोरीको मह)",
     prod_mustard_desc: "हाम्रो Mustard Honey तोरीका फूलहरूबाट संकलन गरिन्छ। यसको स्वाद स्वाभाविक रूपमा मीठो र सुगन्ध प्राकृतिक हुन्छ। चिसो मौसममा यो जम्नु शुद्ध महको स्वाभाविक गुण हो।",
-    prod_mustard_p1: "Floral Source: Mustard Blossoms",
-    prod_mustard_p2: "Taste: Naturally Sweet & Smooth",
-    prod_mustard_p3: "Color: Warm Golden",
+    prod_mustard_p1: "फूलको स्रोत: तोरीको फूल (Mustard Blossoms)",
+    prod_mustard_p2: "स्वाद: प्राकृतिक रूपमा मीठो र स्वादिलो",
+    prod_mustard_p3: "रङ्ग: सुनौलो पहेँलो (Warm Golden)",
 
     prod_litchi_title: "Litchi Honey (लिचीको मह)",
-    prod_litchi_desc: "हाम्रो Litchi Honey लिचीका फूलहरूबाट संकलन गरिन्छ। यो हल्का र प्राकृतिक सुगन्धले भरिपूर्ण हुन्छ।",
-    prod_litchi_p1: "Floral Source: Litchi Blossoms",
-    prod_litchi_p2: "Taste: Light & Fragrant",
-    prod_litchi_p3: "Color: Clear Amber",
+    prod_litchi_desc: "हाम्रो Litchi Honey लिचीका फूलहरूबाट संकलन गरिन्छ। यो हल्का, ताजा र प्राकृतिक सुगन्धले भरिपूर्ण हुन्छ।",
+    prod_litchi_p1: "फूलको स्रोत: लिचीको फूल (Litchi Blossoms)",
+    prod_litchi_p2: "स्वाद: हल्का र सुगन्धित",
+    prod_litchi_p3: "रङ्ग: सफा एम्बर (Clear Amber)",
 
     prod_multi_title: "Multifloral Honey (बहुफुली मह)",
     prod_multi_desc: "हाम्रो Multifloral Honey मौसमअनुसार विभिन्न प्राकृतिक फूलहरूबाट संकलन गरिएको मिश्रण हो। यसमा विविध फूलहरूको सन्तुलित स्वाद र सुगन्ध पाइन्छ।",
-    prod_multi_p1: "Floral Source: Diverse Wildflowers",
-    prod_multi_p2: "Taste: Balanced & Aromatic",
-    prod_multi_p3: "Color: Rich Golden Amber",
+    prod_multi_p1: "फूलको स्रोत: विभिन्न जंगली फूलहरू (Wildflowers)",
+    prod_multi_p2: "स्वाद: सन्तुलित र विशेष बास्नादार",
+    prod_multi_p3: "रङ्ग: गाढा सुनौलो एम्बर (Rich Golden Amber)",
 
-    prod_cat_label: "Product Catalogue",
-    prod_cat_title: "Branded Bottles of <span class=\"gold-gradient-text\">Itahari Honey</span>",
-    prod_cat_desc: "Safal Mauri Palan द्वारा उत्पादित १ के.जी. र ५०० ग्रामका आधिकारिक glass jar हरू।",
-    prod_1kg_title: "Itahari Honey – 1 kg Jar",
-    prod_1kg_sub: "Producer: Safal Mauri Palan, Itahari",
-    prod_1kg_price: "Rs. 1200",
-    prod_badge1: "1 kg Jar",
-    prod_badge2: "500 g Jar",
-    prod_500g_title: "Itahari Honey – 500 g Jar",
-    prod_500g_sub: "Producer: Safal Mauri Palan, Itahari",
-    prod_500g_price: "Rs. 600",
-    prod_sources_title: "Available Floral Varieties:",
-    prod_source_1: "1. Mustard Honey",
-    prod_source_2: "2. Litchi Honey",
-    prod_source_3: "3. Multifloral Honey",
+    prod_cat_label: "उत्पादन क्याटलग",
+    prod_cat_title: "Itahari Honey का <span class=\"gold-gradient-text\">आधिकारिक बोतलहरू</span>",
+    prod_cat_desc: "सफल मौरी पालन द्वारा उत्पादित १ के.जी. र ५०० ग्रामका आधिकारिक ग्लास जारहरू।",
+    prod_1kg_title: "Itahari Honey – १ के.जी. Jar",
+    prod_1kg_sub: "उत्पादक: सफल मौरी पालन, इटहरी",
+    prod_1kg_price: "रु. १२००",
+    prod_badge1: "सर्वाधिक रुचाइएको (१ के.जी.)",
+    prod_badge2: "पारिवारिक साइज (५०० ग्राम)",
+    prod_500g_title: "Itahari Honey – ५०० ग्राम Jar",
+    prod_500g_sub: "उत्पादक: सफल मौरी पालन, इटहरी",
+    prod_500g_price: "रु. ६००",
+    prod_sources_title: "उपलब्ध प्राकृतिक प्रकारहरू:",
+    prod_source_1: "१. तोरीको मह (Mustard Honey)",
+    prod_source_2: "२. लिचीको मह (Litchi Honey)",
+    prod_source_3: "३. बहुफुली मह (Multifloral Honey)",
     prod_order_btn: "WhatsApp मा अर्डर गर्नुहोस्",
     prod_call_btn: "फोनबाट अर्डर गर्नुहोस्",
     prod_purity_tip: "<strong>शुद्धता जानकारी:</strong> चिसो मौसममा मह जम्नु शुद्ध महको प्राकृतिक गुण हो। यसलाई पुनः तरल बनाउन सिसीलाई मनतातो पानीमा केही समय राख्न सक्नुहुन्छ।",
 
     // --- PAGE 3: MORESERVICES.HTML (BEEKEEPING ACCESSORIES) ---
-    acc_hero_label: "Apiary Supplies & Colonies",
-    acc_hero_title: "Beekeeping Accessories & <span class=\"gold-gradient-text\">Bee Colonies</span>",
-    acc_hero_desc: "Safal Mauri Palan मा व्यावसायिक तथा व्यक्तिगत मौरीपालकहरूका लागि आवश्यक सम्पूर्ण modern beehives, colonies, र extraction equipment उपलब्ध छन्।",
-    acc_intro_title: "सम्पूर्ण Beekeeping आवश्यकताबारे",
-    acc_intro_quote: "<u>Safal Mauri Palan</u> मा तपाईंको सम्पूर्ण beekeeping आवश्यकताहरूको समाधान उपलब्ध छ। हामी केवल उच्च गुणस्तरीय मह मात्र आपूर्ति गर्दैनौं, व्यवसायिक र व्यक्तिगत मौरीपालक दुवैका लागि beehives, bee colonies (Apis mellifera र Apis cerana), protective gear जस्तै cap, gloves, brush, smoker र modern honey extraction machines उपलब्ध गराउँछौं।",
+    acc_hero_label: "मौरीपालन सामग्री तथा गोलाहरू",
+    acc_hero_title: "मौरीपालन सामग्री तथा <span class=\"gold-gradient-text\">मौरीका गोलाहरू</span>",
+    acc_hero_desc: "सफल मौरी पालन मा व्यावसायिक तथा व्यक्तिगत मौरीपालकहरूका लागि आवश्यक आधुनिक घारहरू, मौरीका गोलाहरू, र मह संकलनका सम्पूर्ण उपकरणहरू उपलब्ध छन्।",
+    acc_intro_title: "सम्पूर्ण मौरीपालन सामग्री उपलब्ध",
+    acc_intro_quote: "<u>सफल मौरी पालन</u> मा तपाईंको सम्पूर्ण मौरीपालन आवश्यकताहरूको समाधान उपलब्ध छ। हामी केवल उच्च गुणस्तरीय मह मात्र आपूर्ति गर्दैनौं, व्यवसायिक र व्यक्तिगत मौरीपालक दुवैका लागि आधुनिक घारहरू, मौरीका गोलाहरू (Apis mellifera र Apis cerana), सुरक्षा सामग्री जस्तै टोपी, पञ्जा, ब्रस, धुवादानी (smoker) र आधुनिक मह मदानी (centrifugal extractor) उपलब्ध गराउँछौं।",
 
-    acc_filter_all: "सबै सामान",
-    acc_filter_hives: "Beehives & Colonies",
-    acc_filter_harvest: "Harvesting Equipment",
-    acc_filter_gear: "Protective Gear",
-    acc_filter_health: "Mite Control",
+    acc_filter_all: "सबै सामग्री",
+    acc_filter_hives: "घार तथा मौरीका गोलाहरू",
+    acc_filter_harvest: "मह संकलन उपकरण",
+    acc_filter_gear: "सुरक्षा सामग्री",
+    acc_filter_health: "रोग तथा माइट नियन्त्रण",
 
-    eq_1_title: "Beehive (Apis mellifera)",
-    eq_1_sub: "Modern Wooden Frame Hive",
-    eq_2_title: "Beehive (Apis cerana)",
-    eq_2_sub: "Improved Indigenous Hive",
-    eq_3_title: "Live Bee Colonies",
-    eq_3_sub: "Apis mellifera & Apis cerana",
-    eq_4_title: "Honey Harvesting Machine",
+    eq_1_title: "काठे घार (Apis mellifera)",
+    eq_1_sub: "आधुनिक फ्रेमयुक्त काठको घार",
+    eq_2_title: "काठे घार (Apis cerana)",
+    eq_2_sub: "सुधारिएको स्थानीय मौरीको घार",
+    eq_3_title: "मौरीका गोलाहरू (Live Bee Colonies)",
+    eq_3_sub: "Apis mellifera र Apis cerana मौरीका गोला",
+    eq_4_title: "मह काड्ने मेसिन / मदानी",
     eq_4_sub: "Centrifugal Honey Extractor (मह मदानी)",
-    eq_5_title: "Protective Bee Cap & Veil",
-    eq_5_sub: "मौरी टोपी (Safety Net Cap)",
-    eq_6_title: "Stainless Steel Bee Smoker",
+    eq_5_title: "मौरी टोपी तथा जाली (Bee Veil)",
+    eq_5_sub: "सुरक्षा जालीसहितको टोपी",
+    eq_6_title: "स्टेनलेस स्टिल धुवादानी (Smoker)",
     eq_6_sub: "धुवादानी (Bee Smoker)",
-    eq_7_title: "Soft Bristle Bee Brush",
-    eq_7_sub: "मौरी हटाउने ब्रस",
-    eq_8_title: "Heavy-duty Beekeeping Gloves",
-    eq_8_sub: "मौरीपालन पञ्जा",
-    eq_9_title: "Apistone Treatment",
-    eq_9_sub: "Varroa Mite Control Strip",
-    eq_10_title: "Formic Acid Solution",
-    eq_10_sub: "Organic Mite Control Solution",
+    eq_7_title: "नरम मौरी ब्रस (Bee Brush)",
+    eq_7_sub: "फ्रेमबाट मौरी हटाउने विशेष ब्रस",
+    eq_8_title: "मौरीपालन पञ्जा (Bee Gloves)",
+    eq_8_sub: "सुरक्षित र बलियो पञ्जा",
+    eq_9_title: "एपिस्टोन स्ट्रिप (Apistone)",
+    eq_9_sub: "Varroa Mite नियन्त्रण स्ट्रिप",
+    eq_10_title: "फर्मिक एसिड सोलुसन",
+    eq_10_sub: "जैविक माइट नियन्त्रण औषधि (Organic Mite Control)",
     eq_inquire_btn: "मूल्य सोधपुछ गर्नुहोस्",
 
     // --- PAGE 4: GALLERY.HTML (8 CAREFULLY SELECTED FARM PHOTOS) ---
-    gal_hero_label: "Apiary Life in Sunsari",
-    gal_hero_title: "Genuine <span class=\"gold-gradient-text\">Farm Gallery</span>",
-    gal_hero_desc: "Safal Mauri Palan को Itahari-4 स्थित मौरी फार्म, काठका घारहरू, मौरीका चाका र honey harvesting का ८ वास्तविक तस्बिरहरू।",
-    gal_img1_caption: "Sunsari Farm मा modern wooden beehives को दृश्य",
-    gal_img2_caption: "Beekeeper द्वारा honeycomb frame को नियमित निरीक्षण",
-    gal_img3_caption: "Comb मा active रहेको स्वस्थ Apis mellifera colony",
-    gal_img4_caption: "शान्त hive management का लागि bee smoker को प्रयोग",
-    gal_img5_caption: "Centrifugal extractor बाट ताजा pure honey संकलन",
-    gal_img6_caption: "सूर्यको प्रकाशमा व्यवस्थित hive boxes को पंक्ति",
-    gal_img7_caption: "बिहानी घाममा सफा र हराभरा Safal Mauri Palan apiary",
-    gal_img8_caption: "स्वाभाविक रूपमा beeswax ले सिल गरिएको mature honeycomb",
+    gal_hero_label: "सुनसरी फार्मको दैनिकी",
+    gal_hero_title: "हाम्रो वास्तविक <span class=\"gold-gradient-text\">फार्म ग्यालरी</span>",
+    gal_hero_desc: "सफल मौरी पालन को इटहरी-४ स्थित मौरी फार्म, काठका घारहरू, मौरीका चाका र मह संकलनका ८ वास्तविक तस्बिरहरू।",
+    gal_img1_caption: "सुनसरी फार्ममा काठका आधुनिक घारहरूको व्यवस्थित दृश्य",
+    gal_img2_caption: "मौरीपालक विशेषज्ञद्वारा चाका र फ्रेमको नियमित निरीक्षण",
+    gal_img3_caption: "चाकामा सक्रिय रहेको स्वस्थ Apis mellifera मौरीको गोला",
+    gal_img4_caption: "शान्त वातावरणमा घार व्यवस्थापनका लागि धुवादानीको प्रयोग",
+    gal_img5_caption: "Centrifugal extractor मेसिनबाट ताजा शुद्ध मह संकलन",
+    gal_img6_caption: "बिहानी घाममा व्यवस्थित रूपमा राखिएका घारका बाकसहरू",
+    gal_img7_caption: "सफा, शान्त र हराभरा सफल मौरी पालन फार्म परिसर",
+    gal_img8_caption: "प्राकृतिक मौरीको मैन (beeswax) ले भरिएको परिपक्व महको चाका",
 
     // --- PAGE 5: RESOURCES.HTML (KNOWLEDGE & FAQS) ---
-    res_hero_label: "Educational Knowledge Hub",
-    res_hero_title: "Beekeeping Resources & <span class=\"gold-gradient-text\">Knowledge Guide</span>",
-    res_hero_desc: "मौरीका प्रजातिहरू, महको वैज्ञानिक गुणहरू, beekeeping का आधारभूत कुराहरू र सामान्य जिज्ञासाहरूको सँगालो।",
+    res_hero_label: "मौरीपालन ज्ञान केन्द्र",
+    res_hero_title: "मौरीपालन स्रोत तथा <span class=\"gold-gradient-text\">जानकारी सँगालो</span>",
+    res_hero_desc: "मौरीका प्रजातिहरू, महको वैज्ञानिक गुणहरू, मौरीपालनका आधारभूत कुराहरू र सामान्य जिज्ञासाहरूको सँगालो।",
     
-    res_species_title: "1. Honeybee Species in Nepal",
+    res_species_title: "१. नेपालमा पाइने मौरीका प्रमुख प्रजातिहरू",
     res_species_desc: "नेपालमा मुख्यतया Apis mellifera (युरोपेली मौरी, उच्च मह उत्पादन र शान्त स्वभाव) र Apis cerana (स्थानीय रैथाने मौरी, स्थानीय हावापानीसँग अनुकूल) पालिन्छ। साथै Apis dorsata र Apis laboriosa जङ्गली प्रजाति हुन्।",
     
-    res_crystal_title: "2. The Science of Honey Crystallization",
+    res_crystal_title: "२. मह जम्ने (Crystallization) वैज्ञानिक प्रक्रिया",
     res_crystal_desc: "शुद्ध कच्चा महमा Glucose र Fructose को प्राकृतिक अनुपातका कारण चिसो मौसममा crystallization हुनु स्वाभाविक हो। यो मह बिग्रेको वा चिनी मिसाएको होइन, बरु मह नउमालिएको र शुद्ध रहेको वैज्ञानिक प्रमाण हो।",
     
-    res_begin_title: "3. Starting Your First Apiary",
-    res_begin_desc: "नयाँ beekeepers ले प्रशस्त फूल फुल्ने ठाउँ, सफा पिउने पानीको स्रोत र तेज हावा नलाग्ने स्थान रोज्नुपर्छ। उचित beehive box, safety veil, smoker र regular colony checkup ले मौरीपालन सफल बनाउँछ।",
+    res_begin_title: "३. मौरीपालन कसरी सुरु गर्ने?",
+    res_begin_desc: "नयाँ मौरीपालकहरूले प्रशस्त फूल फुल्ने ठाउँ, सफा पिउने पानीको स्रोत र तेज हावा नलाग्ने स्थान रोज्नुपर्छ। उचित काठे घार, सुरक्षा जाली, धुवादानी र नियमित निरीक्षणले मौरीपालन सफल बनाउँछ।",
     
-    res_faq_title: "Frequently Asked Questions (FAQ)",
+    res_faq_title: "बारम्बार सोधिने प्रश्नहरू (FAQ)",
     faq_q1: "Itahari Honey साँच्चिकै १००% शुद्ध छ?",
     faq_a1: "हो, Safal Mauri Palan को Itahari Honey कुनै बाह्य चिनी, केमिकल वा रसायन बिना हाम्रा घारहरूबाट सीधै संकलन गरिएको १००% शुद्ध र प्राकृतिक मह हो।",
     faq_q2: "चिसोमा मह किन जम्छ? के यो मिसावट हो?",
@@ -227,35 +228,35 @@ const translations = {
     faq_a4: "हो, हामी Apis mellifera र Apis cerana का live colonies, beehives, honey extractors, protective veil, smokers र mite control औषधिहरू उपलब्ध गराउँछौं।",
 
     // --- PAGE 6: ABOUT.HTML (ABOUT US & VIDEO) ---
-    abt_hero_label: "Our Journey & Legacy",
-    abt_hero_title: "About <span class=\"gold-gradient-text\">Safal Mauri Palan</span>",
-    abt_hero_desc: "Itahari, Sunsari मा विगत १० वर्षभन्दा बढी समयदेखि आधुनिक, दिगो र वैज्ञानिक beekeeping गर्दै आएको अग्रणी मौरी फार्म।",
-    abt_quote: "<strong><u>Safal Mauri Palan</u> मा तपाईँलाई हार्दिक स्वागत छ।</strong><br><br>Itahari, Nepal मा अवस्थित Safal Mauri Palan ले विगत १० वर्षभन्दा बढी समयदेखि आधुनिक, दिगो र scientific beekeeping गर्दै आएको छ। हामी <em>Apis mellifera</em> प्रजातिका मौरीहरूलाई आधुनिक तरिकाबाट पालन–पोषण गर्छौं, जसले मौरीहरूको स्वास्थ्य र उत्पादन दुवै उच्च स्तरमा राख्छ।<br><br>दशकभन्दा धेरै अनुभवसहित, हामी हाल हरेक वर्ष <strong>१०–१५ tons शुद्ध मह</strong> उत्पादन गर्दै आएका छौँ। हाम्रो मह विभिन्न प्राकृतिक फूल र बोटबिरुवाबाट संकलित हुने भएकाले प्रत्येक variety मा छुट्टै स्वाद, सुगन्ध र गुण पाइन्छ।",
-    abt_feat1_title: "Zero Adulteration",
+    abt_hero_label: "हाम्रो यात्रा र अनुभव",
+    abt_hero_title: "<span class=\"gold-gradient-text\">सफल मौरी पालन</span> को बारेमा",
+    abt_hero_desc: "इटहरी, सुनसरीमा विगत १० वर्षभन्दा बढी समयदेखि आधुनिक, दिगो र वैज्ञानिक मौरीपालन गर्दै आएको अग्रणी मौरी फार्म।",
+    abt_quote: "<strong><u>सफल मौरी पालन (Safal Mauri Palan)</u> मा तपाईँलाई हार्दिक स्वागत छ।</strong><br><br>इटहरी, नेपालमा अवस्थित सफल मौरी पालन ले विगत १० वर्षभन्दा बढी समयदेखि आधुनिक, दिगो र वैज्ञानिक मौरीपालन गर्दै आएको छ। हामी <em>Apis mellifera</em> प्रजातिका मौरीहरूलाई आधुनिक तरिकाबाट पालन–पोषण गर्छौं, जसले मौरीहरूको स्वास्थ्य र उत्पादन दुवै उच्च स्तरमा राख्छ।<br><br>दशकभन्दा धेरै अनुभवसहित, हामी हाल हरेक वर्ष <strong>१०–१५ टन शुद्ध मह</strong> उत्पादन गर्दै आएका छौँ। हाम्रो मह विभिन्न प्राकृतिक फूल र बोटबिरुवाबाट संकलित हुने भएकाले प्रत्येक प्रकारमा छुट्टै स्वाद, सुगन्ध र प्राकृतिक गुण पाइन्छ।",
+    abt_feat1_title: "शतप्रतिशत प्राकृतिक (Zero Adulteration)",
     abt_feat1_desc: "कुनै बाह्य चिनी वा केमिकल मिसावट बिना संकलित शतप्रतिशत प्राकृतिक मह।",
-    abt_feat2_title: "Apis mellifera Care",
-    abt_feat2_desc: "वैज्ञानिक विधिबाट मौरीका गोलाहरूको नियमित स्वास्थ्य परीक्षण र हेरचाह।",
-    abt_feat3_title: "10–15 Tons Capacity",
+    abt_feat2_title: "वैज्ञानिक मौरी हेरचाह",
+    abt_feat2_desc: "वैज्ञानिक विधिबाट मौरीका गोलाहरूको नियमित स्वास्थ्य परीक्षण र उचित हेरचाह।",
+    abt_feat3_title: "वार्षिक १०–१५ टन उत्पादन क्षमता",
     abt_feat3_desc: "वार्षिक १० देखि १५ टन शुद्ध मह उत्पादन गर्न सक्ने अनुभवी क्षमता।",
-    abt_feat4_title: "Complete Apiary Support",
+    abt_feat4_title: "पूर्ण मौरीपालन सहयोग",
     abt_feat4_desc: "नयाँ तथा व्यावसायिक मौरीपालकहरूलाई घार, सामग्री र प्राविधिक सल्लाह।",
-    abt_video_title: "Live Video: Beekeeping & Honey Harvesting",
-    abt_video_caption: "Safal Mauri Palan, Itahari-4, Sunsari — प्राङ्गारिक मौरीपालन र शुद्ध मह संकलनको प्रत्यक्ष भिडियो झलक।",
+    abt_video_title: "प्रत्यक्ष भिडियो: मौरीपालन तथा मह संकलन",
+    abt_video_caption: "सफल मौरी पालन, इटहरी-४, सुनसरी — प्राङ्गारिक मौरीपालन र शुद्ध मह संकलनको प्रत्यक्ष भिडियो झलक।",
 
     // --- PAGE 7: CONTACT.HTML (CONTACT US & MAP) ---
-    cnt_hero_label: "Get In Touch",
-    cnt_hero_title: "Contact <span class=\"gold-gradient-text\">Safal Mauri Palan</span>",
-    cnt_hero_desc: "Itahari Honey खरिद गर्न, beehives तथा accessories मगाउन वा हाम्रो फार्म भ्रमण गर्न हामीलाई सम्पर्क गर्नुहोस्।",
-    cnt_addr_title: "Farm & Company Location",
-    cnt_addr_val: "<strong>Safal Mauri Palan</strong><br>Producer of <strong>Itahari Honey</strong><br>Itahari-4, Sunsari District, Koshi Province, Nepal",
-    cnt_phones_title: "Direct Phone Lines (Click to Call)",
+    cnt_hero_label: "हामीलाई सम्पर्क गर्नुहोस्",
+    cnt_hero_title: "<span class=\"gold-gradient-text\">सफल मौरी पालन</span> सम्पर्क",
+    cnt_hero_desc: "Itahari Honey खरिद गर्न, घार तथा मौरीपालन सामग्री मगाउन वा हाम्रो फार्म भ्रमण गर्न हामीलाई सम्पर्क गर्नुहोस्।",
+    cnt_addr_title: "फार्म तथा कम्पनीको ठेगाना",
+    cnt_addr_val: "<strong>सफल मौरी पालन (Safal Mauri Palan)</strong><br><strong>Itahari Honey</strong> को आधिकारिक उत्पादक<br>इटहरी-४, सुनसरी जिल्ला, कोशी प्रदेश, नेपाल",
+    cnt_phones_title: "सीधा फोन सम्पर्क (Click to Call)",
     cnt_phones_sub: "हाम्रा प्रतिनिधिहरूसँग सीधै कुरा गर्नुहोस्:",
-    cnt_social_title: "Social Media Channels",
+    cnt_social_title: "सामाजिक सञ्जालहरू",
     cnt_social_sub: "हाम्रा भिडियो तथा नयाँ updates हेर्नुहोस्:",
-    cnt_map_title: "Find Us On Google Maps",
-    cnt_msg_title: "Direct WhatsApp Message",
-    cnt_msg_sub: "आफ्नो requirement वा अर्डर तल लेखी पठाउनुहोस्:",
-    cnt_msg_ph: "e.g. मलाई 2 kg Mustard Honey चाहियो।"
+    cnt_map_title: "गुगल म्यापमा हाम्रो स्थान",
+    cnt_msg_title: "WhatsApp मा सीधा सन्देश पठाउनुहोस्",
+    cnt_msg_sub: "आफ्नो आवश्यकता वा अर्डर तल लेखी पठाउनुहोस्:",
+    cnt_msg_ph: "जस्तै: मलाई २ के.जी. तोरीको मह चाहियो।"
   },
 
   en: {
@@ -469,7 +470,11 @@ const translations = {
 let currentLang = 'ne';
 
 function initLanguageSwitcher() {
-  const saved = localStorage.getItem('smp_lang');
+  let saved = null;
+  try {
+    saved = localStorage.getItem('smp_lang');
+  } catch (err) {}
+  // Default to Nepali ('ne') for every first-time visitor regardless of browser language
   currentLang = (saved === 'en') ? 'en' : 'ne';
 
   const switcherPills = document.querySelectorAll('.lang-switcher-pill');
@@ -490,9 +495,14 @@ function initLanguageSwitcher() {
 }
 
 function setLanguage(lang) {
-  currentLang = lang;
-  localStorage.setItem('smp_lang', lang);
-  document.documentElement.lang = lang;
+  currentLang = (lang === 'en') ? 'en' : 'ne';
+  try {
+    localStorage.setItem('smp_lang', currentLang);
+  } catch (err) {}
+  
+  document.documentElement.lang = currentLang;
+  document.documentElement.setAttribute('translate', 'no');
+  document.documentElement.classList.add('notranslate');
 
   document.querySelectorAll('.lang-btn').forEach(btn => {
     if (btn.getAttribute('data-lang') === lang) {
@@ -787,4 +797,193 @@ function initWhatsAppHelpers() {
       window.open(`https://wa.me/${primaryPhone}?text=${encodeURIComponent(text)}`, '_blank');
     });
   }
+}
+
+// Synchronously apply language as soon as script executes at bottom of body
+try {
+  const initialLang = (function() {
+    try {
+      return localStorage.getItem('smp_lang') === 'en' ? 'en' : 'ne';
+    } catch (e) {
+      return 'ne';
+    }
+  })();
+  setLanguage(initialLang);
+} catch (e) {}
+
+
+/* --------------------------------------------------------------------------
+   REALISTIC FLYING HONEYBEE (Apis mellifera)
+   Fluidly follows cursor / touch with fluttering wings and natural hovering.
+   Offset so it never obstructs cursor, buttons, links, or text.
+   -------------------------------------------------------------------------- */
+function initFlyingBee() {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return;
+  }
+
+  let beeContainer = document.querySelector('.flying-bee-container');
+  if (!beeContainer) {
+    beeContainer = document.createElement('div');
+    beeContainer.className = 'flying-bee-container';
+    beeContainer.setAttribute('aria-hidden', 'true');
+    beeContainer.innerHTML = `
+      <svg class="realistic-bee-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="beeShadowGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#3c2610" stop-opacity="0.25"/>
+            <stop offset="100%" stop-color="#3c2610" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="beeAbdomenGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+            <stop offset="0%" stop-color="#e29124"/>
+            <stop offset="25%" stop-color="#f5ad3b"/>
+            <stop offset="55%" stop-color="#c97711"/>
+            <stop offset="85%" stop-color="#6e3c04"/>
+            <stop offset="100%" stop-color="#241403"/>
+          </linearGradient>
+          <radialGradient id="beeThoraxGrad" cx="48%" cy="45%" r="50%">
+            <stop offset="0%" stop-color="#73471c"/>
+            <stop offset="45%" stop-color="#3b2310"/>
+            <stop offset="80%" stop-color="#211308"/>
+            <stop offset="100%" stop-color="#140b04"/>
+          </radialGradient>
+          <linearGradient id="beeWingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.88"/>
+            <stop offset="40%" stop-color="#fdfcf7" stop-opacity="0.75"/>
+            <stop offset="80%" stop-color="#faebd2" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#ffffff" stop-opacity="0.85"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Ground hover shadow -->
+        <ellipse cx="50" cy="88" rx="16" ry="4.5" fill="url(#beeShadowGrad)"/>
+
+        <!-- Jointed Legs -->
+        <g class="bee-legs" stroke="#26170a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <path d="M44,38 L34,32 L26,36"/>
+          <path d="M56,38 L66,32 L74,36"/>
+          <path d="M43,45 L31,46 L24,53"/>
+          <path d="M57,45 L69,46 L76,53"/>
+          <path d="M45,54 L32,62 L22,74"/>
+          <path d="M55,54 L68,62 L78,74"/>
+          <ellipse cx="27" cy="67" rx="3.5" ry="2.2" fill="#e59824" stroke="#8c570b" stroke-width="0.7" transform="rotate(-30 27 67)"/>
+          <ellipse cx="73" cy="67" rx="3.5" ry="2.2" fill="#e59824" stroke="#8c570b" stroke-width="0.7" transform="rotate(30 73 67)"/>
+        </g>
+
+        <!-- Abdomen with natural segments -->
+        <g class="bee-abdomen">
+          <path d="M50,45 C41,45 35,53 35,63 C35,74 44,85 50,89 C56,85 65,74 65,63 C65,53 59,45 50,45 Z" fill="url(#beeAbdomenGrad)" stroke="#1a0d02" stroke-width="1.2"/>
+          <path d="M37,52 Q50,56 63,52" stroke="#1d1004" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M36,53.5 Q50,57.5 64,53.5" stroke="#f0aa37" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.85"/>
+          <path d="M35.5,60 Q50,65 64.5,60" stroke="#1d1004" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+          <path d="M35.5,62 Q50,67 64.5,62" stroke="#f0aa37" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.85"/>
+          <path d="M38,68 Q50,74 62,68" stroke="#1d1004" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+          <path d="M38.5,70 Q50,76 61.5,70" stroke="#f0aa37" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.85"/>
+          <path d="M43,76 Q50,81 57,76" stroke="#1d1004" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M49,88.5 L50,92 L51,88.5 Z" fill="#140b04"/>
+        </g>
+
+        <!-- Thorax with downy fluff -->
+        <g class="bee-thorax">
+          <ellipse cx="50" cy="40" rx="12" ry="10" fill="url(#beeThoraxGrad)" stroke="#1a0e05" stroke-width="1"/>
+          <ellipse cx="50" cy="38" rx="8" ry="5.5" fill="#c47a1c" opacity="0.45"/>
+          <path d="M44,35 Q50,33 56,35" stroke="#f0b64f" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.7"/>
+          <path d="M45,41 Q50,39 55,41" stroke="#f0b64f" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.7"/>
+        </g>
+
+        <!-- Head & Antennae -->
+        <g class="bee-head">
+          <ellipse cx="50" cy="27" rx="8.5" ry="7" fill="#1b1007" stroke="#0f0803" stroke-width="0.8"/>
+          <ellipse cx="43.5" cy="26.5" rx="3.2" ry="5" fill="#0d0702" stroke="#241407" stroke-width="0.6" transform="rotate(-12 43.5 26.5)"/>
+          <ellipse cx="56.5" cy="26.5" rx="3.2" ry="5" fill="#0d0702" stroke="#241407" stroke-width="0.6" transform="rotate(12 56.5 26.5)"/>
+          <circle cx="42.5" cy="25" r="0.9" fill="#ffffff" opacity="0.65"/>
+          <circle cx="55.5" cy="25" r="0.9" fill="#ffffff" opacity="0.65"/>
+          <path d="M47,22 Q43,14 36,16" stroke="#1d1106" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+          <path d="M53,22 Q57,14 64,16" stroke="#1d1106" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+          <circle cx="36" cy="16" r="1.1" fill="#2d1c0e"/>
+          <circle cx="64" cy="16" r="1.1" fill="#2d1c0e"/>
+        </g>
+
+        <!-- Fluttering Translucent Wings -->
+        <g class="bee-wing wing-left-fore">
+          <path d="M46,37 C35,20 12,12 8,24 C5,33 22,43 46,38 Z" fill="url(#beeWingGrad)" stroke="rgba(140, 95, 45, 0.5)" stroke-width="0.9"/>
+          <path d="M44,37 C30,28 17,21 10,24" stroke="rgba(120, 80, 35, 0.45)" stroke-width="0.8" fill="none"/>
+          <path d="M26,26 C22,32 18,36 14,35" stroke="rgba(120, 80, 35, 0.35)" stroke-width="0.6" fill="none"/>
+          <path d="M34,31 C32,36 28,40 24,39" stroke="rgba(120, 80, 35, 0.35)" stroke-width="0.6" fill="none"/>
+        </g>
+        <g class="bee-wing wing-left-hind">
+          <path d="M46,39 C34,31 19,34 17,44 C15,51 28,51 46,41 Z" fill="url(#beeWingGrad)" stroke="rgba(140, 95, 45, 0.45)" stroke-width="0.8"/>
+          <path d="M43,39 C33,36 24,38 20,44" stroke="rgba(120, 80, 35, 0.35)" stroke-width="0.6" fill="none"/>
+        </g>
+        <g class="bee-wing wing-right-fore">
+          <path d="M54,37 C65,20 88,12 92,24 C95,33 78,43 54,38 Z" fill="url(#beeWingGrad)" stroke="rgba(140, 95, 45, 0.5)" stroke-width="0.9"/>
+          <path d="M56,37 C70,28 83,21 90,24" stroke="rgba(120, 80, 35, 0.45)" stroke-width="0.8" fill="none"/>
+          <path d="M74,26 C78,32 82,36 86,35" stroke="rgba(120, 80, 35, 0.35)" stroke-width="0.6" fill="none"/>
+          <path d="M66,31 C68,36 72,40 76,39" stroke="rgba(120, 80, 35, 0.35)" stroke-width="0.6" fill="none"/>
+        </g>
+        <g class="bee-wing wing-right-hind">
+          <path d="M54,39 C66,31 81,34 83,44 C85,51 72,51 54,41 Z" fill="url(#beeWingGrad)" stroke="rgba(140, 95, 45, 0.45)" stroke-width="0.8"/>
+          <path d="M57,39 C67,36 76,38 80,44" stroke="rgba(120, 80, 35, 0.35)" stroke-width="0.6" fill="none"/>
+        </g>
+      </svg>
+    `;
+    document.body.appendChild(beeContainer);
+  }
+
+  let currentX = window.innerWidth * 0.75;
+  let currentY = 160;
+  let targetX = currentX;
+  let targetY = currentY;
+  let currentAngle = 0;
+  let time = 0;
+
+  function setTarget(clientX, clientY, isTouch = false) {
+    const offsetX = isTouch ? 30 : 38;
+    const offsetY = isTouch ? -36 : -32;
+    targetX = Math.min(window.innerWidth - 50, Math.max(12, clientX + offsetX));
+    targetY = Math.min(window.innerHeight - 50, Math.max(60, clientY + offsetY));
+  }
+
+  window.addEventListener('mousemove', (e) => {
+    setTarget(e.clientX, e.clientY, false);
+  }, { passive: true });
+
+  window.addEventListener('touchstart', (e) => {
+    if (e.touches && e.touches.length > 0) {
+      setTarget(e.touches[0].clientX, e.touches[0].clientY, true);
+    }
+  }, { passive: true });
+
+  window.addEventListener('touchmove', (e) => {
+    if (e.touches && e.touches.length > 0) {
+      setTarget(e.touches[0].clientX, e.touches[0].clientY, true);
+    }
+  }, { passive: true });
+
+  let isPageVisible = true;
+  document.addEventListener('visibilitychange', () => {
+    isPageVisible = !document.hidden;
+  });
+
+  function animateBee() {
+    if (isPageVisible) {
+      time += 0.04;
+      const hoverWobbleX = Math.sin(time) * 6;
+      const hoverWobbleY = Math.cos(time * 1.3) * 4.5;
+
+      const dx = (targetX + hoverWobbleX) - currentX;
+      const dy = (targetY + hoverWobbleY) - currentY;
+
+      currentX += dx * 0.065;
+      currentY += dy * 0.065;
+
+      const targetBank = Math.max(-28, Math.min(28, dx * 1.6));
+      currentAngle += (targetBank - currentAngle) * 0.08;
+
+      beeContainer.style.transform = `translate3d(${currentX.toFixed(2)}px, ${currentY.toFixed(2)}px, 0) rotate(${currentAngle.toFixed(2)}deg)`;
+    }
+    requestAnimationFrame(animateBee);
+  }
+
+  requestAnimationFrame(animateBee);
 }
