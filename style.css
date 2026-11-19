@@ -228,14 +228,18 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 13px 26px;
-  font-size: 0.98rem;
+  padding: 12px 24px;
+  font-size: 0.96rem;
   font-weight: 600;
   border-radius: var(--radius-full);
   transition: all var(--transition-smooth);
   position: relative;
-  overflow: hidden;
-  white-space: nowrap;
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.3;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
 }
 
 .btn-primary {
@@ -644,6 +648,8 @@ h1, h2, h3, h4, h5, h6 {
   padding: 7px 18px;
   margin-bottom: 18px;
   box-shadow: 0 2px 12px rgba(60, 45, 20, 0.05);
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .hero-company-badge i {
@@ -656,6 +662,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   color: var(--honey-light);
   letter-spacing: 0.04em;
+  white-space: normal;
+  line-height: 1.3;
 }
 
 .hero-product-title {
@@ -712,6 +720,8 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  white-space: normal;
+  line-height: 1.3;
 }
 
 /* --------------------------------------------------------------------------
@@ -730,154 +740,129 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Honey Harvest Centerpiece (Wooden Dipper & Continuous Flowing Stream) */
-.honey-harvest-centerpiece {
-  position: relative;
-  width: 100%;
-  max-width: 320px;
-  height: 180px;
-  margin: 0 auto 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  filter: drop-shadow(0 8px 20px rgba(217, 130, 24, 0.2));
-  user-select: none;
+/* ==========================================================================
+   INTERACTIVE LIQUID HONEY VISUAL EXPERIENCE
+   Translucent golden honey streams with natural viscosity, glossy reflections,
+   soft ambient caustics, and mouse/touch responsiveness.
+   ========================================================================== */
+.interactive-honey-flow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none !important;
+  z-index: 1;
+  overflow: hidden;
+  opacity: 0.95;
+  transition: opacity var(--transition-smooth);
 }
 
-.harvest-stream-svg {
+.honey-flow-svg {
   width: 100%;
   height: 100%;
+  display: block;
   overflow: visible;
 }
 
-/* Dipper subtle natural sway */
-.dipper-group {
-  transform-origin: 150px 30px;
-  animation: dipperSway 5.5s ease-in-out infinite;
+/* Animated Viscous Highlights */
+.honey-stream-streak {
+  stroke-dasharray: 140 220;
+  animation: honeyStreakFlow 4.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-@keyframes dipperSway {
-  0%, 100% { transform: rotate(-22deg) translateY(0); }
-  50% { transform: rotate(-17deg) translateY(-4px); }
+.honey-stream-streak-branch {
+  stroke-dasharray: 80 160;
+  animation: honeyStreakFlowBranch 3.6s cubic-bezier(0.4, 0, 0.6, 1) infinite 1.2s;
 }
 
-/* Continuous honey stream subtle wave */
-.honey-stream-path {
-  transform-origin: 150px 78px;
-  animation: streamViscosity 2.8s ease-in-out infinite alternate;
-}
-
-@keyframes streamViscosity {
-  0% { transform: scaleX(0.95); }
-  100% { transform: scaleX(1.05); }
-}
-
-/* Continuous downward glossy highlight flow */
-.stream-streak {
-  stroke-dasharray: 22 14;
-  animation: streakFlow 1.4s linear infinite;
-}
-
-@keyframes streakFlow {
-  0% { stroke-dashoffset: 72; }
+@keyframes honeyStreakFlow {
+  0% { stroke-dashoffset: 720; }
   100% { stroke-dashoffset: 0; }
 }
 
-/* Falling viscous honey droplets */
-.honey-droplet-1 {
-  animation: dropFall1 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+@keyframes honeyStreakFlowBranch {
+  0% { stroke-dashoffset: 480; }
+  100% { stroke-dashoffset: 0; }
 }
 
-.honey-droplet-2 {
-  animation: dropFall2 2s cubic-bezier(0.4, 0, 0.6, 1) infinite 1s;
+/* Viscous Droplets Natural Fall & Stretch */
+.droplet-stream-1 {
+  transform-origin: 880px 320px;
+  animation: honeyDropFall1 4.8s cubic-bezier(0.5, 0, 0.7, 1) infinite;
 }
 
-@keyframes dropFall1 {
-  0% { transform: translateY(0) scaleY(0.6); opacity: 0; }
-  25% { opacity: 0.95; }
-  85% { transform: translateY(115px) scaleY(1.35); opacity: 0.95; }
-  100% { transform: translateY(125px) scaleY(0.3); opacity: 0; }
+.droplet-stream-2 {
+  transform-origin: 580px 480px;
+  animation: honeyDropFall2 5.6s cubic-bezier(0.5, 0, 0.7, 1) infinite 2.2s;
 }
 
-@keyframes dropFall2 {
-  0% { transform: translateY(0) scaleY(0.6); opacity: 0; }
-  25% { opacity: 0.95; }
-  85% { transform: translateY(115px) scaleY(1.35); opacity: 0.95; }
-  100% { transform: translateY(125px) scaleY(0.3); opacity: 0; }
+@keyframes honeyDropFall1 {
+  0% { transform: translate(1020px, 360px) scale(0.3) scaleY(0.6); opacity: 0; }
+  15% { opacity: 0.95; transform: translate(1020px, 360px) scale(0.9) scaleY(1.1); }
+  35% { transform: translate(1020px, 370px) scale(1) scaleY(1.4); }
+  65% { transform: translate(1015px, 520px) scale(0.95) scaleY(1.6); opacity: 0.95; }
+  85% { transform: translate(1010px, 620px) scale(0.85) scaleY(1.8); opacity: 0.8; }
+  100% { transform: translate(1008px, 690px) scale(0.3) scaleY(0.4); opacity: 0; }
 }
 
-/* Impact ripples in honey bowl */
-.honey-ripple-1 {
-  transform-origin: 150px 200px;
-  animation: ripplePulse 2s ease-out infinite;
+@keyframes honeyDropFall2 {
+  0% { transform: translate(660px, 540px) scale(0.3) scaleY(0.6); opacity: 0; }
+  18% { opacity: 0.95; transform: translate(660px, 540px) scale(0.85) scaleY(1.1); }
+  38% { transform: translate(660px, 545px) scale(0.95) scaleY(1.4); }
+  70% { transform: translate(656px, 680px) scale(0.9) scaleY(1.6); opacity: 0.95; }
+  88% { transform: translate(654px, 740px) scale(0.8) scaleY(1.7); opacity: 0.7; }
+  100% { transform: translate(652px, 780px) scale(0.3) scaleY(0.4); opacity: 0; }
 }
 
-.honey-ripple-2 {
-  transform-origin: 150px 200px;
-  animation: ripplePulse 2s ease-out infinite 1s;
+/* Caustic Ambient Glow Pools */
+.glow-pool-1 {
+  transform-origin: 880px 240px;
+  animation: causticPulse1 6.5s ease-in-out infinite alternate;
 }
 
-@keyframes ripplePulse {
-  0% { transform: scale(0.3); opacity: 0.85; stroke-width: 2.5; }
-  60% { opacity: 0.45; }
-  100% { transform: scale(1.65); opacity: 0; stroke-width: 0.5; }
+.glow-pool-2 {
+  transform-origin: 320px 480px;
+  animation: causticPulse2 7.5s ease-in-out infinite alternate 1.5s;
 }
 
-/* 3 Independent Flying Honeybees */
-.hero-bee {
-  position: absolute;
-  width: 34px;
-  height: 34px;
-  pointer-events: none;
-  z-index: 12;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.65));
+@keyframes causticPulse1 {
+  0% { opacity: 0.3; transform: scale(0.95); }
+  100% { opacity: 0.55; transform: scale(1.08); }
 }
 
-.bee-wing {
-  transform-origin: 50% 50%;
-  animation: wingFlutter 0.08s ease-in-out infinite alternate;
+@keyframes causticPulse2 {
+  0% { opacity: 0.25; transform: scale(0.92); }
+  100% { opacity: 0.48; transform: scale(1.06); }
 }
 
-@keyframes wingFlutter {
-  0% { transform: scaleY(0.3) rotate(-15deg); }
-  100% { transform: scaleY(1.1) rotate(15deg); }
+/* Luminous Floating Micro-Nectar Beads */
+.nectar-bead {
+  animation: nectarFloat 5s ease-in-out infinite alternate;
+}
+.bead-1 { animation-delay: 0s; }
+.bead-2 { animation-delay: 1.4s; }
+.bead-3 { animation-delay: 2.8s; }
+
+@keyframes nectarFloat {
+  0% { transform: translateY(0) scale(1); opacity: 0.55; }
+  50% { transform: translateY(-14px) scale(1.1); opacity: 0.9; }
+  100% { transform: translateY(-4px) scale(0.95); opacity: 0.65; }
 }
 
-.hero-bee-1 {
-  top: -15px;
-  left: 12%;
-  animation: beeFlight1 5.5s ease-in-out infinite;
+/* Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .honey-stream-streak,
+  .honey-stream-streak-branch,
+  .droplet-stream-1,
+  .droplet-stream-2,
+  .glow-pool-1,
+  .glow-pool-2,
+  .nectar-bead {
+    animation: none !important;
+  }
+  .interactive-honey-flow {
+    opacity: 0.6;
+  }
 }
 
-@keyframes beeFlight1 {
-  0%, 100% { transform: translate(0, 0) rotate(12deg); }
-  33% { transform: translate(14px, -10px) rotate(6deg); }
-  66% { transform: translate(-10px, 8px) rotate(18deg); }
-}
-
-.hero-bee-2 {
-  top: 135px;
-  left: -12px;
-  animation: beeFlight2 6.5s ease-in-out infinite 0.8s;
-}
-
-@keyframes beeFlight2 {
-  0%, 100% { transform: translate(0, 0) rotate(-12deg); }
-  40% { transform: translate(-14px, 14px) rotate(-18deg); }
-  75% { transform: translate(8px, -6px) rotate(-4deg); }
-}
-
-.hero-bee-3 {
-  top: 125px;
-  right: -12px;
-  animation: beeFlight3 7s ease-in-out infinite 1.8s;
-}
-
-@keyframes beeFlight3 {
-  0%, 100% { transform: translate(0, 0) rotate(8deg); }
-  50% { transform: translate(15px, -14px) rotate(-8deg); }
-}
-
-/* Both Real Honey Bottles Showcase */
 .hero-bottles-showcase {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -891,7 +876,7 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--bg-glass-elevated);
   border: 1px solid var(--border-gold);
   border-radius: var(--radius-lg);
-  padding: 18px 14px;
+  padding: 18px 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -901,6 +886,9 @@ h1, h2, h3, h4, h5, h6 {
   transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
 }
 
 .hero-bottle-card:hover {
@@ -950,11 +938,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .bottle-product-title {
   font-family: var(--font-serif);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--cream-pure);
-  margin-bottom: 2px;
+  margin-bottom: 4px;
   line-height: 1.25;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 .bottle-price-tag {
@@ -971,6 +961,8 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--honey-light);
   margin-bottom: 5px;
   font-weight: 600;
+  white-space: normal;
+  line-height: 1.25;
 }
 
 .bottle-varieties-list {
@@ -979,23 +971,32 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   gap: 4px;
   margin-bottom: 12px;
+  width: 100%;
 }
 
 .variety-chip {
   background: var(--sage-light);
   border: 1px solid var(--sage-border);
   color: var(--sage-dark);
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 600;
   padding: 3px 7px;
   border-radius: var(--radius-full);
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.2;
+  box-sizing: border-box;
 }
 
 .bottle-order-btn {
   width: 100%;
-  padding: 8px 12px;
-  font-size: 0.85rem;
+  padding: 8px 8px;
+  font-size: 0.82rem;
   justify-content: center;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.25;
 }
 
 .hero-bottles-footer {
@@ -1521,19 +1522,34 @@ h1, h2, h3, h4, h5, h6 {
 .gallery-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(28, 25, 20, 0.9) 0%, transparent 60%);
+  background: linear-gradient(to top, rgba(14, 11, 7, 0.88) 0%, rgba(20, 16, 10, 0.45) 40%, transparent 70%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 18px;
-  opacity: 0;
-  transition: opacity var(--transition-smooth);
+  padding: 16px 18px;
+  opacity: 0.96;
+  transition: opacity var(--transition-smooth), background var(--transition-smooth);
+  pointer-events: none;
 }
 
 .gallery-overlay span {
-  font-size: 0.95rem;
+  font-size: 0.98rem;
   font-weight: 600;
-  color: var(--cream-pure);
+  color: #ffffff !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85), 0 1px 2px rgba(0, 0, 0, 0.95);
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  transition: transform var(--transition-smooth), color var(--transition-fast);
+}
+
+.gallery-card:hover .gallery-overlay {
+  opacity: 1;
+  background: linear-gradient(to top, rgba(10, 8, 4, 0.95) 0%, rgba(18, 14, 8, 0.6) 48%, transparent 75%);
+}
+
+.gallery-card:hover .gallery-overlay span {
+  color: #ffd466 !important;
+  transform: translateY(-2px);
 }
 
 .gallery-card:hover img {
@@ -2638,9 +2654,9 @@ h1, h2, h3, h4, h5, h6 {
 
   .bottle-product-title {
     font-size: 0.84rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.25;
     max-width: 100%;
   }
 

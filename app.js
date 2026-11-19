@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollToTop();
   initWhatsAppHelpers();
   initFlyingBee();
+  initInteractiveHoneyFlow();
 });
 
 window.addEventListener('load', () => {
@@ -194,14 +195,14 @@ const translations = {
     gal_hero_label: "सुनसरी फार्मको दैनिकी",
     gal_hero_title: "हाम्रो वास्तविक <span class=\"gold-gradient-text\">फार्म ग्यालरी</span>",
     gal_hero_desc: "सफल मौरी पालन को इटहरी-४ स्थित मौरी फार्म, काठका घारहरू, मौरीका चाका र मह संकलनका ८ वास्तविक तस्बिरहरू।",
-    gal_img1_caption: "सुनसरी फार्ममा काठका आधुनिक घारहरूको व्यवस्थित दृश्य",
-    gal_img2_caption: "मौरीपालक विशेषज्ञद्वारा चाका र फ्रेमको नियमित निरीक्षण",
-    gal_img3_caption: "चाकामा सक्रिय रहेको स्वस्थ Apis mellifera मौरीको गोला",
-    gal_img4_caption: "शान्त वातावरणमा घार व्यवस्थापनका लागि धुवादानीको प्रयोग",
-    gal_img5_caption: "Centrifugal extractor मेसिनबाट ताजा शुद्ध मह संकलन",
-    gal_img6_caption: "बिहानी घाममा व्यवस्थित रूपमा राखिएका घारका बाकसहरू",
-    gal_img7_caption: "सफा, शान्त र हराभरा सफल मौरी पालन फार्म परिसर",
-    gal_img8_caption: "प्राकृतिक मौरीको मैन (beeswax) ले भरिएको परिपक्व महको चाका",
+    gal_img1_caption: "सफल फार्मका आधुनिक मौरी घारहरू",
+    gal_img2_caption: "बिक्रीका लागि आधुनिक मौरी घारहरू",
+    gal_img3_caption: "मौरीपालन सचेतना तथा समुदाय अन्तरक्रिया",
+    gal_img4_caption: "सिलबन्दी महका चाका संकलन",
+    gal_img5_caption: "प्याकेजिङ गरिएका महका बोतलहरू",
+    gal_img6_caption: "बिक्रीका लागि लेबलयुक्त महका बोतलहरू",
+    gal_img7_caption: "बिहानी घाममा मौरीका गोलाहरू",
+    gal_img8_caption: "विभिन्न महका प्रकार र रङहरू",
 
     // --- PAGE 5: RESOURCES.HTML (KNOWLEDGE & FAQS) ---
     res_hero_label: "मौरीपालन ज्ञान केन्द्र",
@@ -401,14 +402,14 @@ const translations = {
     gal_hero_label: "Apiary Life in Sunsari",
     gal_hero_title: "Genuine <span class=\"gold-gradient-text\">Farm Gallery</span>",
     gal_hero_desc: "Eight genuine, carefully curated photographs showcasing our wooden beehives, comb inspections, and honey harvesting in Itahari, Nepal.",
-    gal_img1_caption: "Apiary landscape with modern wooden beehives in Sunsari",
-    gal_img2_caption: "Careful honeycomb frame inspection by experienced beekeeper",
-    gal_img3_caption: "Healthy Apis mellifera colony active on brood comb",
-    gal_img4_caption: "Using stainless smoker for calm and gentle hive management",
-    gal_img5_caption: "Pure golden honey extraction using centrifugal machine",
-    gal_img6_caption: "Wooden hive boxes neatly aligned in natural sunlight",
-    gal_img7_caption: "Morning view across the green Safal Mauri Palan apiary",
-    gal_img8_caption: "Mature honeycomb naturally capped with pure beeswax",
+    gal_img1_caption: "Modern Beehives in Safal Bee Farm",
+    gal_img2_caption: "Modern Beehives for Sale",
+    gal_img3_caption: "Beekeeping Awareness and Community Interaction",
+    gal_img4_caption: "Harvesting Fully Sealed Honey Frames",
+    gal_img5_caption: "Packaged Honey Bottles",
+    gal_img6_caption: "Honey Bottles with Product Labels for Sale",
+    gal_img7_caption: "Bee Colonies in Morning Sunlight",
+    gal_img8_caption: "Different Honey Varieties and Natural Colors",
 
     // --- PAGE 5: RESOURCES.HTML (KNOWLEDGE & FAQS) ---
     res_hero_label: "Educational Knowledge Hub",
@@ -986,4 +987,100 @@ function initFlyingBee() {
   }
 
   requestAnimationFrame(animateBee);
+}
+
+
+/* --------------------------------------------------------------------------
+   INTERACTIVE LIQUID HONEY VISUAL EXPERIENCE
+   Fluidly modulates golden honey stream with natural viscosity,
+   harmonic wave breathing, and mouse/touch responsiveness.
+   -------------------------------------------------------------------------- */
+function initInteractiveHoneyFlow() {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return;
+  }
+
+  const primaryPath = document.getElementById('honeyStreamPrimary');
+  const corePath = document.getElementById('honeyStreamCore');
+  const highlightPath = document.getElementById('honeyStreamHighlight');
+  const branchPath = document.getElementById('honeyStreamBranch');
+  const branchHighlight = document.getElementById('honeyStreamBranchHighlight');
+  const heroSection = document.querySelector('.hero-section');
+
+  if (!primaryPath || !corePath || !highlightPath || !heroSection) return;
+
+  let curOffsetX = 0;
+  let curOffsetY = 0;
+  let targetOffsetX = 0;
+  let targetOffsetY = 0;
+  let time = 0;
+  let isPageVisible = true;
+
+  document.addEventListener('visibilitychange', () => {
+    isPageVisible = !document.hidden;
+  });
+
+  function onPointer(clientX, clientY) {
+    const rect = heroSection.getBoundingClientRect();
+    if (clientY >= rect.top - 100 && clientY <= rect.bottom + 100) {
+      const centerX = rect.left + rect.width * 0.5;
+      const centerY = rect.top + rect.height * 0.5;
+      targetOffsetX = Math.max(-55, Math.min(55, (clientX - centerX) * 0.08));
+      targetOffsetY = Math.max(-45, Math.min(45, (clientY - centerY) * 0.06));
+    }
+  }
+
+  window.addEventListener('mousemove', (e) => {
+    onPointer(e.clientX, e.clientY);
+  }, { passive: true });
+
+  window.addEventListener('touchmove', (e) => {
+    if (e.touches && e.touches.length > 0) {
+      onPointer(e.touches[0].clientX, e.touches[0].clientY);
+    }
+  }, { passive: true });
+
+  function renderFluid() {
+    if (isPageVisible) {
+      time += 0.016;
+      const idleWaveX = Math.sin(time * 0.9) * 16 + Math.cos(time * 0.5) * 8;
+      const idleWaveY = Math.cos(time * 1.1) * 12 + Math.sin(time * 0.6) * 6;
+
+      curOffsetX += ((targetOffsetX + idleWaveX) - curOffsetX) * 0.04;
+      curOffsetY += ((targetOffsetY + idleWaveY) - curOffsetY) * 0.04;
+
+      const cp1x = (900 + curOffsetX * 0.6).toFixed(1);
+      const cp1y = (100 + curOffsetY * 0.4).toFixed(1);
+      const cp2x = (1080 + curOffsetX * 1.1).toFixed(1);
+      const cp2y = (180 + curOffsetY * 0.7).toFixed(1);
+      const cp3x = (1020 + curOffsetX * 0.9).toFixed(1);
+      const cp3y = (360 + curOffsetY * 0.5).toFixed(1);
+      const cp4x = (950 + curOffsetX * 0.7).toFixed(1);
+      const cp4y = (540 + curOffsetY * 0.5).toFixed(1);
+      const cp5x = (720 + curOffsetX * 0.4).toFixed(1);
+      const cp5y = (580 + curOffsetY * 0.3).toFixed(1);
+      const endX = (620 + curOffsetX * 0.2).toFixed(1);
+      const endY = 840;
+
+      const d = `M 750, -40 C ${cp1x},${cp1y} ${cp2x},${cp2y} ${cp3x},${cp3y} C ${cp4x},${cp4y} ${cp5x},${cp5y} ${endX},${endY}`;
+
+      primaryPath.setAttribute('d', d);
+      corePath.setAttribute('d', d);
+      highlightPath.setAttribute('d', d);
+
+      if (branchPath && branchHighlight) {
+        const bCp1x = (1120 + curOffsetX * 0.6).toFixed(1);
+        const bCp1y = (450 + curOffsetY * 0.4).toFixed(1);
+        const bCp2x = (1190 + curOffsetX * 0.5).toFixed(1);
+        const bCp2y = (580 + curOffsetY * 0.4).toFixed(1);
+        const bEndX = (1140 + curOffsetX * 0.3).toFixed(1);
+        const bD = `M ${cp3x},${cp3y} C ${bCp1x},${bCp1y} ${bCp2x},${bCp2y} ${bEndX},780`;
+        branchPath.setAttribute('d', bD);
+        branchHighlight.setAttribute('d', bD);
+      }
+    }
+    requestAnimationFrame(renderFluid);
+  }
+
+  requestAnimationFrame(renderFluid);
 }
