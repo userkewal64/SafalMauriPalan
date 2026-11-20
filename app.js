@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollToTop();
   initWhatsAppHelpers();
   initFlyingBee();
-  initInteractiveHoneyFlow();
+  // initInteractiveHoneyFlow();
 });
 
 window.addEventListener('load', () => {
