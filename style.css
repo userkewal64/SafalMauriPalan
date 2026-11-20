@@ -739,62 +739,127 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 5;
 }
 
+/* Honey Harvest Centerpiece (Wooden Dipper & Continuous Flowing Stream) */
 /* ==========================================================================
-   AUTHENTIC HONEY HARVEST REAL VIDEO INTEGRATION (Images/vid2.mp4)
-   Organic, softly integrated tall curved panel showcasing real flowing honey.
-   Preserves natural viscosity, amber sunlight reflections, and organic stream.
+   INTERACTIVE LIQUID HONEY VISUAL EXPERIENCE
+   Translucent golden honey streams with natural viscosity, glossy reflections,
+   soft ambient caustics, and mouse/touch responsiveness.
    ========================================================================== */
-.hero-honey-video-panel {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 440px;
-  max-width: 95%;
-  height: 560px;
-  max-height: 96%;
-  border-radius: 180px 180px 36px 36px;
-  overflow: hidden;
-  z-index: 1;
-  pointer-events: none;
-  background-color: #faf5eb;
-  border: 1px solid rgba(217, 130, 24, 0.3);
-  box-shadow: 
-    0 24px 50px rgba(180, 88, 2, 0.16),
-    0 4px 16px rgba(60, 45, 20, 0.08),
-    0 0 30px rgba(245, 158, 11, 0.12);
-  /* Organic feathered boundary softly diffusing into the warm ivory website canvas */
-  -webkit-mask-image: radial-gradient(ellipse 92% 94% at 50% 50%, black 72%, transparent 100%);
-  mask-image: radial-gradient(ellipse 92% 94% at 50% 50%, black 72%, transparent 100%);
-}
-
-.hero-honey-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 28%;
-  display: block;
-}
-
-/* Feathered ambient overlay smoothly merging warm sunset tones with site background */
-.video-panel-feather {
+.interactive-honey-flow {
   position: absolute;
   inset: 0;
-  pointer-events: none;
-  background: 
-    radial-gradient(ellipse at 50% 50%, transparent 62%, rgba(250, 248, 243, 0.3) 88%, rgba(250, 248, 243, 0.85) 100%),
-    linear-gradient(to bottom, rgba(250, 248, 243, 0.1) 0%, transparent 20%, transparent 80%, rgba(250, 248, 243, 0.25) 100%);
+  pointer-events: none !important;
+  z-index: 1;
+  overflow: hidden;
+  opacity: 0.95;
+  transition: opacity var(--transition-smooth);
+}
+
+.honey-flow-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+/* Animated Viscous Highlights */
+.honey-stream-streak {
+  stroke-dasharray: 140 220;
+  animation: honeyStreakFlow 4.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.honey-stream-streak-branch {
+  stroke-dasharray: 80 160;
+  animation: honeyStreakFlowBranch 3.6s cubic-bezier(0.4, 0, 0.6, 1) infinite 1.2s;
+}
+
+@keyframes honeyStreakFlow {
+  0% { stroke-dashoffset: 720; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes honeyStreakFlowBranch {
+  0% { stroke-dashoffset: 480; }
+  100% { stroke-dashoffset: 0; }
+}
+
+/* Viscous Droplets Natural Fall & Stretch */
+.droplet-stream-1 {
+  transform-origin: 880px 320px;
+  animation: honeyDropFall1 4.8s cubic-bezier(0.5, 0, 0.7, 1) infinite;
+}
+
+.droplet-stream-2 {
+  transform-origin: 580px 480px;
+  animation: honeyDropFall2 5.6s cubic-bezier(0.5, 0, 0.7, 1) infinite 2.2s;
+}
+
+@keyframes honeyDropFall1 {
+  0% { transform: translate(1020px, 360px) scale(0.3) scaleY(0.6); opacity: 0; }
+  15% { opacity: 0.95; transform: translate(1020px, 360px) scale(0.9) scaleY(1.1); }
+  35% { transform: translate(1020px, 370px) scale(1) scaleY(1.4); }
+  65% { transform: translate(1015px, 520px) scale(0.95) scaleY(1.6); opacity: 0.95; }
+  85% { transform: translate(1010px, 620px) scale(0.85) scaleY(1.8); opacity: 0.8; }
+  100% { transform: translate(1008px, 690px) scale(0.3) scaleY(0.4); opacity: 0; }
+}
+
+@keyframes honeyDropFall2 {
+  0% { transform: translate(660px, 540px) scale(0.3) scaleY(0.6); opacity: 0; }
+  18% { opacity: 0.95; transform: translate(660px, 540px) scale(0.85) scaleY(1.1); }
+  38% { transform: translate(660px, 545px) scale(0.95) scaleY(1.4); }
+  70% { transform: translate(656px, 680px) scale(0.9) scaleY(1.6); opacity: 0.95; }
+  88% { transform: translate(654px, 740px) scale(0.8) scaleY(1.7); opacity: 0.7; }
+  100% { transform: translate(652px, 780px) scale(0.3) scaleY(0.4); opacity: 0; }
+}
+
+/* Caustic Ambient Glow Pools */
+.glow-pool-1 {
+  transform-origin: 880px 240px;
+  animation: causticPulse1 6.5s ease-in-out infinite alternate;
+}
+
+.glow-pool-2 {
+  transform-origin: 320px 480px;
+  animation: causticPulse2 7.5s ease-in-out infinite alternate 1.5s;
+}
+
+@keyframes causticPulse1 {
+  0% { opacity: 0.3; transform: scale(0.95); }
+  100% { opacity: 0.55; transform: scale(1.08); }
+}
+
+@keyframes causticPulse2 {
+  0% { opacity: 0.25; transform: scale(0.92); }
+  100% { opacity: 0.48; transform: scale(1.06); }
+}
+
+/* Luminous Floating Micro-Nectar Beads */
+.nectar-bead {
+  animation: nectarFloat 5s ease-in-out infinite alternate;
+}
+.bead-1 { animation-delay: 0s; }
+.bead-2 { animation-delay: 1.4s; }
+.bead-3 { animation-delay: 2.8s; }
+
+@keyframes nectarFloat {
+  0% { transform: translateY(0) scale(1); opacity: 0.55; }
+  50% { transform: translateY(-14px) scale(1.1); opacity: 0.9; }
+  100% { transform: translateY(-4px) scale(0.95); opacity: 0.65; }
 }
 
 /* Reduced Motion Accessibility */
 @media (prefers-reduced-motion: reduce) {
-  .hero-honey-video {
-    display: none;
+  .honey-stream-streak,
+  .honey-stream-streak-branch,
+  .droplet-stream-1,
+  .droplet-stream-2,
+  .glow-pool-1,
+  .glow-pool-2,
+  .nectar-bead {
+    animation: none !important;
   }
-  .hero-honey-video-panel {
-    background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
-    box-shadow: none;
-    border-color: rgba(217, 130, 24, 0.15);
+  .interactive-honey-flow {
+    opacity: 0.6;
   }
 }
 
@@ -2424,14 +2489,6 @@ h1, h2, h3, h4, h5, h6 {
   .hero-company-tagline {
     font-size: 1.15rem;
     margin-bottom: 8px;
-  }
-
-    .hero-honey-video-panel {
-    width: 320px;
-    height: 440px;
-    border-radius: 120px 120px 24px 24px;
-    -webkit-mask-image: radial-gradient(ellipse 90% 92% at 50% 50%, black 68%, transparent 100%);
-    mask-image: radial-gradient(ellipse 90% 92% at 50% 50%, black 68%, transparent 100%);
   }
 
   .hero-visual-stage {
