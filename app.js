@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollToTop();
   initWhatsAppHelpers();
   initFlyingBee();
-  initInteractiveHoneyFlow();
+  initHeroHoneyVideo();
 });
 
 window.addEventListener('load', () => {
@@ -991,96 +991,26 @@ function initFlyingBee() {
 
 
 /* --------------------------------------------------------------------------
-   INTERACTIVE LIQUID HONEY VISUAL EXPERIENCE
-   Fluidly modulates golden honey stream with natural viscosity,
-   harmonic wave breathing, and mouse/touch responsiveness.
+   HERO REAL HONEY HARVEST VIDEO
+   Ensures seamless muted looping playback on mobile & low-power modes.
    -------------------------------------------------------------------------- */
-function initInteractiveHoneyFlow() {
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    return;
+function initHeroHoneyVideo() {
+  const heroVideo = document.querySelector('.hero-honey-video');
+  if (!heroVideo) return;
+
+  heroVideo.muted = true;
+  heroVideo.playsInline = true;
+
+  const playPromise = heroVideo.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(() => {
+      const playOnFirstTouch = () => {
+        heroVideo.play().catch(() => {});
+        document.removeEventListener('touchstart', playOnFirstTouch);
+        document.removeEventListener('click', playOnFirstTouch);
+      };
+      document.addEventListener('touchstart', playOnFirstTouch, { once: true, passive: true });
+      document.addEventListener('click', playOnFirstTouch, { once: true });
+    });
   }
-
-  const primaryPath = document.getElementById('honeyStreamPrimary');
-  const corePath = document.getElementById('honeyStreamCore');
-  const highlightPath = document.getElementById('honeyStreamHighlight');
-  const branchPath = document.getElementById('honeyStreamBranch');
-  const branchHighlight = document.getElementById('honeyStreamBranchHighlight');
-  const heroSection = document.querySelector('.hero-section');
-
-  if (!primaryPath || !corePath || !highlightPath || !heroSection) return;
-
-  let curOffsetX = 0;
-  let curOffsetY = 0;
-  let targetOffsetX = 0;
-  let targetOffsetY = 0;
-  let time = 0;
-  let isPageVisible = true;
-
-  document.addEventListener('visibilitychange', () => {
-    isPageVisible = !document.hidden;
-  });
-
-  function onPointer(clientX, clientY) {
-    const rect = heroSection.getBoundingClientRect();
-    if (clientY >= rect.top - 100 && clientY <= rect.bottom + 100) {
-      const centerX = rect.left + rect.width * 0.5;
-      const centerY = rect.top + rect.height * 0.5;
-      targetOffsetX = Math.max(-55, Math.min(55, (clientX - centerX) * 0.08));
-      targetOffsetY = Math.max(-45, Math.min(45, (clientY - centerY) * 0.06));
-    }
-  }
-
-  window.addEventListener('mousemove', (e) => {
-    onPointer(e.clientX, e.clientY);
-  }, { passive: true });
-
-  window.addEventListener('touchmove', (e) => {
-    if (e.touches && e.touches.length > 0) {
-      onPointer(e.touches[0].clientX, e.touches[0].clientY);
-    }
-  }, { passive: true });
-
-  function renderFluid() {
-    if (isPageVisible) {
-      time += 0.016;
-      const idleWaveX = Math.sin(time * 0.9) * 16 + Math.cos(time * 0.5) * 8;
-      const idleWaveY = Math.cos(time * 1.1) * 12 + Math.sin(time * 0.6) * 6;
-
-      curOffsetX += ((targetOffsetX + idleWaveX) - curOffsetX) * 0.04;
-      curOffsetY += ((targetOffsetY + idleWaveY) - curOffsetY) * 0.04;
-
-      const cp1x = (900 + curOffsetX * 0.6).toFixed(1);
-      const cp1y = (100 + curOffsetY * 0.4).toFixed(1);
-      const cp2x = (1080 + curOffsetX * 1.1).toFixed(1);
-      const cp2y = (180 + curOffsetY * 0.7).toFixed(1);
-      const cp3x = (1020 + curOffsetX * 0.9).toFixed(1);
-      const cp3y = (360 + curOffsetY * 0.5).toFixed(1);
-      const cp4x = (950 + curOffsetX * 0.7).toFixed(1);
-      const cp4y = (540 + curOffsetY * 0.5).toFixed(1);
-      const cp5x = (720 + curOffsetX * 0.4).toFixed(1);
-      const cp5y = (580 + curOffsetY * 0.3).toFixed(1);
-      const endX = (620 + curOffsetX * 0.2).toFixed(1);
-      const endY = 840;
-
-      const d = `M 750, -40 C ${cp1x},${cp1y} ${cp2x},${cp2y} ${cp3x},${cp3y} C ${cp4x},${cp4y} ${cp5x},${cp5y} ${endX},${endY}`;
-
-      primaryPath.setAttribute('d', d);
-      corePath.setAttribute('d', d);
-      highlightPath.setAttribute('d', d);
-
-      if (branchPath && branchHighlight) {
-        const bCp1x = (1120 + curOffsetX * 0.6).toFixed(1);
-        const bCp1y = (450 + curOffsetY * 0.4).toFixed(1);
-        const bCp2x = (1190 + curOffsetX * 0.5).toFixed(1);
-        const bCp2y = (580 + curOffsetY * 0.4).toFixed(1);
-        const bEndX = (1140 + curOffsetX * 0.3).toFixed(1);
-        const bD = `M ${cp3x},${cp3y} C ${bCp1x},${bCp1y} ${bCp2x},${bCp2y} ${bEndX},780`;
-        branchPath.setAttribute('d', bD);
-        branchHighlight.setAttribute('d', bD);
-      }
-    }
-    requestAnimationFrame(renderFluid);
-  }
-
-  requestAnimationFrame(renderFluid);
 }
