@@ -550,6 +550,111 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid var(--border-glass);
   text-align: center;
   overflow: hidden;
+
+/* ------------------------------------------------------------
+   HERO BACKGROUND LAYERS – gradient, honeycomb, flow, droplets, flora
+   ------------------------------------------------------------ */
+.hero-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.honey-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #fff8e6 0%, #fde5c0 45%, #f8c76c 80%, #f5b027 100%);
+  opacity: 0.96;
+}
+
+.honeycomb-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='104' viewBox='0 0 120 104' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='60,0 120,30 120,74 60,104 0,74 0,30' fill='none' stroke='%23d98218' stroke-width='0.8' stroke-opacity='0.08'/%3E%3C/svg%3E");
+  background-size: 120px 104px;
+  opacity: 0.12;
+}
+
+.honey-flow {
+  position: absolute;
+  inset: 0;
+  background: url("Images/honey-flow.png") no-repeat bottom right;
+  background-size: 45% auto;
+  opacity: 0.85;
+  animation: honeyFlowMove 12s linear infinite;
+}
+
+@keyframes honeyFlowMove {
+  0% { transform: translate(0,0) rotate(0deg); }
+  50% { transform: translate(-5%, -3%) rotate(0.5deg); }
+  100% { transform: translate(0,0) rotate(0deg); }
+}
+
+.honey-droplets::before,
+.honey-droplets::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,224,130,0.85), rgba(255,200,70,0.55));
+  box-shadow: 0 0 8px rgba(255,210,100,0.4);
+}
+
+.honey-droplets::before {
+  width: 18px; height: 18px;
+  left: 22%; top: 65%;
+  animation: dropletFloat 6s ease-in-out infinite alternate;
+}
+
+.honey-droplets::after {
+  width: 12px; height: 12px;
+  left: 78%; top: 58%;
+  animation: dropletFloat 5s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes dropletFloat {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-12px) scale(1.05); }
+}
+
+.decorative-flora {
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("Images/blossom1.png"),
+    url("Images/blossom2.png"),
+    url("Images/leaf1.png"),
+    url("Images/leaf2.png"),
+    url("Images/bee1.svg"),
+    url("Images/bee2.svg"),
+    url("Images/bee3.svg");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position:
+    12% 78%,
+    88% 82%,
+    20% 85%,
+    70% 90%,
+    10% 30%,
+    50% 20%,
+    90% 40%;
+  background-size:
+    48px 48px,
+    54px 54px,
+    36px 36px,
+    42px 42px,
+    24px 24px,
+    20px 20px,
+    28px 28px;
+  animation: floraFloat 14s ease-in-out infinite;
+}
+
+@keyframes floraFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
 }
 
 .page-hero::before {
@@ -593,6 +698,111 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   padding: calc(var(--nav-height) + 20px) 0 50px;
   overflow: hidden;
+
+/* ------------------------------------------------------------
+   HERO BACKGROUND LAYERS – gradient, honeycomb, flow, droplets, flora
+   ------------------------------------------------------------ */
+.hero-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.honey-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #fff8e6 0%, #fde5c0 45%, #f8c76c 80%, #f5b027 100%);
+  opacity: 0.96;
+}
+
+.honeycomb-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='104' viewBox='0 0 120 104' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='60,0 120,30 120,74 60,104 0,74 0,30' fill='none' stroke='%23d98218' stroke-width='0.8' stroke-opacity='0.08'/%3E%3C/svg%3E");
+  background-size: 120px 104px;
+  opacity: 0.12;
+}
+
+.honey-flow {
+  position: absolute;
+  inset: 0;
+  background: url("Images/honey-flow.png") no-repeat bottom right;
+  background-size: 45% auto;
+  opacity: 0.85;
+  animation: honeyFlowMove 12s linear infinite;
+}
+
+@keyframes honeyFlowMove {
+  0% { transform: translate(0,0) rotate(0deg); }
+  50% { transform: translate(-5%, -3%) rotate(0.5deg); }
+  100% { transform: translate(0,0) rotate(0deg); }
+}
+
+.honey-droplets::before,
+.honey-droplets::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,224,130,0.85), rgba(255,200,70,0.55));
+  box-shadow: 0 0 8px rgba(255,210,100,0.4);
+}
+
+.honey-droplets::before {
+  width: 18px; height: 18px;
+  left: 22%; top: 65%;
+  animation: dropletFloat 6s ease-in-out infinite alternate;
+}
+
+.honey-droplets::after {
+  width: 12px; height: 12px;
+  left: 78%; top: 58%;
+  animation: dropletFloat 5s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes dropletFloat {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-12px) scale(1.05); }
+}
+
+.decorative-flora {
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("Images/blossom1.png"),
+    url("Images/blossom2.png"),
+    url("Images/leaf1.png"),
+    url("Images/leaf2.png"),
+    url("Images/bee1.svg"),
+    url("Images/bee2.svg"),
+    url("Images/bee3.svg");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position:
+    12% 78%,
+    88% 82%,
+    20% 85%,
+    70% 90%,
+    10% 30%,
+    50% 20%,
+    90% 40%;
+  background-size:
+    48px 48px,
+    54px 54px,
+    36px 36px,
+    42px 42px,
+    24px 24px,
+    20px 20px,
+    28px 28px;
+  animation: floraFloat 14s ease-in-out infinite;
+}
+
+@keyframes floraFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
 }
 
 .hero-bg-lights {
@@ -751,6 +961,111 @@ h1, h2, h3, h4, h5, h6 {
   pointer-events: none !important;
   z-index: 1;
   overflow: hidden;
+
+/* ------------------------------------------------------------
+   HERO BACKGROUND LAYERS – gradient, honeycomb, flow, droplets, flora
+   ------------------------------------------------------------ */
+.hero-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.honey-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #fff8e6 0%, #fde5c0 45%, #f8c76c 80%, #f5b027 100%);
+  opacity: 0.96;
+}
+
+.honeycomb-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='104' viewBox='0 0 120 104' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='60,0 120,30 120,74 60,104 0,74 0,30' fill='none' stroke='%23d98218' stroke-width='0.8' stroke-opacity='0.08'/%3E%3C/svg%3E");
+  background-size: 120px 104px;
+  opacity: 0.12;
+}
+
+.honey-flow {
+  position: absolute;
+  inset: 0;
+  background: url("Images/honey-flow.png") no-repeat bottom right;
+  background-size: 45% auto;
+  opacity: 0.85;
+  animation: honeyFlowMove 12s linear infinite;
+}
+
+@keyframes honeyFlowMove {
+  0% { transform: translate(0,0) rotate(0deg); }
+  50% { transform: translate(-5%, -3%) rotate(0.5deg); }
+  100% { transform: translate(0,0) rotate(0deg); }
+}
+
+.honey-droplets::before,
+.honey-droplets::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,224,130,0.85), rgba(255,200,70,0.55));
+  box-shadow: 0 0 8px rgba(255,210,100,0.4);
+}
+
+.honey-droplets::before {
+  width: 18px; height: 18px;
+  left: 22%; top: 65%;
+  animation: dropletFloat 6s ease-in-out infinite alternate;
+}
+
+.honey-droplets::after {
+  width: 12px; height: 12px;
+  left: 78%; top: 58%;
+  animation: dropletFloat 5s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes dropletFloat {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-12px) scale(1.05); }
+}
+
+.decorative-flora {
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("Images/blossom1.png"),
+    url("Images/blossom2.png"),
+    url("Images/leaf1.png"),
+    url("Images/leaf2.png"),
+    url("Images/bee1.svg"),
+    url("Images/bee2.svg"),
+    url("Images/bee3.svg");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position:
+    12% 78%,
+    88% 82%,
+    20% 85%,
+    70% 90%,
+    10% 30%,
+    50% 20%,
+    90% 40%;
+  background-size:
+    48px 48px,
+    54px 54px,
+    36px 36px,
+    42px 42px,
+    24px 24px,
+    20px 20px,
+    28px 28px;
+  animation: floraFloat 14s ease-in-out infinite;
+}
+
+@keyframes floraFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
   opacity: 0.95;
   transition: opacity var(--transition-smooth);
 }
@@ -886,6 +1201,111 @@ h1, h2, h3, h4, h5, h6 {
   transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
   position: relative;
   overflow: hidden;
+
+/* ------------------------------------------------------------
+   HERO BACKGROUND LAYERS – gradient, honeycomb, flow, droplets, flora
+   ------------------------------------------------------------ */
+.hero-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.honey-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #fff8e6 0%, #fde5c0 45%, #f8c76c 80%, #f5b027 100%);
+  opacity: 0.96;
+}
+
+.honeycomb-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='104' viewBox='0 0 120 104' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='60,0 120,30 120,74 60,104 0,74 0,30' fill='none' stroke='%23d98218' stroke-width='0.8' stroke-opacity='0.08'/%3E%3C/svg%3E");
+  background-size: 120px 104px;
+  opacity: 0.12;
+}
+
+.honey-flow {
+  position: absolute;
+  inset: 0;
+  background: url("Images/honey-flow.png") no-repeat bottom right;
+  background-size: 45% auto;
+  opacity: 0.85;
+  animation: honeyFlowMove 12s linear infinite;
+}
+
+@keyframes honeyFlowMove {
+  0% { transform: translate(0,0) rotate(0deg); }
+  50% { transform: translate(-5%, -3%) rotate(0.5deg); }
+  100% { transform: translate(0,0) rotate(0deg); }
+}
+
+.honey-droplets::before,
+.honey-droplets::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,224,130,0.85), rgba(255,200,70,0.55));
+  box-shadow: 0 0 8px rgba(255,210,100,0.4);
+}
+
+.honey-droplets::before {
+  width: 18px; height: 18px;
+  left: 22%; top: 65%;
+  animation: dropletFloat 6s ease-in-out infinite alternate;
+}
+
+.honey-droplets::after {
+  width: 12px; height: 12px;
+  left: 78%; top: 58%;
+  animation: dropletFloat 5s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes dropletFloat {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-12px) scale(1.05); }
+}
+
+.decorative-flora {
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("Images/blossom1.png"),
+    url("Images/blossom2.png"),
+    url("Images/leaf1.png"),
+    url("Images/leaf2.png"),
+    url("Images/bee1.svg"),
+    url("Images/bee2.svg"),
+    url("Images/bee3.svg");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position:
+    12% 78%,
+    88% 82%,
+    20% 85%,
+    70% 90%,
+    10% 30%,
+    50% 20%,
+    90% 40%;
+  background-size:
+    48px 48px,
+    54px 54px,
+    36px 36px,
+    42px 42px,
+    24px 24px,
+    20px 20px,
+    28px 28px;
+  animation: floraFloat 14s ease-in-out infinite;
+}
+
+@keyframes floraFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
   box-sizing: border-box;
   width: 100%;
   max-width: 100%;
@@ -1126,6 +1546,111 @@ h1, h2, h3, h4, h5, h6 {
   transition: all var(--transition-smooth);
   position: relative;
   overflow: hidden;
+
+/* ------------------------------------------------------------
+   HERO BACKGROUND LAYERS – gradient, honeycomb, flow, droplets, flora
+   ------------------------------------------------------------ */
+.hero-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.honey-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #fff8e6 0%, #fde5c0 45%, #f8c76c 80%, #f5b027 100%);
+  opacity: 0.96;
+}
+
+.honeycomb-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='104' viewBox='0 0 120 104' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='60,0 120,30 120,74 60,104 0,74 0,30' fill='none' stroke='%23d98218' stroke-width='0.8' stroke-opacity='0.08'/%3E%3C/svg%3E");
+  background-size: 120px 104px;
+  opacity: 0.12;
+}
+
+.honey-flow {
+  position: absolute;
+  inset: 0;
+  background: url("Images/honey-flow.png") no-repeat bottom right;
+  background-size: 45% auto;
+  opacity: 0.85;
+  animation: honeyFlowMove 12s linear infinite;
+}
+
+@keyframes honeyFlowMove {
+  0% { transform: translate(0,0) rotate(0deg); }
+  50% { transform: translate(-5%, -3%) rotate(0.5deg); }
+  100% { transform: translate(0,0) rotate(0deg); }
+}
+
+.honey-droplets::before,
+.honey-droplets::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,224,130,0.85), rgba(255,200,70,0.55));
+  box-shadow: 0 0 8px rgba(255,210,100,0.4);
+}
+
+.honey-droplets::before {
+  width: 18px; height: 18px;
+  left: 22%; top: 65%;
+  animation: dropletFloat 6s ease-in-out infinite alternate;
+}
+
+.honey-droplets::after {
+  width: 12px; height: 12px;
+  left: 78%; top: 58%;
+  animation: dropletFloat 5s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes dropletFloat {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-12px) scale(1.05); }
+}
+
+.decorative-flora {
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("Images/blossom1.png"),
+    url("Images/blossom2.png"),
+    url("Images/leaf1.png"),
+    url("Images/leaf2.png"),
+    url("Images/bee1.svg"),
+    url("Images/bee2.svg"),
+    url("Images/bee3.svg");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position:
+    12% 78%,
+    88% 82%,
+    20% 85%,
+    70% 90%,
+    10% 30%,
+    50% 20%,
+    90% 40%;
+  background-size:
+    48px 48px,
+    54px 54px,
+    36px 36px,
+    42px 42px,
+    24px 24px,
+    20px 20px,
+    28px 28px;
+  animation: floraFloat 14s ease-in-out infinite;
+}
+
+@keyframes floraFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
   box-shadow: var(--shadow-card);
 }
 
@@ -1441,6 +1966,111 @@ h1, h2, h3, h4, h5, h6 {
   background: #faf7f0;
   border-radius: var(--radius-sm);
   overflow: hidden;
+
+/* ------------------------------------------------------------
+   HERO BACKGROUND LAYERS – gradient, honeycomb, flow, droplets, flora
+   ------------------------------------------------------------ */
+.hero-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.honey-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #fff8e6 0%, #fde5c0 45%, #f8c76c 80%, #f5b027 100%);
+  opacity: 0.96;
+}
+
+.honeycomb-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='104' viewBox='0 0 120 104' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='60,0 120,30 120,74 60,104 0,74 0,30' fill='none' stroke='%23d98218' stroke-width='0.8' stroke-opacity='0.08'/%3E%3C/svg%3E");
+  background-size: 120px 104px;
+  opacity: 0.12;
+}
+
+.honey-flow {
+  position: absolute;
+  inset: 0;
+  background: url("Images/honey-flow.png") no-repeat bottom right;
+  background-size: 45% auto;
+  opacity: 0.85;
+  animation: honeyFlowMove 12s linear infinite;
+}
+
+@keyframes honeyFlowMove {
+  0% { transform: translate(0,0) rotate(0deg); }
+  50% { transform: translate(-5%, -3%) rotate(0.5deg); }
+  100% { transform: translate(0,0) rotate(0deg); }
+}
+
+.honey-droplets::before,
+.honey-droplets::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,224,130,0.85), rgba(255,200,70,0.55));
+  box-shadow: 0 0 8px rgba(255,210,100,0.4);
+}
+
+.honey-droplets::before {
+  width: 18px; height: 18px;
+  left: 22%; top: 65%;
+  animation: dropletFloat 6s ease-in-out infinite alternate;
+}
+
+.honey-droplets::after {
+  width: 12px; height: 12px;
+  left: 78%; top: 58%;
+  animation: dropletFloat 5s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes dropletFloat {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-12px) scale(1.05); }
+}
+
+.decorative-flora {
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("Images/blossom1.png"),
+    url("Images/blossom2.png"),
+    url("Images/leaf1.png"),
+    url("Images/leaf2.png"),
+    url("Images/bee1.svg"),
+    url("Images/bee2.svg"),
+    url("Images/bee3.svg");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position:
+    12% 78%,
+    88% 82%,
+    20% 85%,
+    70% 90%,
+    10% 30%,
+    50% 20%,
+    90% 40%;
+  background-size:
+    48px 48px,
+    54px 54px,
+    36px 36px,
+    42px 42px,
+    24px 24px,
+    20px 20px,
+    28px 28px;
+  animation: floraFloat 14s ease-in-out infinite;
+}
+
+@keyframes floraFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1506,6 +2136,111 @@ h1, h2, h3, h4, h5, h6 {
   height: 250px;
   border-radius: var(--radius-md);
   overflow: hidden;
+
+/* ------------------------------------------------------------
+   HERO BACKGROUND LAYERS – gradient, honeycomb, flow, droplets, flora
+   ------------------------------------------------------------ */
+.hero-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.honey-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #fff8e6 0%, #fde5c0 45%, #f8c76c 80%, #f5b027 100%);
+  opacity: 0.96;
+}
+
+.honeycomb-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='104' viewBox='0 0 120 104' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='60,0 120,30 120,74 60,104 0,74 0,30' fill='none' stroke='%23d98218' stroke-width='0.8' stroke-opacity='0.08'/%3E%3C/svg%3E");
+  background-size: 120px 104px;
+  opacity: 0.12;
+}
+
+.honey-flow {
+  position: absolute;
+  inset: 0;
+  background: url("Images/honey-flow.png") no-repeat bottom right;
+  background-size: 45% auto;
+  opacity: 0.85;
+  animation: honeyFlowMove 12s linear infinite;
+}
+
+@keyframes honeyFlowMove {
+  0% { transform: translate(0,0) rotate(0deg); }
+  50% { transform: translate(-5%, -3%) rotate(0.5deg); }
+  100% { transform: translate(0,0) rotate(0deg); }
+}
+
+.honey-droplets::before,
+.honey-droplets::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,224,130,0.85), rgba(255,200,70,0.55));
+  box-shadow: 0 0 8px rgba(255,210,100,0.4);
+}
+
+.honey-droplets::before {
+  width: 18px; height: 18px;
+  left: 22%; top: 65%;
+  animation: dropletFloat 6s ease-in-out infinite alternate;
+}
+
+.honey-droplets::after {
+  width: 12px; height: 12px;
+  left: 78%; top: 58%;
+  animation: dropletFloat 5s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes dropletFloat {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-12px) scale(1.05); }
+}
+
+.decorative-flora {
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("Images/blossom1.png"),
+    url("Images/blossom2.png"),
+    url("Images/leaf1.png"),
+    url("Images/leaf2.png"),
+    url("Images/bee1.svg"),
+    url("Images/bee2.svg"),
+    url("Images/bee3.svg");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position:
+    12% 78%,
+    88% 82%,
+    20% 85%,
+    70% 90%,
+    10% 30%,
+    50% 20%,
+    90% 40%;
+  background-size:
+    48px 48px,
+    54px 54px,
+    36px 36px,
+    42px 42px,
+    24px 24px,
+    20px 20px,
+    28px 28px;
+  animation: floraFloat 14s ease-in-out infinite;
+}
+
+@keyframes floraFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
   cursor: pointer;
   border: 1px solid var(--border-glass);
   box-shadow: var(--shadow-card);
@@ -1698,6 +2433,111 @@ h1, h2, h3, h4, h5, h6 {
 .faq-answer {
   max-height: 0;
   overflow: hidden;
+
+/* ------------------------------------------------------------
+   HERO BACKGROUND LAYERS – gradient, honeycomb, flow, droplets, flora
+   ------------------------------------------------------------ */
+.hero-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.honey-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #fff8e6 0%, #fde5c0 45%, #f8c76c 80%, #f5b027 100%);
+  opacity: 0.96;
+}
+
+.honeycomb-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='104' viewBox='0 0 120 104' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='60,0 120,30 120,74 60,104 0,74 0,30' fill='none' stroke='%23d98218' stroke-width='0.8' stroke-opacity='0.08'/%3E%3C/svg%3E");
+  background-size: 120px 104px;
+  opacity: 0.12;
+}
+
+.honey-flow {
+  position: absolute;
+  inset: 0;
+  background: url("Images/honey-flow.png") no-repeat bottom right;
+  background-size: 45% auto;
+  opacity: 0.85;
+  animation: honeyFlowMove 12s linear infinite;
+}
+
+@keyframes honeyFlowMove {
+  0% { transform: translate(0,0) rotate(0deg); }
+  50% { transform: translate(-5%, -3%) rotate(0.5deg); }
+  100% { transform: translate(0,0) rotate(0deg); }
+}
+
+.honey-droplets::before,
+.honey-droplets::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,224,130,0.85), rgba(255,200,70,0.55));
+  box-shadow: 0 0 8px rgba(255,210,100,0.4);
+}
+
+.honey-droplets::before {
+  width: 18px; height: 18px;
+  left: 22%; top: 65%;
+  animation: dropletFloat 6s ease-in-out infinite alternate;
+}
+
+.honey-droplets::after {
+  width: 12px; height: 12px;
+  left: 78%; top: 58%;
+  animation: dropletFloat 5s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes dropletFloat {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-12px) scale(1.05); }
+}
+
+.decorative-flora {
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("Images/blossom1.png"),
+    url("Images/blossom2.png"),
+    url("Images/leaf1.png"),
+    url("Images/leaf2.png"),
+    url("Images/bee1.svg"),
+    url("Images/bee2.svg"),
+    url("Images/bee3.svg");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position:
+    12% 78%,
+    88% 82%,
+    20% 85%,
+    70% 90%,
+    10% 30%,
+    50% 20%,
+    90% 40%;
+  background-size:
+    48px 48px,
+    54px 54px,
+    36px 36px,
+    42px 42px,
+    24px 24px,
+    20px 20px,
+    28px 28px;
+  animation: floraFloat 14s ease-in-out infinite;
+}
+
+@keyframes floraFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
   transition: max-height var(--transition-smooth), padding var(--transition-smooth);
   padding: 0 24px;
   color: var(--text-muted);
@@ -1872,6 +2712,111 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
+
+/* ------------------------------------------------------------
+   HERO BACKGROUND LAYERS – gradient, honeycomb, flow, droplets, flora
+   ------------------------------------------------------------ */
+.hero-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.honey-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #fff8e6 0%, #fde5c0 45%, #f8c76c 80%, #f5b027 100%);
+  opacity: 0.96;
+}
+
+.honeycomb-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='104' viewBox='0 0 120 104' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='60,0 120,30 120,74 60,104 0,74 0,30' fill='none' stroke='%23d98218' stroke-width='0.8' stroke-opacity='0.08'/%3E%3C/svg%3E");
+  background-size: 120px 104px;
+  opacity: 0.12;
+}
+
+.honey-flow {
+  position: absolute;
+  inset: 0;
+  background: url("Images/honey-flow.png") no-repeat bottom right;
+  background-size: 45% auto;
+  opacity: 0.85;
+  animation: honeyFlowMove 12s linear infinite;
+}
+
+@keyframes honeyFlowMove {
+  0% { transform: translate(0,0) rotate(0deg); }
+  50% { transform: translate(-5%, -3%) rotate(0.5deg); }
+  100% { transform: translate(0,0) rotate(0deg); }
+}
+
+.honey-droplets::before,
+.honey-droplets::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,224,130,0.85), rgba(255,200,70,0.55));
+  box-shadow: 0 0 8px rgba(255,210,100,0.4);
+}
+
+.honey-droplets::before {
+  width: 18px; height: 18px;
+  left: 22%; top: 65%;
+  animation: dropletFloat 6s ease-in-out infinite alternate;
+}
+
+.honey-droplets::after {
+  width: 12px; height: 12px;
+  left: 78%; top: 58%;
+  animation: dropletFloat 5s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes dropletFloat {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-12px) scale(1.05); }
+}
+
+.decorative-flora {
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("Images/blossom1.png"),
+    url("Images/blossom2.png"),
+    url("Images/leaf1.png"),
+    url("Images/leaf2.png"),
+    url("Images/bee1.svg"),
+    url("Images/bee2.svg"),
+    url("Images/bee3.svg");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position:
+    12% 78%,
+    88% 82%,
+    20% 85%,
+    70% 90%,
+    10% 30%,
+    50% 20%,
+    90% 40%;
+  background-size:
+    48px 48px,
+    54px 54px,
+    36px 36px,
+    42px 42px,
+    24px 24px,
+    20px 20px,
+    28px 28px;
+  animation: floraFloat 14s ease-in-out infinite;
+}
+
+@keyframes floraFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
   background: #000;
   aspect-ratio: 16/9;
 }
@@ -2028,6 +2973,111 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid var(--border-gold);
   border-radius: var(--radius-lg);
   overflow: hidden;
+
+/* ------------------------------------------------------------
+   HERO BACKGROUND LAYERS – gradient, honeycomb, flow, droplets, flora
+   ------------------------------------------------------------ */
+.hero-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.honey-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #fff8e6 0%, #fde5c0 45%, #f8c76c 80%, #f5b027 100%);
+  opacity: 0.96;
+}
+
+.honeycomb-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='104' viewBox='0 0 120 104' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='60,0 120,30 120,74 60,104 0,74 0,30' fill='none' stroke='%23d98218' stroke-width='0.8' stroke-opacity='0.08'/%3E%3C/svg%3E");
+  background-size: 120px 104px;
+  opacity: 0.12;
+}
+
+.honey-flow {
+  position: absolute;
+  inset: 0;
+  background: url("Images/honey-flow.png") no-repeat bottom right;
+  background-size: 45% auto;
+  opacity: 0.85;
+  animation: honeyFlowMove 12s linear infinite;
+}
+
+@keyframes honeyFlowMove {
+  0% { transform: translate(0,0) rotate(0deg); }
+  50% { transform: translate(-5%, -3%) rotate(0.5deg); }
+  100% { transform: translate(0,0) rotate(0deg); }
+}
+
+.honey-droplets::before,
+.honey-droplets::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,224,130,0.85), rgba(255,200,70,0.55));
+  box-shadow: 0 0 8px rgba(255,210,100,0.4);
+}
+
+.honey-droplets::before {
+  width: 18px; height: 18px;
+  left: 22%; top: 65%;
+  animation: dropletFloat 6s ease-in-out infinite alternate;
+}
+
+.honey-droplets::after {
+  width: 12px; height: 12px;
+  left: 78%; top: 58%;
+  animation: dropletFloat 5s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes dropletFloat {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-12px) scale(1.05); }
+}
+
+.decorative-flora {
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("Images/blossom1.png"),
+    url("Images/blossom2.png"),
+    url("Images/leaf1.png"),
+    url("Images/leaf2.png"),
+    url("Images/bee1.svg"),
+    url("Images/bee2.svg"),
+    url("Images/bee3.svg");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position:
+    12% 78%,
+    88% 82%,
+    20% 85%,
+    70% 90%,
+    10% 30%,
+    50% 20%,
+    90% 40%;
+  background-size:
+    48px 48px,
+    54px 54px,
+    36px 36px,
+    42px 42px,
+    24px 24px,
+    20px 20px,
+    28px 28px;
+  animation: floraFloat 14s ease-in-out infinite;
+}
+
+@keyframes floraFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
   box-shadow: var(--shadow-card);
   min-height: 400px;
 }
@@ -2441,6 +3491,111 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 100%;
     box-sizing: border-box;
     overflow: hidden;
+
+/* ------------------------------------------------------------
+   HERO BACKGROUND LAYERS – gradient, honeycomb, flow, droplets, flora
+   ------------------------------------------------------------ */
+.hero-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.honey-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #fff8e6 0%, #fde5c0 45%, #f8c76c 80%, #f5b027 100%);
+  opacity: 0.96;
+}
+
+.honeycomb-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='104' viewBox='0 0 120 104' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='60,0 120,30 120,74 60,104 0,74 0,30' fill='none' stroke='%23d98218' stroke-width='0.8' stroke-opacity='0.08'/%3E%3C/svg%3E");
+  background-size: 120px 104px;
+  opacity: 0.12;
+}
+
+.honey-flow {
+  position: absolute;
+  inset: 0;
+  background: url("Images/honey-flow.png") no-repeat bottom right;
+  background-size: 45% auto;
+  opacity: 0.85;
+  animation: honeyFlowMove 12s linear infinite;
+}
+
+@keyframes honeyFlowMove {
+  0% { transform: translate(0,0) rotate(0deg); }
+  50% { transform: translate(-5%, -3%) rotate(0.5deg); }
+  100% { transform: translate(0,0) rotate(0deg); }
+}
+
+.honey-droplets::before,
+.honey-droplets::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,224,130,0.85), rgba(255,200,70,0.55));
+  box-shadow: 0 0 8px rgba(255,210,100,0.4);
+}
+
+.honey-droplets::before {
+  width: 18px; height: 18px;
+  left: 22%; top: 65%;
+  animation: dropletFloat 6s ease-in-out infinite alternate;
+}
+
+.honey-droplets::after {
+  width: 12px; height: 12px;
+  left: 78%; top: 58%;
+  animation: dropletFloat 5s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes dropletFloat {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-12px) scale(1.05); }
+}
+
+.decorative-flora {
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("Images/blossom1.png"),
+    url("Images/blossom2.png"),
+    url("Images/leaf1.png"),
+    url("Images/leaf2.png"),
+    url("Images/bee1.svg"),
+    url("Images/bee2.svg"),
+    url("Images/bee3.svg");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position:
+    12% 78%,
+    88% 82%,
+    20% 85%,
+    70% 90%,
+    10% 30%,
+    50% 20%,
+    90% 40%;
+  background-size:
+    48px 48px,
+    54px 54px,
+    36px 36px,
+    42px 42px,
+    24px 24px,
+    20px 20px,
+    28px 28px;
+  animation: floraFloat 14s ease-in-out infinite;
+}
+
+@keyframes floraFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
   }
 
   .product-actions {
@@ -2512,6 +3667,111 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 100%;
     box-sizing: border-box;
     overflow: hidden;
+
+/* ------------------------------------------------------------
+   HERO BACKGROUND LAYERS – gradient, honeycomb, flow, droplets, flora
+   ------------------------------------------------------------ */
+.hero-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.honey-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #fff8e6 0%, #fde5c0 45%, #f8c76c 80%, #f5b027 100%);
+  opacity: 0.96;
+}
+
+.honeycomb-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='104' viewBox='0 0 120 104' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='60,0 120,30 120,74 60,104 0,74 0,30' fill='none' stroke='%23d98218' stroke-width='0.8' stroke-opacity='0.08'/%3E%3C/svg%3E");
+  background-size: 120px 104px;
+  opacity: 0.12;
+}
+
+.honey-flow {
+  position: absolute;
+  inset: 0;
+  background: url("Images/honey-flow.png") no-repeat bottom right;
+  background-size: 45% auto;
+  opacity: 0.85;
+  animation: honeyFlowMove 12s linear infinite;
+}
+
+@keyframes honeyFlowMove {
+  0% { transform: translate(0,0) rotate(0deg); }
+  50% { transform: translate(-5%, -3%) rotate(0.5deg); }
+  100% { transform: translate(0,0) rotate(0deg); }
+}
+
+.honey-droplets::before,
+.honey-droplets::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,224,130,0.85), rgba(255,200,70,0.55));
+  box-shadow: 0 0 8px rgba(255,210,100,0.4);
+}
+
+.honey-droplets::before {
+  width: 18px; height: 18px;
+  left: 22%; top: 65%;
+  animation: dropletFloat 6s ease-in-out infinite alternate;
+}
+
+.honey-droplets::after {
+  width: 12px; height: 12px;
+  left: 78%; top: 58%;
+  animation: dropletFloat 5s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes dropletFloat {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-12px) scale(1.05); }
+}
+
+.decorative-flora {
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("Images/blossom1.png"),
+    url("Images/blossom2.png"),
+    url("Images/leaf1.png"),
+    url("Images/leaf2.png"),
+    url("Images/bee1.svg"),
+    url("Images/bee2.svg"),
+    url("Images/bee3.svg");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position:
+    12% 78%,
+    88% 82%,
+    20% 85%,
+    70% 90%,
+    10% 30%,
+    50% 20%,
+    90% 40%;
+  background-size:
+    48px 48px,
+    54px 54px,
+    36px 36px,
+    42px 42px,
+    24px 24px,
+    20px 20px,
+    28px 28px;
+  animation: floraFloat 14s ease-in-out infinite;
+}
+
+@keyframes floraFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
   }
 
   .bottle-img-frame {
@@ -2645,6 +3905,111 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 100%;
     box-sizing: border-box;
     overflow: hidden;
+
+/* ------------------------------------------------------------
+   HERO BACKGROUND LAYERS – gradient, honeycomb, flow, droplets, flora
+   ------------------------------------------------------------ */
+.hero-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.honey-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #fff8e6 0%, #fde5c0 45%, #f8c76c 80%, #f5b027 100%);
+  opacity: 0.96;
+}
+
+.honeycomb-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='104' viewBox='0 0 120 104' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='60,0 120,30 120,74 60,104 0,74 0,30' fill='none' stroke='%23d98218' stroke-width='0.8' stroke-opacity='0.08'/%3E%3C/svg%3E");
+  background-size: 120px 104px;
+  opacity: 0.12;
+}
+
+.honey-flow {
+  position: absolute;
+  inset: 0;
+  background: url("Images/honey-flow.png") no-repeat bottom right;
+  background-size: 45% auto;
+  opacity: 0.85;
+  animation: honeyFlowMove 12s linear infinite;
+}
+
+@keyframes honeyFlowMove {
+  0% { transform: translate(0,0) rotate(0deg); }
+  50% { transform: translate(-5%, -3%) rotate(0.5deg); }
+  100% { transform: translate(0,0) rotate(0deg); }
+}
+
+.honey-droplets::before,
+.honey-droplets::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,224,130,0.85), rgba(255,200,70,0.55));
+  box-shadow: 0 0 8px rgba(255,210,100,0.4);
+}
+
+.honey-droplets::before {
+  width: 18px; height: 18px;
+  left: 22%; top: 65%;
+  animation: dropletFloat 6s ease-in-out infinite alternate;
+}
+
+.honey-droplets::after {
+  width: 12px; height: 12px;
+  left: 78%; top: 58%;
+  animation: dropletFloat 5s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes dropletFloat {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-12px) scale(1.05); }
+}
+
+.decorative-flora {
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("Images/blossom1.png"),
+    url("Images/blossom2.png"),
+    url("Images/leaf1.png"),
+    url("Images/leaf2.png"),
+    url("Images/bee1.svg"),
+    url("Images/bee2.svg"),
+    url("Images/bee3.svg");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position:
+    12% 78%,
+    88% 82%,
+    20% 85%,
+    70% 90%,
+    10% 30%,
+    50% 20%,
+    90% 40%;
+  background-size:
+    48px 48px,
+    54px 54px,
+    36px 36px,
+    42px 42px,
+    24px 24px,
+    20px 20px,
+    28px 28px;
+  animation: floraFloat 14s ease-in-out infinite;
+}
+
+@keyframes floraFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
   }
 
   .bottle-img-frame {

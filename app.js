@@ -22,6 +22,42 @@ window.addEventListener('pageshow', () => {
 
 window.scrollTo(0, 0);
 
+function initHeroCarousel() {
+  const showcase = document.querySelector('.hero-bottles-showcase');
+  if (!showcase) return;
+  const cards = showcase.querySelectorAll('.hero-bottle-card');
+  if (!cards.length) return;
+  // Create navigation dots
+  const dotContainer = document.createElement('div');
+  dotContainer.className = 'carousel-dots';
+  cards.forEach((_, i) => {
+    const btn = document.createElement('button');
+    btn.dataset.index = i;
+    btn.addEventListener('click', () => setActive(i));
+    dotContainer.appendChild(btn);
+  });
+  showcase.appendChild(dotContainer);
+
+  let current = 0;
+  const setActive = (i) => {
+    cards[current].classList.remove('active');
+    dotContainer.children[current].classList.remove('active');
+    current = i % cards.length;
+    cards[current].classList.add('active');
+    dotContainer.children[current].classList.add('active');
+  };
+
+  // Init first slide
+  setActive(0);
+
+  // Autoplay unless reduced motion
+  const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (!mq.matches) {
+    setInterval(() => setActive((current + 1) % cards.length), 4500);
+  }
+}
+
+// Existing init block
 document.addEventListener('DOMContentLoaded', () => {
   window.scrollTo(0, 0);
   document.documentElement.scrollTop = 0;
@@ -36,7 +72,25 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollToTop();
   initWhatsAppHelpers();
   initFlyingBee();
-  initInteractiveHoneyFlow();
+  //initInteractiveHoneyFlow();
+  initHeroCarousel();
+});
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+
+  initLanguageSwitcher();
+  initGlobalNavigation();
+  initHeroBottlesInteraction();
+  initGalleryLightbox();
+  initEquipmentFilter();
+  initFaqAccordion();
+  initScrollToTop();
+  initWhatsAppHelpers();
+  initFlyingBee();
+  // Remove old interactive honey flow init
+  // initInteractiveHoneyFlow();
+  initHeroCarousel();
 });
 
 window.addEventListener('load', () => {
