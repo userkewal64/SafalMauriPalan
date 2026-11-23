@@ -602,6 +602,31 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 0;
 }
 
+.hero-bg-visual {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: url('assets/images/hero/hero-honeycomb-harvest.jpg') center right / cover no-repeat;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+  mask-image: radial-gradient(ellipse at 75% 50%, black 20%, transparent 72%);
+  -webkit-mask-image: radial-gradient(ellipse at 75% 50%, black 20%, transparent 72%);
+  filter: saturate(1.1) brightness(1.05);
+  transition: opacity var(--transition-smooth);
+}
+
+@media (max-width: 991px) {
+  .hero-bg-visual {
+    width: 100%;
+    opacity: 0.08;
+    mask-image: radial-gradient(circle at center, black 15%, transparent 68%);
+    -webkit-mask-image: radial-gradient(circle at center, black 15%, transparent 68%);
+  }
+}
+
 .glow-circle {
   position: absolute;
   border-radius: 50%;
@@ -1120,13 +1145,34 @@ h1, h2, h3, h4, h5, h6 {
   background: #ffffff;
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-lg);
-  padding: 30px 26px;
+  padding: 24px 22px 28px;
   display: flex;
   flex-direction: column;
   transition: all var(--transition-smooth);
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow-card);
+}
+
+.variety-banner-frame {
+  width: 100%;
+  height: 180px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-glass);
+  background: var(--bg-forest);
+}
+
+.variety-feature-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.variety-card:hover .variety-feature-img {
+  transform: scale(1.05);
 }
 
 .variety-card::before {
