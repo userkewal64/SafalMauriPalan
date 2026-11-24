@@ -96,9 +96,9 @@ const translations = {
     home_bottle2_name: "Itahari Honey – ५०० ग्राम",
     home_bottle2_price: "रु. ६००",
     home_varieties_available_lbl: "उपलब्ध प्रकारहरू:",
-    home_var_mustard: "तोरीको मह (Mustard Honey)",
-    home_var_litchi: "लिचीको मह (Litchi Honey)",
-    home_var_multi: "बहुफुली मह (Multifloral Honey)",
+    home_var_mustard: "तोरीको मह",
+    home_var_litchi: "लिचीको मह",
+    home_var_multi: "बहुफुली मह",
     home_btn_order_wa: "WhatsApp अर्डर",
     home_explore_varieties_btn: "सबै महका प्रकारहरू र विवरण हेर्नुहोस्",
 
@@ -247,6 +247,8 @@ const translations = {
     abt_feat4_desc: "नयाँ तथा व्यावसायिक मौरीपालकहरूलाई घार, सामग्री र प्राविधिक सल्लाह।",
     abt_video_title: "प्रत्यक्ष भिडियो: मौरीपालन तथा मह संकलन",
     abt_video_caption: "सफल मौरी पालन, इटहरी-४, सुनसरी — प्राङ्गारिक मौरीपालन र शुद्ध मह संकलनको प्रत्यक्ष भिडियो झलक।",
+    abt_prom_heading: "आज नै शुद्ध <span class=\"gold-gradient-text\">इटहरी मह</span> को अनुभव गर्नुहोस्",
+    abt_prom_desc: "चाहे तपाईंलाई भान्छाको लागि शुद्ध प्राकृतिक मह चाहिएको होस् वा नयाँ मौरीपालन व्यवसाय सुरु गर्न मौरीघार र सामग्री चाहिएको होस्, हामीलाई सम्झनुहोस्।",
 
     // --- PAGE 7: CONTACT.HTML (CONTACT US & MAP) ---
     cnt_hero_label: "हामीलाई सम्पर्क गर्नुहोस्",
@@ -458,6 +460,8 @@ const translations = {
     abt_feat4_desc: "Providing beehives, live colonies, extractors, and hands-on guidance for local beekeepers.",
     abt_video_title: "Live Video: Beekeeping & Honey Harvesting",
     abt_video_caption: "Safal Mauri Palan, Itahari-4, Sunsari — Authentic live video of beekeeping and pure honey harvesting.",
+    abt_prom_heading: "Experience Pure <span class=\"gold-gradient-text\">Itahari Honey</span> Today",
+    abt_prom_desc: "Whether you need pure natural honey for your household or beehives and equipment to start beekeeping, feel free to contact us.",
 
     // --- PAGE 7: CONTACT.HTML (CONTACT US & MAP) ---
     cnt_hero_label: "Get In Touch",
