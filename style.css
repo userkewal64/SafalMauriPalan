@@ -114,20 +114,31 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background-image: url("Images/img1.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.025;
+  background-image: 
+    linear-gradient(180deg, rgba(255, 249, 237, 0.40) 0%, rgba(255, 249, 237, 0.70) 42%, rgba(255, 249, 237, 0.90) 100%),
+    url("Images/new1-mobile.jpg");
+  background-position: 
+    center center,
+    center top;
+  background-repeat: 
+    no-repeat,
+    no-repeat;
+  background-size: 
+    cover,
+    cover;
+  opacity: 0.5;
   pointer-events: none;
   z-index: -1;
-  filter: contrast(105%) brightness(108%);
+  filter: saturate(112%) contrast(104%);
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 /* --------------------------------------------------------------------------
-   WEBSITE-WIDE DESKTOP-ONLY SUBTLE HONEY-THEMED FIXED BACKGROUND
-   Uses existing Images/new1.jpg with an ivory/cream overlay across all pages.
-   Stationary during scrolling, purely ambient, without affecting readability.
+   WEBSITE-WIDE HONEY-THEMED FIXED BACKGROUND
+   Mobile (< 993px): 9:16 portrait honeycomb (Images/new1-mobile.jpg)
+   Desktop (>= 993px): Landscape honeycomb (Images/new1.jpg)
+   Stationary during scrolling, opacity ~0.5, with ivory overlay.
    -------------------------------------------------------------------------- */
 .desktop-honey-bg {
   display: none !important;
@@ -147,10 +158,7 @@ body::before {
     background-size: 
       cover,
       cover;
-    opacity: 0.7;
-    filter: saturate(112%) contrast(104%);
-    transform: translateZ(0);
-    will-change: transform;
+    opacity: 0.5;
   }
 
   .page-hero {
@@ -633,7 +641,7 @@ html[lang="en"] .nav-links .nav-link {
 .page-hero {
   position: relative;
   padding: calc(var(--nav-height) + 40px) 0 45px;
-  background: linear-gradient(180deg, var(--bg-deep-forest) 0%, var(--bg-forest) 100%);
+  background: linear-gradient(180deg, rgba(255, 249, 237, 0.35) 0%, rgba(255, 243, 219, 0.55) 100%);
   border-bottom: 1px solid var(--border-gold);
   text-align: center;
   overflow: hidden;
