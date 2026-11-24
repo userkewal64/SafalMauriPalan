@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordion();
   initScrollToTop();
   initWhatsAppHelpers();
-  initFlyingBee();
+  // initFlyingBee(); // Disabled per aesthetic guidelines: strictly no flying bees or distracting animations
   // initInteractiveHoneyFlow();
 });
 
@@ -111,6 +111,10 @@ const translations = {
     home_vid_preview_title: "सफल मौरी पालन <span class=\"gold-gradient-text\">भिडियो भ्रमण</span>",
     home_vid_preview_desc: "इटहरी फार्ममा मौरीपालन तथा मह संकलनको प्रत्यक्ष भिडियो झलक।",
     home_about_explore_btn: "हाम्रोबारे थप जान्नुहोस्",
+    home_cta_title: "फार्मबाटै सिधै शुद्ध Itahari Honey अर्डर गर्नुहोस्",
+    home_cta_desc: "नेपालभर होम डेलिभरीका लागि हाम्रा मौरीपालकहरूलाई सम्पर्क गर्नुहोस् वा WhatsApp मार्फत सोधपुछ पठाउनुहोस्।",
+    home_cta_wa_btn: "WhatsApp मा कुराकानी गर्नुहोस्",
+    home_cta_visit_btn: "हाम्रो इटहरी फार्ममा आउनुहोस्",
 
     // --- PAGE 2: OURPRODUCTS.HTML (HONEY VARIETIES & CATALOGUE) ---
     prod_hero_label: "शुद्ध र प्राकृतिक मह",
@@ -169,9 +173,9 @@ const translations = {
     acc_filter_gear: "सुरक्षा सामग्री",
     acc_filter_health: "रोग तथा माइट नियन्त्रण",
 
-    eq_1_title: "काठे घार (Apis mellifera)",
+    eq_1_title: "आधुनिक घार (Apis Mellifera)",
     eq_1_sub: "आधुनिक फ्रेमयुक्त काठको घार",
-    eq_2_title: "काठे घार (Apis cerana)",
+    eq_2_title: "आधुनिक घार (Apis Cerana)",
     eq_2_sub: "सुधारिएको स्थानीय मौरीको घार",
     eq_3_title: "मौरीका गोलाहरू (Live Bee Colonies)",
     eq_3_sub: "Apis mellifera र Apis cerana मौरीका गोला",
@@ -318,6 +322,10 @@ const translations = {
     home_vid_preview_title: "Safal Mauri Palan <span class=\"gold-gradient-text\">Video Tour</span>",
     home_vid_preview_desc: "Watch authentic video footage of our apiary operations, comb management, and honey extraction in Itahari, Sunsari.",
     home_about_explore_btn: "Read More About Us",
+    home_cta_title: "Order Pure Itahari Honey Direct from Farm",
+    home_cta_desc: "Call our beekeepers or send an inquiry via WhatsApp for direct home delivery across Nepal.",
+    home_cta_wa_btn: "Chat on WhatsApp",
+    home_cta_visit_btn: "Visit Our Farm in Itahari",
 
     // --- PAGE 2: OURPRODUCTS.HTML (HONEY VARIETIES & CATALOGUE) ---
     prod_hero_label: "Pure Honey",
@@ -376,9 +384,9 @@ const translations = {
     acc_filter_gear: "Protective Gear",
     acc_filter_health: "Mite Control",
 
-    eq_1_title: "Beehive (Apis mellifera)",
+    eq_1_title: "Modern Beehive (Apis mellifera)",
     eq_1_sub: "Modern Wooden Frame Hive",
-    eq_2_title: "Beehive (Apis cerana)",
+    eq_2_title: "Modern Beehive (Apis cerana)",
     eq_2_sub: "Improved Indigenous Hive",
     eq_3_title: "Live Bee Colonies",
     eq_3_sub: "Apis mellifera & Apis cerana",

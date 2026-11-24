@@ -9,26 +9,27 @@
    1. CSS VARIABLES & DESIGN TOKENS
    -------------------------------------------------------------------------- */
 :root {
-  /* Color Palette - Warm Ivory, Cream & Nature */
-  --bg-deep-forest: #faf8f3;
-  --bg-forest: #f5efe4;
-  --bg-forest-light: #ece3d2;
-  --bg-forest-card: rgba(255, 255, 255, 0.94);
-  --bg-glass: rgba(255, 255, 255, 0.88);
+  /* Color Palette - Warm Ivory, Soft Cream & Natural Backgrounds */
+  --bg-deep-forest: #FFF9ED;
+  --bg-forest: #FFF3DB;
+  --bg-forest-light: #F7EAD0;
+  --bg-forest-card: rgba(255, 255, 255, 0.95);
+  --bg-glass: rgba(255, 255, 255, 0.90);
   --bg-glass-elevated: rgba(255, 255, 255, 0.98);
 
-  /* Color Palette - Golden Honey & Rich Amber */
-  --honey-primary: #d98218;
-  --honey-light: #b86a08;
-  --honey-glow: rgba(217, 130, 24, 0.16);
-  --honey-deep: #a85d05;
-  --honey-amber: #c4740e;
-  --honey-dark: #8a4902;
+  /* Color Palette - Honey Gold, Amber & Natural Brown */
+  --honey-primary: #E8AA35;
+  --honey-light: #D99124;
+  --honey-glow: rgba(232, 170, 53, 0.18);
+  --honey-deep: #76502C;
+  --honey-amber: #D99124;
+  --honey-dark: #76502C;
+  --honey-caramel: #C88938;
 
-  /* Color Palette - Sage Green Accents */
+  /* Color Palette - Subtle Botanical Green Accents */
   --sage-primary: #4a6b53;
   --sage-dark: #2e4535;
-  --sage-light: #eef4f0;
+  --sage-light: #f0f5f1;
   --sage-border: rgba(74, 107, 83, 0.22);
   --sage-glow: rgba(74, 107, 83, 0.12);
 
@@ -41,12 +42,12 @@
   --text-muted: #666155;
 
   /* Accents & Borders */
-  --border-gold: rgba(217, 130, 24, 0.24);
-  --border-gold-glow: rgba(217, 130, 24, 0.55);
-  --border-glass: rgba(180, 150, 110, 0.18);
-  --shadow-subtle: 0 4px 18px rgba(60, 45, 20, 0.05);
-  --shadow-gold: 0 6px 28px rgba(217, 130, 24, 0.15);
-  --shadow-card: 0 10px 30px rgba(60, 45, 20, 0.07), 0 2px 8px rgba(60, 45, 20, 0.03);
+  --border-gold: rgba(232, 170, 53, 0.28);
+  --border-gold-glow: rgba(232, 170, 53, 0.55);
+  --border-glass: rgba(200, 137, 56, 0.18);
+  --shadow-subtle: 0 4px 18px rgba(118, 80, 44, 0.05);
+  --shadow-gold: 0 6px 28px rgba(232, 170, 53, 0.18);
+  --shadow-card: 0 10px 30px rgba(118, 80, 44, 0.07), 0 2px 8px rgba(118, 80, 44, 0.03);
 
   /* Typography */
   --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
@@ -95,10 +96,10 @@ body {
   display: flex;
   flex-direction: column;
   background-image: 
-    radial-gradient(circle at 12% 16%, rgba(217, 130, 24, 0.05) 0%, transparent 42%),
-    radial-gradient(circle at 88% 64%, rgba(74, 107, 83, 0.045) 0%, transparent 48%),
-    radial-gradient(circle at 50% 92%, rgba(217, 130, 24, 0.035) 0%, transparent 45%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cpath d='M28 0 L56 16.16 L56 48.5 L28 64.66 L0 48.5 L0 16.16 Z M28 97 L56 80.84 L56 48.5 L28 64.66 L0 48.5 L0 80.84 Z' fill='none' stroke='%23b4966e' stroke-width='0.75' stroke-opacity='0.035'/%3E%3C/svg%3E");
+    radial-gradient(circle at 12% 16%, rgba(232, 170, 53, 0.05) 0%, transparent 42%),
+    radial-gradient(circle at 88% 64%, rgba(74, 107, 83, 0.04) 0%, transparent 48%),
+    radial-gradient(circle at 50% 92%, rgba(232, 170, 53, 0.035) 0%, transparent 45%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cpath d='M28 0 L56 16.16 L56 48.5 L28 64.66 L0 48.5 L0 16.16 Z M28 97 L56 80.84 L56 48.5 L28 64.66 L0 48.5 L0 80.84 Z' fill='none' stroke='%23C88938' stroke-width='0.75' stroke-opacity='0.035'/%3E%3C/svg%3E");
   background-attachment: fixed;
 }
 
@@ -546,8 +547,8 @@ h1, h2, h3, h4, h5, h6 {
 .page-hero {
   position: relative;
   padding: calc(var(--nav-height) + 40px) 0 45px;
-  background: linear-gradient(180deg, #fcf9f3 0%, #f4ede1 100%);
-  border-bottom: 1px solid var(--border-glass);
+  background: linear-gradient(180deg, var(--bg-deep-forest) 0%, var(--bg-forest) 100%);
+  border-bottom: 1px solid var(--border-gold);
   text-align: center;
   overflow: hidden;
 }
@@ -557,11 +558,11 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   inset: 0;
   background-image: 
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='120' viewBox='0 0 160 120'%3E%3Cpath d='M20 100 C40 80, 50 50, 45 20 C60 40, 75 70, 70 100 M45 45 C30 40, 20 50, 25 60 C35 65, 45 55, 45 45 M55 35 C70 30, 80 40, 75 50 C65 55, 55 45, 55 35 M48 70 C35 70, 28 80, 32 90 C42 92, 48 82, 48 70' fill='none' stroke='%234a6b53' stroke-width='1.2' stroke-opacity='0.045'/%3E%3Ccircle cx='45' cy='18' r='3.5' fill='%23d98218' fill-opacity='0.055'/%3E%3Ccircle cx='41' cy='14' r='2.5' fill='%23d98218' fill-opacity='0.045'/%3E%3Ccircle cx='49' cy='14' r='2.5' fill='%23d98218' fill-opacity='0.045'/%3E%3C/svg%3E"),
-    radial-gradient(circle at 10% 20%, rgba(217, 130, 24, 0.05) 0%, transparent 40%),
-    radial-gradient(circle at 90% 70%, rgba(74, 107, 83, 0.04) 0%, transparent 45%);
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: left 24px bottom 12px, top left, bottom right;
+    radial-gradient(circle at 10% 20%, rgba(232, 170, 53, 0.07) 0%, transparent 40%),
+    radial-gradient(circle at 90% 70%, rgba(74, 107, 83, 0.05) 0%, transparent 45%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 97'%3E%3Cpath d='M28 0 L56 16.16 L56 48.5 L28 64.66 L0 48.5 L0 16.16 Z M28 97 L56 80.84 L56 48.5 L28 64.66 L0 48.5 L0 80.84 Z' fill='none' stroke='%23C88938' stroke-width='0.75' stroke-opacity='0.035'/%3E%3C/svg%3E");
+  background-repeat: no-repeat, no-repeat, repeat;
+  background-position: top left, bottom right, center;
   pointer-events: none;
   z-index: 1;
 }
@@ -593,6 +594,22 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   padding: calc(var(--nav-height) + 20px) 0 50px;
   overflow: hidden;
+  background-color: var(--bg-deep-forest);
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, var(--bg-deep-forest) 0%, var(--bg-deep-forest) 36%, rgba(255, 249, 237, 0.90) 52%, rgba(255, 249, 237, 0.35) 75%, rgba(255, 249, 237, 0.08) 100%),
+    url('assets/images/backgrounds/hero-honeycomb.png');
+  background-position: center left, right center;
+  background-size: 100% 100%, cover;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.95;
 }
 
 .hero-bg-lights {
@@ -612,7 +629,7 @@ h1, h2, h3, h4, h5, h6 {
 .glow-1 {
   width: 520px;
   height: 520px;
-  background: radial-gradient(circle, rgba(217, 130, 24, 0.14) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(232, 170, 53, 0.16) 0%, transparent 70%);
   top: 10%;
   right: 8%;
 }
@@ -620,7 +637,7 @@ h1, h2, h3, h4, h5, h6 {
 .glow-2 {
   width: 650px;
   height: 650px;
-  background: radial-gradient(circle, rgba(74, 107, 83, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(74, 107, 83, 0.08) 0%, transparent 70%);
   bottom: 0%;
   left: -8%;
 }
@@ -741,126 +758,23 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Honey Harvest Centerpiece (Wooden Dipper & Continuous Flowing Stream) */
 /* ==========================================================================
-   INTERACTIVE LIQUID HONEY VISUAL EXPERIENCE
-   Translucent golden honey streams with natural viscosity, glossy reflections,
-   soft ambient caustics, and mouse/touch responsiveness.
+   DECORATIVE ARTIFACTS SUPPRESSION (STRICTLY PROHIBITED PER USER SPEC)
+   No honey streams, pipes, droplets, or floating elements.
    ========================================================================== */
-.interactive-honey-flow {
-  position: absolute;
-  inset: 0;
-  pointer-events: none !important;
-  z-index: 1;
-  overflow: hidden;
-  opacity: 0.95;
-  transition: opacity var(--transition-smooth);
-}
-
-.honey-flow-svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-  overflow: visible;
-}
-
-/* Animated Viscous Highlights */
-.honey-stream-streak {
-  stroke-dasharray: 140 220;
-  animation: honeyStreakFlow 4.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-.honey-stream-streak-branch {
-  stroke-dasharray: 80 160;
-  animation: honeyStreakFlowBranch 3.6s cubic-bezier(0.4, 0, 0.6, 1) infinite 1.2s;
-}
-
-@keyframes honeyStreakFlow {
-  0% { stroke-dashoffset: 720; }
-  100% { stroke-dashoffset: 0; }
-}
-
-@keyframes honeyStreakFlowBranch {
-  0% { stroke-dashoffset: 480; }
-  100% { stroke-dashoffset: 0; }
-}
-
-/* Viscous Droplets Natural Fall & Stretch */
-.droplet-stream-1 {
-  transform-origin: 880px 320px;
-  animation: honeyDropFall1 4.8s cubic-bezier(0.5, 0, 0.7, 1) infinite;
-}
-
-.droplet-stream-2 {
-  transform-origin: 580px 480px;
-  animation: honeyDropFall2 5.6s cubic-bezier(0.5, 0, 0.7, 1) infinite 2.2s;
-}
-
-@keyframes honeyDropFall1 {
-  0% { transform: translate(1020px, 360px) scale(0.3) scaleY(0.6); opacity: 0; }
-  15% { opacity: 0.95; transform: translate(1020px, 360px) scale(0.9) scaleY(1.1); }
-  35% { transform: translate(1020px, 370px) scale(1) scaleY(1.4); }
-  65% { transform: translate(1015px, 520px) scale(0.95) scaleY(1.6); opacity: 0.95; }
-  85% { transform: translate(1010px, 620px) scale(0.85) scaleY(1.8); opacity: 0.8; }
-  100% { transform: translate(1008px, 690px) scale(0.3) scaleY(0.4); opacity: 0; }
-}
-
-@keyframes honeyDropFall2 {
-  0% { transform: translate(660px, 540px) scale(0.3) scaleY(0.6); opacity: 0; }
-  18% { opacity: 0.95; transform: translate(660px, 540px) scale(0.85) scaleY(1.1); }
-  38% { transform: translate(660px, 545px) scale(0.95) scaleY(1.4); }
-  70% { transform: translate(656px, 680px) scale(0.9) scaleY(1.6); opacity: 0.95; }
-  88% { transform: translate(654px, 740px) scale(0.8) scaleY(1.7); opacity: 0.7; }
-  100% { transform: translate(652px, 780px) scale(0.3) scaleY(0.4); opacity: 0; }
-}
-
-/* Caustic Ambient Glow Pools */
-.glow-pool-1 {
-  transform-origin: 880px 240px;
-  animation: causticPulse1 6.5s ease-in-out infinite alternate;
-}
-
-.glow-pool-2 {
-  transform-origin: 320px 480px;
-  animation: causticPulse2 7.5s ease-in-out infinite alternate 1.5s;
-}
-
-@keyframes causticPulse1 {
-  0% { opacity: 0.3; transform: scale(0.95); }
-  100% { opacity: 0.55; transform: scale(1.08); }
-}
-
-@keyframes causticPulse2 {
-  0% { opacity: 0.25; transform: scale(0.92); }
-  100% { opacity: 0.48; transform: scale(1.06); }
-}
-
-/* Luminous Floating Micro-Nectar Beads */
+.interactive-honey-flow,
+.honey-flow-svg,
+.honey-stream-streak,
+.honey-stream-streak-branch,
+.droplet-stream-1,
+.droplet-stream-2,
+.glow-pool-1,
+.glow-pool-2,
 .nectar-bead {
-  animation: nectarFloat 5s ease-in-out infinite alternate;
-}
-.bead-1 { animation-delay: 0s; }
-.bead-2 { animation-delay: 1.4s; }
-.bead-3 { animation-delay: 2.8s; }
-
-@keyframes nectarFloat {
-  0% { transform: translateY(0) scale(1); opacity: 0.55; }
-  50% { transform: translateY(-14px) scale(1.1); opacity: 0.9; }
-  100% { transform: translateY(-4px) scale(0.95); opacity: 0.65; }
-}
-
-/* Reduced Motion Accessibility */
-@media (prefers-reduced-motion: reduce) {
-  .honey-stream-streak,
-  .honey-stream-streak-branch,
-  .droplet-stream-1,
-  .droplet-stream-2,
-  .glow-pool-1,
-  .glow-pool-2,
-  .nectar-bead {
-    animation: none !important;
-  }
-  .interactive-honey-flow {
-    opacity: 0.6;
-  }
+  display: none !important;
+  animation: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 .hero-bottles-showcase {
@@ -1011,77 +925,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   REALISTIC FLYING HONEYBEE (Apis mellifera)
-   Single elegant bee that smoothly follows cursor / touch with natural hovering
-   and animated fluttering wings. Strictly non-obstructing with pointer-events: none.
+   FLYING BEE SUPPRESSION (STRICTLY PROHIBITED PER USER SPEC)
    ========================================================================== */
 .flying-bee-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 44px;
-  height: 44px;
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
   pointer-events: none !important;
-  user-select: none !important;
-  z-index: 9999;
-  will-change: transform;
-  filter: drop-shadow(0 6px 14px rgba(60, 40, 15, 0.22));
-  transition: opacity 0.3s ease;
-}
-
-.realistic-bee-svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-  overflow: visible;
-  pointer-events: none !important;
-}
-
-/* Wing Fluttering Animations */
-.bee-wing.wing-left-fore {
-  transform-origin: 46px 37px;
-  animation: realisticWingLeftFore 0.065s ease-in-out infinite alternate;
-}
-
-.bee-wing.wing-left-hind {
-  transform-origin: 46px 39px;
-  animation: realisticWingLeftHind 0.065s ease-in-out infinite alternate 0.015s;
-}
-
-.bee-wing.wing-right-fore {
-  transform-origin: 54px 37px;
-  animation: realisticWingRightFore 0.065s ease-in-out infinite alternate;
-}
-
-.bee-wing.wing-right-hind {
-  transform-origin: 54px 39px;
-  animation: realisticWingRightHind 0.065s ease-in-out infinite alternate 0.015s;
-}
-
-@keyframes realisticWingLeftFore {
-  0% { transform: scaleY(0.3) rotate(-24deg) skewX(-12deg); opacity: 0.75; }
-  100% { transform: scaleY(1.35) rotate(28deg) skewX(12deg); opacity: 0.95; }
-}
-
-@keyframes realisticWingLeftHind {
-  0% { transform: scaleY(0.35) rotate(-18deg) skewX(-8deg); opacity: 0.7; }
-  100% { transform: scaleY(1.25) rotate(22deg) skewX(8deg); opacity: 0.9; }
-}
-
-@keyframes realisticWingRightFore {
-  0% { transform: scaleY(0.3) rotate(24deg) skewX(12deg); opacity: 0.75; }
-  100% { transform: scaleY(1.35) rotate(-28deg) skewX(-12deg); opacity: 0.95; }
-}
-
-@keyframes realisticWingRightHind {
-  0% { transform: scaleY(0.35) rotate(18deg) skewX(8deg); opacity: 0.7; }
-  100% { transform: scaleY(1.25) rotate(-22deg) skewX(-8deg); opacity: 0.9; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .flying-bee-container {
-    display: none !important;
-  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1094,8 +944,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-alt {
-  background: linear-gradient(180deg, transparent 0%, rgba(245, 239, 228, 0.65) 50%, transparent 100%);
+  background: linear-gradient(180deg, rgba(255, 243, 219, 0.45) 0%, rgba(255, 243, 219, 0.9) 50%, rgba(255, 243, 219, 0.45) 100%);
   position: relative;
+  border-top: 1px solid rgba(232, 170, 53, 0.12);
+  border-bottom: 1px solid rgba(232, 170, 53, 0.12);
 }
 
 .section-alt::before {
@@ -2465,6 +2317,15 @@ h1, h2, h3, h4, h5, h6 {
   .hero-section {
     padding: calc(var(--nav-height) + 10px) 0 35px;
     min-height: auto;
+  }
+
+  .hero-section::before {
+    background-image: 
+      linear-gradient(to bottom, rgba(255, 249, 237, 0.94) 0%, rgba(255, 249, 237, 0.82) 40%, rgba(255, 249, 237, 0.96) 100%),
+      url('assets/images/backgrounds/hero-honeycomb-mobile.png');
+    background-position: center top;
+    background-size: cover;
+    opacity: 0.92;
   }
 
   .hero-grid {
