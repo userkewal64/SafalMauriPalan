@@ -241,6 +241,7 @@ html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3 {
   font-family: inherit;
   color: var(--heading-gold);
   background: linear-gradient(135deg, #76502C 0%, #A95F13 45%, #D99124 100%);
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
   font-weight: 800;
