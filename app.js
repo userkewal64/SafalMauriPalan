@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordion();
   initScrollToTop();
   initWhatsAppHelpers();
-  // initFlyingBee(); // Disabled per aesthetic guidelines: strictly no flying bees or distracting animations
+  initFlyingBee();
   // initInteractiveHoneyFlow();
 });
 
@@ -832,6 +832,10 @@ try {
    -------------------------------------------------------------------------- */
 function initFlyingBee() {
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    return;
+  }
+  // Disable on touch/mobile devices (no mouse cursor)
+  if (window.matchMedia && window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
     return;
   }
 
